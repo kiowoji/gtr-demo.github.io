@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" type="text/css" rel="stylesheet">
+    <link href="./index.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Main</title>
+
+</head>
+
+<body>
+    <header-component></header-component>
+
+    <main class="flex justify-center sm:py-20 md:py-24 lg:py-60 sm:flex-col md:flex-row lg:flex-row px-4">
+        <div class="sm:w-full md:w-[25%] lg:w-[25%] mr-10">
+            <div class="text-xl lg:text-2xl text-gray-400 mb-4">404</div>
+            <h1 class="text-2xl lg:text-4xl font-bold mb-6">Йой... Щось пішло не так!</h1>
+            <p class="text-lg lg:text-xl text-gray-500 mb-10">Схоже, щось пішло зовсім не так. Не хвилюйтеся, це може трапитися з найкращими з нас 🙂</p>
+            <button class="main-btn sm:w-full sm:mb-20">На головну сторінку</button>
+        </div>
+        <img src="public/images/404.jpg" alt="not-found">
+    </main>
+
+    <footer-component></footer-component>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" type="text/css" rel="stylesheet">
+    <link href="./index.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>filter</title>
+</head>
+<body>
+
+
+<header-component></header-component>
+
+<div class="container mx-auto bg-white">
+    <ul class="breadcrumbs">
+        <li>
+            <a href="#">Головна</a>
+            <img src="public/images/chevron-right.svg" alt="">
+        </li>
+        <li>
+            <a href="#">Якась сторінка</a>
+            <img src="public/images/chevron-right.svg" alt="">
+        </li>
+        <li>
+            <a href="#">Ще якась сторінка</a>
+            <img src="public/images/chevron-right.svg" alt="">
+        </li>
+        <li class=" ">
+            <a href="#">Лумшори</a>
+        </li>
+    </ul>
+    <div class=" container mx-auto">
+        <div class=" text-lg mb-16 text-black">Лумшори: знайдено 287 варіантів</div>
+    </div>
+    <div class="container mx-auto flex">
+        
+        <div class=" flex flex-row justify-start">
+            <div class="w-72 mr-7">
+                <form action="" method="get">
+                    <div class="px-5 bg-bggrey flex flex-col">
+                        <div class=" text-2xl text-black mt-10 mb-7">Пошук оренди</div>
+                        <div class="mb-5">
+                            <label for="">Місце призначення</label>
+                            <div id="loc_search" class=" pl-3 py-3 mt-2 rounded-md border-gray-400 border bg-white flex fle-row justify-start items-center">
+                                <img src="public/images/icon-map.svg" alt="">
+                                <div id="loc_name" class="w-48 ml-2 border-none text-sm text-black">Оберіть локацію :</div>
+                                <input name="location" id="loc" type="hidden" value="">
+                            </div>
+                            <ul id="loc_group" class="hidden absolute bg-white rounded-md mt-1 overflow-y-scroll h-52 loc_group">
+                                <li class=" flex flex-row py-3 px-6 hover:bg-orange-200" data-location="Колочава">
+                                    <img src="public/images/icon-map.svg" alt="">
+                                    <div class=" text-sm text-black font-normal pl-2">Колочава</div>
+                                </li>
+                                <li class=" flex flex-row py-3 px-6 hover:bg-orange-200" data-location="Косино - термальні води">
+                                    <img src="public/images/icon-map.svg" alt="">
+                                    <div class=" text-sm text-black font-normal pl-2">Косино - термальні води</div>
+                                </li>
+                                <li class=" flex flex-row py-3 px-6 hover:bg-orange-200" data-location="Лумшори">
+                                    <img src="public/images/icon-map.svg" alt="">
+                                    <div class=" text-sm text-black font-normal pl-2">Лумшори</div>
+                                </li>
+                                <li class=" flex flex-row py-3 px-6 hover:bg-orange-200" data-location="Міжгір’я">
+                                    <img src="public/images/icon-map.svg" alt="">
+                                    <div class=" text-sm text-black font-normal pl-2">Міжгір’я</div>
+                                </li>
+                                <li class=" flex flex-row py-3 px-6 hover:bg-orange-200" data-location="Колочава">
+                                    <img src="public/images/icon-map.svg" alt="">
+                                    <div class=" text-sm text-black font-normal pl-2">Колочава</div>
+                                </li>
+                                <li class=" flex flex-row py-3 px-6 hover:bg-orange-200" data-location="Косино - термальні води">
+                                    <img src="public/images/icon-map.svg" alt="">
+                                    <div class=" text-sm text-black font-normal pl-2">Косино - термальні води</div>
+                                </li>
+                                <li class=" flex flex-row py-3 px-6 hover:bg-orange-200" data-location="Лумшори">
+                                    <img src="public/images/icon-map.svg" alt="">
+                                    <div class=" text-sm text-black font-normal pl-2">Лумшори</div>
+                                </li>
+                                <li class=" flex flex-row py-3 px-6 hover:bg-orange-200" data-location="Міжгір’я">
+                                    <img src="public/images/icon-map.svg" alt="">
+                                    <div class=" text-sm text-black font-normal pl-2">Міжгір’я</div>
+                                </li>
+                            </ul> 
+                        </div>
+                        <div class=" mb-5">
+                            <label for="">Прибуття</label>
+                            <div id="start_data" class=" pl-3 py-3 mt-2 rounded-md border-gray-400 border bg-white flex fle-row justify-start items-center">
+                                <img src="public/images/icon-service/tabler-icon-calendar-minus.svg" alt="">
+                                <div id="data_s" class="w-48 ml-2 border-none text-sm text-black">24 лютого</div>
+                                <input name="start" id="start" type="hidden" value="">
+                            </div>
+                        </div>
+                        <div class=" mb-5">
+                            <label for="">Виїзд</label>
+                            <div id="end_data" class=" pl-3 py-3 mt-2 rounded-md border-gray-400 border bg-white flex fle-row justify-start items-center">
+                                <img src="public/images/icon-service/tabler-icon-calendar-minus.svg" alt="">
+                                <div id="data_e" class="w-48 ml-2 border-none text-sm text-black">24 лютого</div>
+                                <input name="end" id="end" type="hidden" value="">
+                            </div>
+                        </div>
+                        <div class=" mb-5">
+                            <label for="">Гості</label>
+                            <div id="guest" class=" pl-3 py-3 mt-2 rounded-md border-gray-400 border bg-white flex fle-row justify-start items-center">
+                                <img src="public/images/icon-service/tabler-icon-user-plus.svg" alt="">
+                                <div id="inp_guest" class="w-48 ml-2 border-none text-sm text-black">1 дорослий без дітей</div>
+                                <input name="guest_data" id="guest_data" type="hidden" value="">
+                            </div>
+                        </div>
+                        
+                            <button id="form_filter" class=" bg-orange-400 text-white text-xl font-bold px-16 py-6  mt-10 mb-5 rounded-md" type="submit">Шукати</button>
+                        
+                        
+                    </div>        
+                </form> 
+            </div>
+            <div>
+                <div class=" flex flex-row justify-start items-center border-b-2 border-b-slate-300 mb-5 pb-5">
+                    <a class=" bg-bggrey py-2 px-4 mr-3 hover:bg-white border-2 hover:border-orange-400" href="#">Є Wi-Fi</a>
+                    <a class=" bg-bggrey py-2 px-4 mr-3 hover:bg-white border-2 hover:border-orange-400"href="#">З кухнею</a>
+                    <a class=" bg-bggrey py-2 px-4 mr-3 hover:bg-white border-2 hover:border-orange-400" href="#">З басейном</a>
+                    <button class=" text-black-orange text-base underline" >Показати більше</button>
+                </div>
+                <div class=" flex justify-between items-center mb-8">
+                    <a href="#" class="flex text-x text-base border border-red-500 py-1 pr-1 pl-5" >Скасувати фільтри 
+                        <img src="public/images/icon-service/x.svg" alt="">
+                    </a>
+                    <div class=" flex justify-between items-center">
+                        <div>
+                            <div class=" flex justify-between items-center bg-bggrey  rounded mr-7 pr-1 pl-4 py-1">
+                                <div class=" mr-6">Від дешевих</div> 
+                                <img src="public/images/icon-service/Vector.svg" alt="">
+                            </div>
+                            <ul id="sort_filter" class=" absolute bg-white rounded ">
+                                <li class=" pt-5 pb-3 px-7">За рейтингом </li>
+                                <li class=" pt-5 pb-3 px-7">За ціною </li>
+                            </ul>
+                        </div>
+                        
+                        <img src="public/images/icon-service/grid-2.svg" alt="">
+                        <img src="public/images/icon-service/grid.svg" alt="">
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="flex flex-col justify-start">
+                        <img src="public/images/hotel/2021-08-22-scaled.webp" alt="">
+                        <div class="text-base font-semibold text-black mt-4 mb-3">
+                            <a href="#"> Назва готеля</a>
+                        </div>
+                        <div class="flex flex-row justify-star">
+                            <img src="public/images/icon-map.svg" alt="">
+                            <div class="text-base text-gray-500 pl-2">
+                                Адресса...</div>
+                        </div>
+                        <div class="flex flex-row mt-1.5 mb-1.5 justify-star">
+                            <img src="public/images/main-cards/icon-phone.svg" alt="">
+                            <div class="text-base text-gray-500 pl-2">+380960000000</div>
+                            <img src="public/images/main-cards/icon-eye-off.svg" alt="">
+                        </div>
+                        <div class="flex flex-row justify-star">
+                            <img src="public/images/main-cards/icon-coins.svg" alt="">
+                            <div class="text-base text-gray-500 pl-2">від 1070 ₴ / ніч</div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-start">
+                        <img src="public/images/hotel/2021-08-22-scaled.webp" alt="">
+                        <div class="text-base font-semibold text-black mt-4 mb-3">
+                            <a href="#"> Назва готеля</a>
+                        </div>
+                        <div class="flex flex-row justify-star">
+                            <img src="public/images/icon-map.svg" alt="">
+                            <div class="text-base text-gray-500 pl-2">
+                                Адресса...</div>
+                        </div>
+                        <div class="flex flex-row mt-1.5 mb-1.5 justify-star">
+                            <img src="public/images/main-cards/icon-phone.svg" alt="">
+                            <div class="text-base text-gray-500 pl-2">+380960000000</div>
+                            <img src="public/images/main-cards/icon-eye-off.svg" alt="">
+                        </div>
+                        <div class="flex flex-row justify-star">
+                            <img src="public/images/main-cards/icon-coins.svg" alt="">
+                            <div class="text-base text-gray-500 pl-2">від 1070 ₴ / ніч</div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-start">
+                        <img src="public/images/hotel/2021-08-22-scaled.webp" alt="">
+                        <div class="text-base font-semibold text-black mt-4 mb-3">
+                            <a href="#"> Назва готеля</a>
+                        </div>
+                        <div class="flex flex-row justify-star">
+                            <img src="public/images/icon-map.svg" alt="">
+                            <div class="text-base text-gray-500 pl-2">
+                                Адресса...</div>
+                        </div>
+                        <div class="flex flex-row mt-1.5 mb-1.5 justify-star">
+                            <img src="public/images/main-cards/icon-phone.svg" alt="">
+                            <div class="text-base text-gray-500 pl-2">+380960000000</div>
+                            <img src="public/images/main-cards/icon-eye-off.svg" alt="">
+                        </div>
+                        <div class="flex flex-row justify-star">
+                            <img src="public/images/main-cards/icon-coins.svg" alt="">
+                            <div class="text-base text-gray-500 pl-2">від 1070 ₴ / ніч</div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-start">
+                        <img src="public/images/hotel/2021-08-22-scaled.webp" alt="">
+                        <div class="text-base font-semibold text-black mt-4 mb-3">
+                            <a href="#"> Назва готеля</a>
+                        </div>
+                        <div class="flex flex-row justify-star">
+                            <img src="public/images/icon-map.svg" alt="">
+                            <div class="text-base text-gray-500 pl-2">
+                                Адресса...</div>
+                        </div>
+                        <div class="flex flex-row mt-1.5 mb-1.5 justify-star">
+                            <img src="public/images/main-cards/icon-phone.svg" alt="">
+                            <div class="text-base text-gray-500 pl-2">+380960000000</div>
+                            <img src="public/images/main-cards/icon-eye-off.svg" alt="">
+                        </div>
+                        <div class="flex flex-row justify-star">
+                            <img src="public/images/main-cards/icon-coins.svg" alt="">
+                            <div class="text-base text-gray-500 pl-2">від 1070 ₴ / ніч</div>
+                        </div>
+                    </div>
+                </div> 
+            </div> 
+        </div>
+
+    </div>
+</div>
+    <div class=" fixed top-0 left-0 w-full h-screen bg-slate-200 bg-opacity-80">
+        <div class="  bg-white  w-3/6 mx-auto mt-60 px-6 py-8">
+            <div class="flex flex-col justify-between">
+                <div class=" flex flex-row items-center justify-between mt-6">
+                    <div class=" font-bold text-black text-2xl">Сервіси локацій <span class=" text-xs font-normal">(Можна вибрати будь-яку кількість)</span> </div>
+                    <img src="public/images/icon-service/x-bl.svg" alt="">
+                </div>
+                <div class="flex flex-wrap mt-12 mb-14">
+                    <a class=" bg-bggrey py-2 px-4 mr-3 mb-4 hover:bg-white border-2 hover:border-orange-400" href="#">Є Wi-Fi</a>
+                    <a class=" bg-bggrey py-2 px-4 mr-3 mb-4 hover:bg-white border-2 hover:border-orange-400"href="#">З кухнею</a>
+                    <a class=" bg-bggrey py-2 px-4 mr-3 mb-4 hover:bg-white border-2 hover:border-orange-400" href="#">З басейном</a>
+                    <a class=" bg-bggrey py-2 px-4 mr-3 mb-4 hover:bg-white border-2 hover:border-orange-400" href="#">Є Wi-Fi</a>
+                    <a class=" bg-bggrey py-2 px-4 mr-3 mb-4 hover:bg-white border-2 hover:border-orange-400"href="#">З кухнею</a>
+                    <a class=" bg-bggrey py-2 px-4 mr-3 mb-4 hover:bg-white border-2 hover:border-orange-400" href="#">З басейном</a>
+                    <a class=" bg-bggrey py-2 px-4 mr-3 mb-4 hover:bg-white border-2 hover:border-orange-400" href="#">Є Wi-Fi</a>
+                    <a class=" bg-bggrey py-2 px-4 mr-3 mb-4 hover:bg-white border-2 hover:border-orange-400"href="#">З кухнею</a>
+                    <a class=" bg-bggrey py-2 px-4 mr-3 mb-4 hover:bg-white border-2 hover:border-orange-400" href="#">З басейном</a>
+                    <a class=" bg-bggrey py-2 px-4 mr-3 mb-4 hover:bg-white border-2 hover:border-orange-400" href="#">Є Wi-Fi</a>
+                    <a class=" bg-bggrey py-2 px-4 mr-3 mb-4 hover:bg-white border-2 hover:border-orange-400"href="#">З кухнею</a>
+                    <a class=" bg-bggrey py-2 px-4 mr-3 mb-4 hover:bg-white border-2 hover:border-orange-400" href="#">З басейном</a>   
+                </div>
+                <div class=" flex flex-row items-center justify-between border-t-stone-200 border-t-2 py-11">
+                    <button class="text-base underline">Скасувати всі послуги</button>
+                    <button class="px-8 py-4 bg-orange-400 rounded-md text-white font-bold ">Показати 174 варіанти</button>
+                </div> 
+            </div>
+
+        </div> 
+    </div>
+
+    <footer-component></footer-component>
+    
+</body>
+<script type="module" src="app.js"></script>
+<script type="module" src="./js/uploader.js"></script>
+
+</html>
