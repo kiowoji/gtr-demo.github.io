@@ -138,13 +138,5 @@ document.addEventListener("DOMContentLoaded", function () {
       } else { openServicesBtn.innerHTML = `Показати більше <span>></span>`;}
   })
 
-  const phoneOverflows = document.getElementsByClassName('phone-overflow');
-  const eyeIcons = document.getElementsByClassName('eye-icon');
-
-  for (let i = 0; i < eyeIcons.length; i++) {
-    eyeIcons[i].addEventListener('click', () => {
-      phoneOverflows[i].classList.toggle('!w-auto');
-    });
-  }
 });
 

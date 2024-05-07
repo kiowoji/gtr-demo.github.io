@@ -304,6 +304,13 @@ class addObjectForm extends HTMLElement {
         currentTab = currentTab + n;
         if (currentTab >= x.length) {
             document.getElementById("addHotelForm").submit();
+            sliderOverlay.classList.add('hidden');
+            const checkOverlayHidden = setInterval(() => {
+            if (sliderOverlay.classList.contains('hidden')) {
+                clearInterval(checkOverlayHidden);
+                alert('Форма була успішно надіслана!');
+            }
+            }, 100);
             return false;
         }
         showTab(currentTab);
@@ -333,6 +340,9 @@ class addObjectForm extends HTMLElement {
         function validateForm() {
             let x, y, i, valid = true;
             x = document.getElementsByClassName("tab");
+            if (currentTab >= x.length || currentTab < 0) {
+                return false;
+            }
             y = x[currentTab].querySelectorAll("input, textarea");
             
             let errorMessages = x[currentTab].querySelectorAll(".error-message");

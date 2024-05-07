@@ -55,23 +55,6 @@ arrowRight.addEventListener('click', () => {
     categories.scrollLeft += 150;
 })
 
-
-const phoneOverflows = document.getElementsByClassName('phone-overflow');
-const eyeIcons = document.getElementsByClassName('eye-icon');
-
-for (let i = 0; i < eyeIcons.length; i++) {
-  eyeIcons[i].addEventListener('click', () => {
-    phoneOverflows[i].classList.toggle('!w-max');
-  });
-}
-
-
-document.querySelectorAll('.hotel-phone').forEach(function(phone) {
-    phone.addEventListener('click', function(event) {
-        event.stopPropagation();
-    });
-});
-
 const hotelCards = document.getElementsByClassName('hotel-card');
 
 Array.from(hotelCards).forEach((card) => {

@@ -162,7 +162,7 @@ class Header extends HTMLElement {
                     <li id="tours">Тури<span class="text-gray-400 text-2xl lg:!hidden">></span></li>
                     <li id="services">Активності<span class="text-gray-400 text-2xl lg:!hidden">></span></li>
                 </ul>
-                <div class="menu-link pb-8 pt-5 border-t-2 lg:border-t-0 flex flex-row justify-between items-end">
+                <div class="menu-link pb-16 lg:pb-8 pt-5 border-t-2 lg:border-t-0 flex flex-row justify-between items-end">
                     <div class="flex flex-col gap-5 pl-5 lg:pl-12">
                         <span class="font-bold">Опублікувати об'єкт</span>
                         <a href="tel:+380956480880" class="text-gray-500">+38(095) 648 0880</a>

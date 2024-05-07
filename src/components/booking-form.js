@@ -19,11 +19,11 @@ class BookingForm extends HTMLElement {
                     <div class="flex flex-row">
                         <div class="item-form w-full">
                             <label for="check-in-date" class="text-left">Прибуття</label>
-                            <input id="check-in-date" type="text" class="w-full !rounded-r-none !border-r-0 text-sm !pr-2" placeholder="01.01.2024">
+                            <input id="check-in-date" type="text" class="w-full !rounded-r-none !border-r-0 text-sm !pr-2" placeholder="01.01.2024" readonly>
                         </div>
                         <div class="item-form !rounded-l-none w-full">
                             <label for="check-out-date" class="text-right pr-2">Виїзд</label>
-                            <input id="check-out-date" type="text" class="w-full !rounded-l-none" placeholder="02.01.2024">
+                            <input id="check-out-date" type="text" class="w-full !rounded-l-none" placeholder="02.01.2024" readonly>
                         </div>
                         
                     </div>

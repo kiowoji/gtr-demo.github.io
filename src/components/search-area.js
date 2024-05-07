@@ -34,7 +34,7 @@ class SearchArea extends HTMLElement {
                             <p class="result-desc">Місто на річці Уж в Закарпатській області України, центр Ужгородської міської громади та Ужгородськ...</p>
                         </div>
                     </li>
-                    <li class="search-result-item">
+                    <li class="search-result-item hotel-card-res">
                         <img src="${result2}" alt="picture" class="result-photo">
                         <div class="flex flex-col">
                             <h2 class="text-lg lg:text-xl">Назва житла 1</h2>
@@ -102,7 +102,7 @@ class SearchArea extends HTMLElement {
                             <p class="result-desc">Місто на річці Уж в Закарпатській області України, центр Ужгородської міської громади та Ужгородськ...</p>
                         </div>
                     </li>
-                    <li class="search-result-item">
+                    <li class="search-result-item hotel-card-res">
                         <img src="${result2}" alt="picture" class="result-photo">
                         <div class="flex flex-col">
                             <h2 class="text-lg lg:text-xl">Назва житла 2</h2>
@@ -205,15 +205,14 @@ class SearchArea extends HTMLElement {
             }
         });
         });
-        
-    const phoneOverflows = document.getElementsByClassName('phone-overflow');
-    const eyeIcons = document.getElementsByClassName('eye-icon');
 
-    for (let i = 0; i < eyeIcons.length; i++) {
-    eyeIcons[i].addEventListener('click', () => {
-        phoneOverflows[i].classList.toggle('!w-max');
-    });
-    }
+        const hotelCards = document.getElementsByClassName('hotel-card-res');
+
+        Array.from(hotelCards).forEach((card) => {
+        card.addEventListener('click', () => {
+            window.location.href = 'hotel.html';
+        });
+        });
 
     }
 }
