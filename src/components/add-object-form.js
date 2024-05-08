@@ -305,12 +305,6 @@ class addObjectForm extends HTMLElement {
         if (currentTab >= x.length) {
             document.getElementById("addHotelForm").submit();
             sliderOverlay.classList.add('hidden');
-            const checkOverlayHidden = setInterval(() => {
-            if (sliderOverlay.classList.contains('hidden')) {
-                clearInterval(checkOverlayHidden);
-                alert('Форма була успішно надіслана!');
-            }
-            }, 100);
             return false;
         }
         showTab(currentTab);

@@ -820,3 +820,6 @@ input.invalid {
 .selected-date{
     @apply border-2 !border-orange-600 bg-orange-100
 }
+.active-outline{
+    outline: 2px solid #f97316;
+}

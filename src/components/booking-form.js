@@ -193,6 +193,8 @@ class BookingForm extends HTMLElement {
                 }
                 calendar.classList.remove('!hidden');
                 checkInDateInput.focus();
+                checkInDateInput.classList.add('active-outline');
+                checkOutDateInput.classList.remove('active-outline');
             });
 
             checkOutDateInput.addEventListener('click', () => {
@@ -210,6 +212,7 @@ class BookingForm extends HTMLElement {
                 }
                 calendar.classList.remove('!hidden');
                 checkInDateInput.focus();
+                checkInDateInput.classList.add('active-outline');
             });
             
             document.addEventListener('click', (event) => {
@@ -426,6 +429,8 @@ class BookingForm extends HTMLElement {
                             checkInDateInput.value = formattedDate;
                             dateDiv.classList.add('selected-date');
                             checkOutDateInput.focus();
+                            checkInDateInput.classList.remove('active-outline');
+                            checkOutDateInput.classList.add('active-outline');
                         } else if (!checkOutDateInput.value) {
                             const checkOutDate = new Date(year, month, i);
                             const checkInDate = new Date(checkInDateInput.value.split('.').reverse().join('-'));
@@ -435,6 +440,7 @@ class BookingForm extends HTMLElement {
                                 dateDiv.classList.add('selected-date');
                                 calendarErrorMessage.classList.add('hidden');
                                 calendar.classList.add('!hidden');
+                                checkOutDateInput.classList.remove('active-outline');
                             } else {
                                 calendarErrorMessage.classList.remove('hidden');
                             }
