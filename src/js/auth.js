@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!form.checkValidity()) {
             return;
         } else {
-            form.submit();
+            // form.submit();
             window.location.href="https://t.me/infoGoToRest"
         }
     });
