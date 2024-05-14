@@ -14,10 +14,10 @@
 <body>
 
     <header class="guide-header">
-        <img src="./public/images/logo.png" alt="logo" class="bg-white mx-auto">
+        <a href="/"><img src="./public/images/logo.png" alt="logo" class="bg-white mx-auto"></a>
     </header>
 
-    <main class="bg-gray-100 text-center py-20">
+    <main class="bg-gray-section text-center py-20">
         <h1 class="text-5xl font-bold mb-14">Анкета</h1>
         <form action="#" id="guide-form">
             <h2>1. Особисті дані</h2>
@@ -27,7 +27,7 @@
             <span class="error-message">Це поле обов'язкове</span>
 
             <label for="phone"><span class="required">*</span>Контактний телефон</label>
-            <input type="tel" id="phone" name="phone" required placeholder="+380XXXXXXXXX" pattern="[\+]380\d{9}">
+            <input type="tel" id="phone" name="phone" required placeholder="+3" pattern = "(\+?380|0)?\d{9}">
             <span class="error-message">Введіть дійсний номер телефону</span>
 
             <label for="languages"><span class="required">*</span>Якими мовами володієте</label>
@@ -57,7 +57,7 @@
         <div id="overlay">
             <div id="success-popup">
                 <div class="flex justify-end absolute top-4 right-4">
-                    <img src="public/images/icon-service/x.svg" alt="close" class="">
+                    <img src="public/images/icon-service/x.svg" alt="close" id="close-btn" class="cursor-pointer">
                 </div>
                 <div class="text-5xl mb-7">Дякуємо!</div>
                 <p class="text-xl text-gray-600 mb-14">Ми отримали Вашу анкету та </br>відповімо протягом 24 годин</p>

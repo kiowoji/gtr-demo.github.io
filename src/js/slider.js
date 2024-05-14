@@ -62,3 +62,24 @@ Array.from(hotelCards).forEach((card) => {
     window.location.href = 'hotel.html';
   });
 });
+
+const locationCards = document.getElementsByClassName('location-img');
+
+Array.from(locationCards).forEach((card) => {
+  card.addEventListener('click', () => {
+    window.location.href = '#';
+  });
+});
+
+var button = document.querySelector(".button-up");
+button.addEventListener("click", function() {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth"
+  });
+});
+
+window.addEventListener("scroll", function() {
+  button.classList.toggle("hidden", window.scrollY < 100);
+});

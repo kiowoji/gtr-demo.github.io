@@ -1,6 +1,7 @@
 import flagua from '/src/public/images/flag-ua.svg';
 import flagru from '/src/public/images/flag-ru.svg';
 import flagde from '/src/public/images/flag-germany.svg';
+import flageng from '/src/public/images/flag-eng.svg';
 import facebook from '/src/public/images/social-icon/Facebook.svg';
 import instagram from '/src/public/images/social-icon/Instagram.svg';
 import pinterest from '/src/public/images/social-icon/Pinterest.svg';
@@ -16,7 +17,7 @@ class Footer extends HTMLElement {
     connectedCallback() {
     this.innerHTML = `
     <footer class="bg-white">
-        <div class="bg-gray-100">
+        <div class="bg-[#F0F0F0]">
         <div class="email-subscription side-paddings">
             <div class="flex flex-col text-center lg:text-left">
                 <div class="text-2xl font-bold whitespace-normal lg:whitespace-nowrap">Підпишись на новини</div>
@@ -81,7 +82,7 @@ class Footer extends HTMLElement {
         <div class="copyright side-paddings">
             <div class="flex sm:mb-4 md:mb-4 lg:mb-0">
                 <button type="button" class="leng mr-5" id="foo-leng">
-                    <div class="uppercase text-sm mr-1 text-gray-400">ua</div>
+                    <div class="uppercase text-base mr-1 text-secondary">ua</div>
                     <img src="${flagua}" alt="flag">
                 </button>
                 <button type="button" id="foo-currency">
@@ -107,6 +108,12 @@ class Footer extends HTMLElement {
                         <img src="${flagde}" alt="flag">
                     </button>
                 </li>
+                <li>
+                    <button type="button" class="leng" data-lang="eng">
+                        <div class="leng-select">eng</div>
+                        <img src="${flageng}" alt="flag">
+                    </button>
+                </li>
             </ul>
             <ul id="foo-currency-menu" class="!hidden">
                 <li>
@@ -120,7 +127,7 @@ class Footer extends HTMLElement {
                     </button>
                 </li>
             </ul>
-            <div class="gray-text">
+            <div class="text-secondary">
                 <span>Copyright © 2023 by</span>
                 <a href="https://go-to.rest" class="underline">Go-To.Rest</a>
             </div>

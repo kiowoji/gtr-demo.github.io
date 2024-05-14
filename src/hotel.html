@@ -7,7 +7,7 @@
     <link href="./index.css" type="text/css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@21.0.6/build/css/intlTelInput.css">
     <title>Hotel</title>
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@21.0.6/build/js/intlTelInput.min.js"></script>
@@ -39,7 +39,7 @@
         <div class="wrapper">
             <div class="rating" id="rating">
                 <img src="public/images/icon-star.svg" alt="star">
-                <div class="ml-2 text-base">4,4 (275 відгуків)</div>
+                <div class="hotel-rate">4,4 (275 відгуків)</div>
             </div>
             <div class="location">
                 <img src="public/images/icon-map.svg" alt="map">
@@ -49,20 +49,100 @@
         </div>
 
         <div id="map-overlay" class="slider-overlay hidden">
-            <img src="public/images/icon-close-round.svg" alt="icon-close" id="close-map">
-            <iframe class="map-popup" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2647.380602922082!2d23.689662926953133!3d48.43003460000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47376232ac998769%3A0xbdf0d44f6872e01b!2zSG90ZWzKuSAiQXpoaW8i!5e0!3m2!1sen!2sua!4v1712139978466!5m2!1sen!2sua" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-popup">
+                <img src="public/images/icon-close-round.svg" alt="icon-close" id="close-map">
+                <iframe class="map-iframe relative" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2647.380602922082!2d23.689662926953133!3d48.43003460000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47376232ac998769%3A0xbdf0d44f6872e01b!2zSG90ZWzKuSAiQXpoaW8i!5e0!3m2!1sen!2sua!4v1712139978466!5m2!1sen!2sua" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="map-info shadow-md">
+                    <div class="font-semibold text-base mb-2.5">Готель «Ажіо»</div>
+                    <div class="rating mb-2" id="rating">
+                        <img src="public/images/icon-star.svg" alt="star">
+                        <div class="hotel-rate !no-underline">4,4 (<span class="underline">275 відгуків</span>)</div>
+                    </div>
+                    <div class="location mb-5">
+                        <img src="public/images/icon-map.svg" alt="map">
+                        <a href="https://maps.app.goo.gl/T48FiFnXXHyz7wjF8" class="hotel-location !no-underline">вул. Шевченка, 81А, с. Колочава, Закарпатська обл., Україна, 90043</a> 
+                    </div>
+                    <div class="flex flex-row w-max gap-2.5 pb-6 border-b-2 border-gray-200">
+                        <img src="public/images/slider/1_1.jpg" alt="hotel-photo" class="w-[100px] h-[100px] rounded-md">
+                        <img src="public/images/slider/1_2.jpg" alt="hotel-photo" class="w-[100px] h-[100px] rounded-md">
+                        <img src="public/images/slider/1_3.jpg" alt="hotel-photo" class="w-[100px] h-[100px] rounded-md">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="item-service">
+                            <img src="public/images/icon-service/icons-house/icon-conditioner.svg" alt="conditioner" class="hotel-service-icon">
+                            <p>Кондиціонер</p>
+                        </div>
+                        <div class="item-service">
+                            <img src="public/images/icon-service/icons-house/icon-mountains.svg" alt="mountains" class="hotel-service-icon">
+                            <p>Вид на гори</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 pt-4 hidden" id="services-hidden-map">
+                        <div class="item-service">
+                            <img src="public/images/icon-service/icons-house/icon-parking.svg" alt="conditioner" class="hotel-service-icon">
+                            <p>Паркінг</p>
+                        </div>
+                        <div class="item-service">
+                            <img src="public/images/icon-service/icons-house/icon-toaster.svg" alt="conditioner" class="hotel-service-icon">
+                            <p>Сніданок</p>
+                        </div>
+                        <div class="item-service">
+                            <img src="public/images/icon-service/icons-house/icon-heater.svg" alt="conditioner" class="hotel-service-icon">
+                            <p>Обігрівач</p>
+                        </div>
+                        <div class="item-service">
+                            <img src="public/images/icon-service/icons-house/icon-cutlery.svg" alt="conditioner" class="hotel-service-icon">
+                            <p>Ресторан</p>
+                        </div>
+                    </div>  
+                    
+                    <div class="btn-service-map" id="open-services-map">Показати більше<span>></span></div>
+                </div>
+
+                <div class="map-filter">
+                    <div class="flex flex-row gap-2 pb-4">
+                        <button class="all-btn">Все</button>
+                        <button class="clean-btn">Стерти</button>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="toeat" name="toeat" value="Поїсти">
+                        <label for="toeat">Поїсти</label><br>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="sights" name="sights" value="Пам’ятки">
+                        <label for="sights">Пам’ятки</label><br>
+                    </div>
+                    <div class="checkbox-wrapper">
+                         <input type="checkbox" id="services-checkbox" name="services-checkbox" value="Послуги">
+                        <label for="services-checkbox">Послуги</label><br>
+                    </div>
+                   <div class="checkbox-wrapper">
+                        <input type="checkbox" id="transfer" name="transfer" value="Трансфер">
+                        <label for="transfer">Трансфер</label><br>
+                   </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="tours" name="tours" value="Тури">
+                        <label for="tours">Тури</label><br>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="accomodation" name="accomodation" value="Житло">
+                        <label for="accomodation">Житло</label><br>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="reviews-overlay" class="slider-overlay hidden">
-            <div class="reviews-popup overflow-hidden">
+            <div class="reviews-popup">
                 <img src="public/images/icon-close-round.svg" alt="icon-close" id="close-reviews">
+                <div class="overflow-hidden h-[99%] md:h-[99%] lg:h-[750px]">
                 <div class="reviews-info">
                     <div>
-                        <div class="flex flex-row items-center gap-3 mb-3">
+                        <div class="flex flex-row items-center gap-3 mb-4">
                             <img src="public/images/icon-star.svg" alt="star" class="w-8 h-8 lg:w-10 lg:h-10">
-                            <span class="text-2xl lg:text-5xl">4,4</span>
+                            <span class="text-2xl lg:text-5xl font-bold">4,4</span>
                         </div>
-                        <span class="texl-lg lg:text-2xl text-gray-500">275 відгуків</span>
+                        <span class="texl-lg lg:text-2xl text-secondary">275 відгуків</span>
                     </div>
 
                     <div class="reviews-rating">
@@ -97,8 +177,8 @@
                     </div>
                 </div>
 
-                <div class="h-full overflow-scroll pb-96 md:pb-72 lg:pb-52">
-                    <ul class="pt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-16 gap-y-8">
+                <div class="reviews-list" id="reviewsList">
+                    <ul class="reviews-wrapper">
                     <li>
                         <div class="review-info">
                             <img src="./public/images/ava.jpg" alt="avatar" class="reviewer-img">
@@ -160,8 +240,72 @@
                         </div>
                         <p class="review-content">Я нещодавно провів неймовірно комфортний відпочинок у цьому готелі. Мені дуже сподобалася атмосфера та зручності, які надає цей готель. Розташування готелю також вражає – він розташований у чудовому місці, де легко дістатися до головних визначних пам'яток міста.</p>
                     </li>
-                </ul>
+                    </ul>
+                    <ul class="reviews-wrapper">
+                        <li>
+                        <div class="review-info">
+                            <img src="./public/images/ava.jpg" alt="avatar" class="reviewer-img">
+                            <div class="flex flex-col">
+                                <span>Олег</span>
+                                <span class="text-gray-400">2 тижні тому</span>
+                            </div>
+                        </div>
+                        <p class="review-content">Моє перебування в цьому готелі було дуже приємним. Зручні номери, чисто і охайно. Готель розташований в самому центрі міста, що робить його ідеальним місцем для відпочинку. Рекомендую!</p>
+                    </li>
+                    <li>
+                        <div class="review-info">
+                            <img src="./public/images/ava.jpg" alt="avatar" class="reviewer-img">
+                            <div class="flex flex-col">
+                                <span>Катя</span>
+                                <span class="text-gray-400">2 тижні тому</span>
+                            </div>
+                        </div>
+                        <p class="review-content">Мій візит в цей готель був незабутнім. Відмінний сервіс, комфортні номери та чистота в кожному куточку. Готель розташований в дуже зручному місці, що робить його ідеальним для туристів. Я відчував себе, як вдома, і планую повернутися сюди знову.</p>
+                    </li>
+                    <li>
+                        <div class="review-info">
+                            <img src="./public/images/ava.jpg" alt="avatar" class="reviewer-img">
+                            <div class="flex flex-col">
+                                <span>Олег</span>
+                                <span class="text-gray-400">2 тижні тому</span>
+                            </div>
+                        </div>
+                        <p class="review-content">Я нещодавно провів неймовірно комфортний відпочинок у цьому готелі. Мені дуже сподобалася атмосфера та зручності, які надає цей готель. Розташування готелю також вражає – він розташований у чудовому місці, де легко дістатися до головних визначних пам'яток міста.</p>
+                    </li>
+                    <li>
+                        <div class="review-info">
+                            <img src="./public/images/ava.jpg" alt="avatar" class="reviewer-img">
+                            <div class="flex flex-col">
+                                <span>Ірина</span>
+                                <span class="text-gray-400">2 тижні тому</span>
+                            </div>
+                        </div>
+                        <p class="review-content">Я залишилась в цьому готелі на вікенд, і він перевершив мої очікування. Привітний персонал, сучасний дизайн і чудовий вид з вікон номера. Мені сподобалося все. Обов'язково повернуся сюди ще раз!</p>
+                    </li>
+                    
+                    <li>
+                        <div class="review-info">
+                            <img src="./public/images/ava.jpg" alt="avatar" class="reviewer-img">
+                            <div class="flex flex-col">
+                                <span>Борис</span>
+                                <span class="text-gray-400">2 тижні тому</span>
+                            </div>
+                        </div>
+                        <p class="review-content">Я нещодавно провів неймовірно комфортний відпочинок у цьому готелі. Мені дуже сподобалася атмосфера та зручності, які надає цей готель. Розташування готелю також вражає – він розташований у чудовому місці, де легко дістатися до головних визначних пам'яток міста.</p>
+                    </li>
+                    <li>
+                        <div class="review-info">
+                            <img src="./public/images/ava.jpg" alt="avatar" class="reviewer-img">
+                            <div class="flex flex-col">
+                                <span>Олег</span>
+                                <span class="text-gray-400">2 тижні тому</span>
+                            </div>
+                        </div>
+                        <p class="review-content">Я нещодавно провів неймовірно комфортний відпочинок у цьому готелі. Мені дуже сподобалася атмосфера та зручності, які надає цей готель. Розташування готелю також вражає – він розташований у чудовому місці, де легко дістатися до головних визначних пам'яток міста.</p>
+                    </li>
+                    </ul>
                 </div>   
+                </div>
             </div>
         </div>
 
@@ -365,7 +509,8 @@
                     <div class="wrapper-rooms">
                         <div class="room">
                             <img src="public/images/rooms/lux.jpg" alt="img" class="room-img">
-                            <div class="wrapper-room">
+                            <div class="wrapper-details">
+                                <div class="wrapper-room">
                                 <div class="title-room">Люкс</div>
                                 <ul class="details-room">
                                     <li>
@@ -386,124 +531,88 @@
                                 </ul>
                             </div>
                             <div class="item-room">
-                                <div class="price-room"><span class="font-bold">700 ₴</span> / ніч</div>
+                                <div class="price-room"><span class="font-semibold">700 ₴</span> / ніч</div>
                                 <div class="btn-booking">Деталі номера</div>
                             </div>
+                            </div>  
                         </div>
                         <div class="room">
                             <img src="public/images/rooms/halflux.jpg" alt="img" class="room-img">
+                            <div class="wrapper-details">
                                 <div class="wrapper-room">
-                                    <div class="title-room">Півлюкс</div>
-                                    <ul class="details-room">
-                                        <li>
-                                            <img src="public/images/icon-service/icons-house/icon-bed.svg" alt="icon" class="hotel-service-icon">
-                                            <p>4 односпальні ліжка</p>
-                                        </li>
-                                        <li>
-                                            <img src="public/images/icon-service/icons-house/icon-family.svg" alt="icon" class="hotel-service-icon">
-                                            <p>Для 4 дорослих</p>
-                                        </li>
-                                    </ul>
+                                        <div class="title-room">Півлюкс</div>
+                                        <ul class="details-room">
+                                            <li>
+                                                <img src="public/images/icon-service/icons-house/icon-bed.svg" alt="icon" class="hotel-service-icon">
+                                                <p>4 односпальні ліжка</p>
+                                            </li>
+                                            <li>
+                                                <img src="public/images/icon-service/icons-house/icon-family.svg" alt="icon" class="hotel-service-icon">
+                                                <p>Для 4 дорослих</p>
+                                            </li>
+                                        </ul>
                                 </div>
-                            <div class="item-room">
-                                <div class="price-room"><span class="font-bold">750 ₴</span>/ ніч</div>
-                                <div class="btn-booking">Деталі номера</div>
+                                <div class="item-room">
+                                    <div class="price-room"><span class="font-semibold">750 ₴</span>/ ніч</div>
+                                    <div class="btn-booking">Деталі номера</div>
+                                </div>
                             </div>
                         </div>
                         <div class="room">
                             <img src="public/images/rooms/standart.jpg" alt="img" class="room-img">
-                            <div class="wrapper-room">
-                                <div class="title-room">Стандарт</div>
-                                <ul class="details-room">
-                                    <li>
-                                        <img src="public/images/icon-service/icons-house/icon-bed.svg" alt="icon" class="hotel-service-icon">
-                                        <p>1 двоспальне ліжко</p>
-                                    </li>
-                                    <li>
-                                        <img src="public/images/icon-service/icons-house/icon-family.svg" alt="icon" class="hotel-service-icon">
-                                        <p>Для 2 дорослих</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="item-room">
-                                <div class="price-room"><span class="font-bold">500 ₴</span> / ніч</div>
-                                <div class="btn-booking">Деталі номера</div>
+                            <div class="wrapper-details">
+                                <div class="wrapper-room">
+                                    <div class="title-room">Стандарт</div>
+                                    <ul class="details-room">
+                                        <li>
+                                            <img src="public/images/icon-service/icons-house/icon-bed.svg" alt="icon" class="hotel-service-icon">
+                                            <p>1 двоспальне ліжко</p>
+                                        </li>
+                                        <li>
+                                            <img src="public/images/icon-service/icons-house/icon-family.svg" alt="icon" class="hotel-service-icon">
+                                            <p>Для 2 дорослих</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="item-room">
+                                    <div class="price-room"><span class="font-semibold">500 ₴</span> / ніч</div>
+                                    <div class="btn-booking">Деталі номера</div>
+                                </div>
                             </div>
                         </div>
                         <div class="room">
                             <img src="public/images/rooms/economy.jpg" alt="img" class="room-img">
-                            <div class="wrapper-room">
-                                <div class="title-room">Економ</div>
-                                <ul class="details-room">
-                                    <li>
-                                        <img src="public/images/icon-service/icons-house/icon-bed.svg" alt="icon" class="hotel-service-icon">
-                                        <div>
-                                            <p>4 односпальні ліжка</p>
-                                            <p>1 розкладний диван</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <img src="public/images/icon-service/icons-house/icon-family.svg" alt="icon" class="hotel-service-icon">
-                                        <p>Для 6 дорослих</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="item-room">
-                                <div class="price-room"><span class="font-bold">300 ₴</span> / ніч</div>
-                                <div class="btn-booking">Деталі номера</div>
+                            <div class="wrapper-details">
+                                <div class="wrapper-room">
+                                    <div class="title-room">Економ</div>
+                                    <ul class="details-room">
+                                        <li>
+                                            <img src="public/images/icon-service/icons-house/icon-bed.svg" alt="icon" class="hotel-service-icon">
+                                            <div>
+                                                <p>4 односпальні ліжка</p>
+                                                <p>1 розкладний диван</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="public/images/icon-service/icons-house/icon-family.svg" alt="icon" class="hotel-service-icon">
+                                            <p>Для 6 дорослих</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="item-room">
+                                    <div class="price-room"><span class="font-semibold">300 ₴</span> / ніч</div>
+                                    <div class="btn-booking">Деталі номера</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="service-hotel">
-                    <div class="service-title mb-6">Поширенні запитання</div>
-                    <div class="faq mb-16">
-                        <div class="w-full">
-                            <button class="accordion">
-                                <span>Яка середня ціна готелю?</span>
-                                <img src="public/images/icon-service/arrow-down.svg">
-                            </button>
-                            <div class="panel">
-                                <p class="text-gray-500 mb-9 ml-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur</p>
-                            </div>
-
-                            <button class="accordion">
-                                <span>Чому варто обрати Go To Rest?</span>
-                                <img src="public/images/icon-service/arrow-down.svg">
-                            </button>
-                            <div class="panel active">
-                                <p class="text-gray-500 mb-9 ml-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur</p>
-                            </div>
-
-                            <button class="accordion">
-                                <span>Яка середня ціна готелю?</span>
-                                <img src="public/images/icon-service/arrow-down.svg">
-                            </button>
-                            <div class="panel">
-                                <p class="text-gray-500 mb-9 ml-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur</p>
-                            </div>
-
-                            <button class="accordion">
-                                <span>Чому варто обрати Go To Rest?</span>
-                                <img src="public/images/icon-service/arrow-down.svg">
-                            </button>
-                            <div class="panel">
-                                <p class="text-gray-500 mb-9 ml-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur</p>
-                            </div>
-
-                            <button class="accordion">
-                                <span>Яка середня ціна готелю?</span>
-                                <img src="public/images/icon-service/arrow-down.svg">
-                            </button>
-                            <div class="panel">
-                                <p class="text-gray-500 mb-9 ml-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur</p>
-                            </div>
-                        </div>
-                    </div>
+                    <faq-component class="w-full faq-hotel"></faq-component>  
                 </div>
                 <div class="service-hotel mb-20 md:mb-40 lg:mb-48">
                     <div class="service-title mb-6 text-center md:text-left lg:text-left">Житло поруч</div>
-                        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-7 mt-10">
+                        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-7">
                         <div class="hotel-card">
                         <img src="public/images/hotel/hotel_9.png" alt="" class="hotel-img">
                         <div class="hotel-title">
@@ -572,16 +681,18 @@
                 </div>
                 </div>
             </div>
-            <booking-form class="hidden lg:block"></booking-form>
+            <div>
+                <booking-form class="hidden lg:block sticky top-[70px] pb-5"></booking-form>
+            </div>
         </div>
         </div>
     </main>
     
     <footer-component></footer-component>
          
-    <div id="booking-form-overlay" class="bg-gray-100 fixed top-0 left-0 z-[9998] w-full h-full hidden">
-        <div class="w-full md:w-[70%] mx-auto h-[100vh] pr-5 py-5 overflow-hidden">
-            <p class="text-right cursor-pointer text-xl text-orange-700 pb-5" id="close-booking-form">&#x2715;</p>
+    <div id="booking-form-overlay" class="bg-[#F0F0F0] fixed top-0 left-0 z-[9998] w-full h-full hidden">
+        <div class="w-full md:w-[70%] mx-auto h-[100vh] pr-5 py-5 overflow-auto">
+            <p class="text-right cursor-pointer text-xl text-orange-700" id="close-booking-form">&#x2715;</p>
             <booking-form></booking-form>
         </div>
     </div>

@@ -94,8 +94,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeMap = document.getElementById('close-map');
   const openMap = document.getElementById('open-map');
   const mapOverlay = document.getElementById('map-overlay');
+  const hotelLocation = document.querySelector('.hotel-location');
 
   openMap.addEventListener('click', () => {
+    mapOverlay.classList.remove('hidden');
+  })
+
+  hotelLocation.addEventListener('click', () => {
     mapOverlay.classList.remove('hidden');
   })
 
@@ -105,8 +110,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const closeReviews = document.getElementById('close-reviews');
   const reviewsOverlay = document.getElementById('reviews-overlay');
+  const reviewsPopup = document.getElementById('reviews-popup');
   closeReviews.addEventListener('click', () => {
     reviewsOverlay.classList.add('hidden');
+  })
+
+  reviewsOverlay.addEventListener('click', (e) => {
+    if (!e.target.contains.reviewsPopup) {
+      reviewsOverlay.classList.add('hidden');
+    }
   })
 
   const rating = document.getElementById('rating');
@@ -138,5 +150,41 @@ document.addEventListener("DOMContentLoaded", function () {
       } else { openServicesBtn.innerHTML = `Показати більше <span>></span>`;}
   })
 
+  const openServicesMapBtn = document.getElementById('open-services-map');
+  const servicesMapHidden = document.getElementById('services-hidden-map');
+  openServicesMapBtn.addEventListener('click', () => {
+      servicesMapHidden.classList.toggle('hidden');
+      if (!servicesMapHidden.classList.contains('hidden')) {
+          openServicesMapBtn.innerHTML = `Згорнути <span><</span>`;
+      } else { openServicesMapBtn.innerHTML = `Показати більше <span>></span>`;}
+  })
+
+  const allBtn = document.querySelector('.all-btn');
+  const cleanBtn = document.querySelector('.clean-btn');
+  const checkboxes = document.querySelectorAll('.checkbox-wrapper input[type="checkbox"]');
+
+  allBtn.addEventListener('click', function() {
+      checkboxes.forEach(function(checkbox) {
+          checkbox.checked = true;
+          checkbox.parentElement.classList.add('active-wrapper');
+      });
+  });
+
+  cleanBtn.addEventListener('click', function() {
+      checkboxes.forEach(function(checkbox) {
+          checkbox.checked = false;
+          checkbox.parentElement.classList.remove('active-wrapper');
+      });
+  });
+
+  checkboxes.forEach(function(checkbox) {
+      checkbox.addEventListener('change', function() {
+          if (this.checked) {
+              this.parentElement.classList.add('active-wrapper');
+          } else {
+              this.parentElement.classList.remove('active-wrapper');
+          }
+      });
+  });
 });
 

@@ -1,6 +1,7 @@
 import flagua from '/src/public/images/flag-ua.svg';
 import flagru from '/src/public/images/flag-ru.svg';
 import flagde from '/src/public/images/flag-germany.svg';
+import flageng from '/src/public/images/flag-eng.svg';
 import telegram from '/src/public/images/telegram.svg';
 import viber from '/src/public/images/viber.svg';
 import menuBurger from '/src/public/images/menu_burger.svg';
@@ -26,14 +27,14 @@ class Header extends HTMLElement {
             <div class="flex-alignment">
                 <div class="flex-alignment py-3">
                     <button type="button" class="leng mr-5" id="leng">
-                        <div class="uppercase text-sm mr-1 text-gray-400">ua</div>
+                        <div class="uppercase text-base mr-1 !text-header-top-text">ua</div>
                         <img src="${flagua}" alt="flag">
                     </button>
-                    <button type="button" id="currency">
-                        <div class="money-select" id="currency-data">uah</div>
+                    <button type="button" id="currency" class="rounded-sm px-1">
+                        <div class="money-select !text-header-top-text" id="currency-data">uah</div>
                     </button>
-                    <a class=" text-gray-400 text-base mr-5" href="#">Блог</a>
-                    <a class=" text-gray-400 text-base "  href="#">Про нас</a> 
+                    <a class="text-header-top-text text-base mr-5" href="#">Блог</a>
+                    <a class="text-header-top-text text-base "  href="#">Про нас</a> 
                 </div>
                 <div class="flex-alignment">
                     <a href="#">
@@ -42,12 +43,12 @@ class Header extends HTMLElement {
                     <a class=" mx-2" href="#">
                         <img src="${viber}" alt="icon">
                     </a>
-                    <a class="text-gray-400 text-base font-semibold" href="tel:+380956480880">+38 (095) 648-0880</a>
+                    <a class="text-header-top-text text-base font-semibold" href="tel:+380956480880">+38 (095) 648-0880</a>
                 </div> 
             </div>
         </div>
 
-        <ul id="leng-menu" class="!hidden">
+        <ul id="leng-menu" class="!hidden !text-header-top-text">
                 <li>
                     <button type="button" class="leng" data-lang="ua">
                         <div class="leng-select">ua</div>
@@ -66,8 +67,14 @@ class Header extends HTMLElement {
                         <img src="${flagde}" alt="flag">
                     </button>
                 </li>
+                <li>
+                    <button type="button" class="leng" data-lang="eng">
+                        <div class="leng-select">eng</div>
+                        <img src="${flageng}" alt="flag">
+                    </button>
+                </li>
         </ul>
-        <ul id="currency-menu" class="!hidden">
+        <ul id="currency-menu" class="!hidden !text-header-top-text">
                 <li>
                     <button type="button" class="currency">
                         <div class="currency-select">uan</div>
@@ -75,7 +82,7 @@ class Header extends HTMLElement {
                 </li>
                 <li>
                     <button type="button" class="currency">
-                        <div class="currency-select">eur</div>
+                        <div class="currency-select px-0.5">eur</div>
                     </button>
                 </li>
         </ul>
@@ -162,7 +169,7 @@ class Header extends HTMLElement {
                     <li id="tours">Тури<span class="text-gray-400 text-2xl lg:!hidden">></span></li>
                     <li id="services">Активності<span class="text-gray-400 text-2xl lg:!hidden">></span></li>
                 </ul>
-                <div class="menu-link pb-16 lg:pb-8 pt-5 border-t-2 lg:border-t-0 flex flex-row justify-between items-end">
+                <div class="menu-link pb-24 lg:pb-8 pt-5 border-t-2 lg:border-t-0 flex flex-row justify-between items-end">
                     <div class="flex flex-col gap-5 pl-5 lg:pl-12">
                         <span class="font-bold">Опублікувати об'єкт</span>
                         <a href="tel:+380956480880" class="text-gray-500">+38(095) 648 0880</a>
@@ -170,11 +177,11 @@ class Header extends HTMLElement {
                         <a href="tel:+380956480880" class="text-gray-500">info@go-to.rest</a>
                     </div>
                     <div class="lg:hidden">
-                        <button type="button" class="leng mr-5 bg-gray-200 px-4 py-2 cursor-pointer rounded" id="sidebar-leng">
-                            <div class="uppercase text-sm mr-1 text-gray-400">ua</div>
+                        <button type="button" class="leng mr-5 bg-hover-bg px-4 py-2 cursor-pointer rounded" id="sidebar-leng">
+                            <div class="uppercase text-base mr-1 text-secondary">ua</div>
                             <img src="${flagua}" alt="flag">
                         </button>
-                        <ul id="sidebar-leng-menu" class="!hidden">
+                        <ul id="sidebar-leng-menu" class="!hidden !bg-hover-bg !mr-20">
                             <li>
                                 <button type="button" class="leng" data-lang="ua">
                                     <div class="leng-select">ua</div>
@@ -191,6 +198,12 @@ class Header extends HTMLElement {
                                 <button type="button" class="leng" data-lang="de">
                                     <div class="leng-select">de</div>
                                     <img src="${flagde}" alt="flag">
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="leng" data-lang="eng">
+                                    <div class="leng-select">eng</div>
+                                    <img src="${flageng}" alt="flag">
                                 </button>
                             </li>
                         </ul>

@@ -69,7 +69,7 @@ class BookingForm extends HTMLElement {
                     </div>
                     <div class="item-form relative">
                         <label for="guests">Гості</label>
-                        <div id="guests" class="w-full bg-white p-4 rounded-md border-2 border-gray-300 cursor-pointer flex flex-row justify-between items-center">
+                        <div id="guests" class="w-full bg-white px-5 py-3 rounded-md border-2 border-gray-300 cursor-pointer flex flex-row justify-between items-center">
                             <span id="total-guests">1 Гість</span>
                             <span class="text-2xl rotate-90" id="toggle-icon">></span>
                         </div>
@@ -121,7 +121,6 @@ class BookingForm extends HTMLElement {
                                 <li class="text-sm text-gray-500">
                                     Помешкання розраховано максимум на 4 особи. Якщо ви плануєте привезти більше 2 улюбленців, повідомте про це власника.
                                 </li>
-                                <li class="text-right underline cursor-pointer" id="close-info">Закрити</li>
                             </ul>
                         </div>
                     </div>
@@ -154,7 +153,7 @@ class BookingForm extends HTMLElement {
                     <div class="text-xl mb-2">Контакти</div>
                     <div class="contact-tel">
                         <img src=${phoneIcon} alt="icon">
-                        <a href="tel:+380672170985" class="text-base ml-2">+38 (067) 217 09 85</a>
+                        <a href="tel:+380672170985" class="text-base ml-2 text-secondary">+38 (067) 217 09 85</a>
                     </div>
                 </div>
             </div>
@@ -179,18 +178,6 @@ class BookingForm extends HTMLElement {
            
 
             checkInDateInput.addEventListener('click', () => {
-                if (checkInDateInput.value) {
-                    checkInDateInput.value = '';
-                    checkOutDateInput.value = '';
-                    const selectedDates = document.querySelectorAll('.selected-date');
-                    selectedDates.forEach((date) => {
-                        date.classList.remove('selected-date');
-                    });
-                    const selectedRange = document.querySelectorAll('.date div');
-                    selectedRange.forEach((range) => {
-                        range.classList.remove('bg-orange-100');
-                    })
-                }
                 calendar.classList.remove('!hidden');
                 checkInDateInput.focus();
                 checkInDateInput.classList.add('active-outline');
@@ -198,22 +185,12 @@ class BookingForm extends HTMLElement {
             });
 
             checkOutDateInput.addEventListener('click', () => {
-                if (checkOutDateInput.value) {
-                    checkOutDateInput.value = '';
-                    checkInDateInput.value = '';
-                    const selectedDates = document.querySelectorAll('.selected-date');
-                    selectedDates.forEach((date) => {
-                        date.classList.remove('selected-date');
-                    });
-                    const selectedRange = document.querySelectorAll('.date div');
-                    selectedRange.forEach((range) => {
-                        range.classList.remove('bg-orange-100');
-                    })
-                }
                 calendar.classList.remove('!hidden');
-                checkInDateInput.focus();
-                checkInDateInput.classList.add('active-outline');
+                checkOutDateInput.focus();
+                checkOutDateInput.classList.add('active-outline');
+                checkInDateInput.classList.remove('active-outline');
             });
+
             
             document.addEventListener('click', (event) => {
                 if (!calendar.contains(event.target) && !checkInDateInput.contains(event.target) && !checkOutDateInput.contains(event.target)) {
@@ -221,14 +198,20 @@ class BookingForm extends HTMLElement {
                 }
             });
 
-            guestsField.addEventListener('click', () => {
-                guestsInfo.classList.remove('hidden');
-                toggleIcon.classList.toggle('-rotate-90');
-            })
+            if (!guestsField.hasEventListener) {
+                guestsField.addEventListener('click', () => {
+                    guestsInfo.classList.toggle('hidden');
+                    toggleIcon.classList.toggle('rotate-[270deg]');
+                });
+                guestsField.hasEventListener = true;
+            }
 
-            closeInfo.addEventListener('click', () => {
-                guestsInfo.classList.add('hidden');
-            })
+            document.addEventListener('click', (event) => {
+                if (!guestsInfo.contains(event.target) && !guestsField.contains(event.target)) {
+                    guestsInfo.classList.add('hidden');
+                    toggleIcon.classList.remove('rotate-[270deg]');
+                }
+            });
 
             function showPopup() {
                 bookingOverlay.style.display = 'block';
@@ -419,32 +402,37 @@ class BookingForm extends HTMLElement {
                     dateContainer.appendChild(dateDiv);
 
                     dateDiv.addEventListener('click', (event) => {
-                        const clickedDate = new Date(year, month, i);
-                        const yearString = clickedDate.getFullYear().toString();
-                        const monthString = (clickedDate.getMonth() + 1).toString().padStart(2, '0');
-                        const dateString = clickedDate.getDate().toString().padStart(2, '0');
-                        const formattedDate = `${dateString}.${monthString}.${yearString}`;
+                    const clickedDate = new Date(year, month, i);
+                    const yearString = clickedDate.getFullYear().toString();
+                    const monthString = (clickedDate.getMonth() + 1).toString().padStart(2, '0');
+                    const dateString = clickedDate.getDate().toString().padStart(2, '0');
+                    const formattedDate = `${dateString}.${monthString}.${yearString}`;
 
-                        if (!checkInDateInput.value) {
-                            checkInDateInput.value = formattedDate;
+                        if (!checkInDateInput.value || checkOutDateInput.value) {
+                        document.querySelectorAll('.selected-date').forEach(selectedDate => {
+                            selectedDate.classList.remove('selected-date');
+                        });
+                        checkInDateInput.value = formattedDate;
+                        checkOutDateInput.value = '';
+                        dateDiv.classList.add('selected-date');
+                        checkOutDateInput.classList.add('active-outline');
+                        checkInDateInput.classList.remove('active-outline');
+                    
+                    } else if (!checkOutDateInput.value) {
+                        const checkOutDate = new Date(year, month, i);
+                        const checkInDate = new Date(checkInDateInput.value.split('.').reverse().join('-'));
+
+                        if (checkOutDate > checkInDate) {
+                        
+                            checkOutDateInput.value = formattedDate;
                             dateDiv.classList.add('selected-date');
-                            checkOutDateInput.focus();
-                            checkInDateInput.classList.remove('active-outline');
-                            checkOutDateInput.classList.add('active-outline');
-                        } else if (!checkOutDateInput.value) {
-                            const checkOutDate = new Date(year, month, i);
-                            const checkInDate = new Date(checkInDateInput.value.split('.').reverse().join('-'));
-
-                            if (checkOutDate > checkInDate) {
-                                checkOutDateInput.value = formattedDate;
-                                dateDiv.classList.add('selected-date');
-                                calendarErrorMessage.classList.add('hidden');
-                                calendar.classList.add('!hidden');
-                                checkOutDateInput.classList.remove('active-outline');
-                            } else {
-                                calendarErrorMessage.classList.remove('hidden');
-                            }
+                            calendarErrorMessage.classList.add('hidden');
+                            calendar.classList.add('!hidden');
+                            checkOutDateInput.classList.remove('active-outline');
+                        } else {
+                            calendarErrorMessage.classList.remove('hidden');
                         }
+                    }
                     });
                 }
             }
@@ -453,16 +441,18 @@ class BookingForm extends HTMLElement {
                 dateContainer.addEventListener('mouseover', (event) => {
                     const checkInDateInput = document.querySelector('#check-in-date');
                     const checkInDate = checkInDateInput.value;
+                    const checkOutDateInput = document.querySelector('#check-out-date');
+                    const checkOutDate = checkOutDateInput.value;
                     const hoveredDateDiv = event.target;
                     const year = parseInt(hoveredDateDiv.closest('.month').querySelector('.month-name').textContent.split(' ')[1]);
                     const monthIndex = months.indexOf(hoveredDateDiv.closest('.month').querySelector('.month-name').textContent.split(' ')[0]);
                     const day = parseInt(hoveredDateDiv.textContent);
                     const hoveredDate = new Date(year, monthIndex, day);
-                    highlightDateRange(checkInDate, hoveredDate);
+                    highlightDateRange(checkInDate, checkOutDate, hoveredDate);
                 });
             });
 
-            function highlightDateRange(checkinDate, hoverDate) {
+            function highlightDateRange(checkinDate, checkOutDate, hoverDate) {
                 const checkin = new Date(checkinDate.split('.').reverse().join('-'));
                 const dateContainers = document.querySelectorAll('.calendar .date');
                 dateContainers.forEach(dateContainer => {

@@ -7,7 +7,7 @@
     <link href="./index.css" type="text/css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>Main</title>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
@@ -99,6 +99,7 @@
 
         <div class="hotel-cards side-paddings">
             <div class="hotel-card">
+                <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
                 <img src="public/images/hotel/376862503.webp" alt="" class="hotel-img">
                 <div class="hotel-title">
                     <a href="./hotel.html">Еко-садиба «Васкул»</a>
@@ -121,6 +122,7 @@
             </div>
 
             <div class="hotel-card">
+                <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
                 <img src="public/images/hotel/2021-08-22-scaled.webp" alt="" class="hotel-img">
                 <div class="hotel-title">
                     <a href="./hotel.html">Гостинний двір «Лісова казка в лісі</a>
@@ -143,6 +145,7 @@
             </div>
 
             <div class="hotel-card">
+                <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
                 <img src="public/images/hotel/hotel_3.png" alt="" class="hotel-img">
                 <div class="hotel-title">
                     <a href="./hotel.html">Готель «Mineral»</a>
@@ -165,6 +168,7 @@
             </div>
 
             <div class="hotel-card">
+                <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
                 <img src="public/images/hotel/hotel_4.png" alt="" class="hotel-img">
                 <div class="hotel-title">
                     <a href="./hotel.html">Еко-садиба «Васкул»</a>
@@ -187,6 +191,7 @@
             </div>
 
             <div class="hotel-card">
+                <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
                 <img src="public/images/hotel/hotel_5.png" alt="" class="hotel-img">
                 <div class="hotel-title">
                     <a href="./hotel.html">Гостинний двір «Лісова казка в лісі</a>
@@ -209,6 +214,7 @@
             </div>
 
             <div class="hotel-card">
+                <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
                 <img src="public/images/hotel/hotel_6.png" alt="" class="hotel-img">
                 <div class="hotel-title">
                     <a href="./hotel.html">Еко-садиба «Васкул»</a>
@@ -231,6 +237,7 @@
             </div>
 
             <div class="hotel-card">
+                <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
                 <img src="public/images/hotel/hotel_7.png" alt="" class="hotel-img">
                 <div class="hotel-title">
                     <a href="./hotel.html">Готель «Mineral»</a>
@@ -253,6 +260,7 @@
             </div>
 
             <div class="hotel-card">
+                <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
                 <img src="public/images/hotel/hotel_8.png" alt="" class="hotel-img">
                 <div class="hotel-title">
                     <a href="./hotel.html">Еко-садиба «Васкул»</a>
@@ -275,6 +283,7 @@
             </div>
 
             <div class="hotel-card">
+                <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
                 <img src="public/images/hotel/hotel_9.png" alt="" class="hotel-img">
                 <div class="hotel-title">
                     <a href="./hotel.html">Гостинний двір «Лісова казка в лісі</a>
@@ -297,6 +306,7 @@
             </div>
 
             <div class="hotel-card">
+                <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
                 <img src="public/images/hotel/hotel_10.png" alt="" class="hotel-img">
                 <div class="hotel-title">
                     <a href="./hotel.html">Еко-садиба «Васкул»</a>
@@ -319,6 +329,7 @@
             </div>
 
             <div class="hotel-card">
+                <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
                 <img src="public/images/hotel/hotel_11.png" alt="" class="hotel-img">
                 <div class="hotel-title">
                     <a href="./hotel.html">Готель «Mineral»</a>
@@ -341,6 +352,7 @@
             </div>
 
             <div class="hotel-card">
+                <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
                 <img src="public/images/hotel/hotel_12.png" alt="" class="hotel-img">
                 <div class="hotel-title">
                     <a href="./hotel.html">Еко-садиба «Васкул»</a>
@@ -362,12 +374,33 @@
                 </div>                    
             </div>
         </div>
-        <div class="side-paddings pb-20 md:pb-10 lg:pb-10">
+        <div class="side-paddings">
             <button class="btn-more">Показати ще</button>
+        </div>
+
+        <div id="signin-overlay" class="signin-overlay hidden">
+            <div id="signin-popup">
+                <div class="flex text-base md:text-xl lg:text-xl pb-8 border-b-2 border-gray-section font-semibold mb-10 justify-center">
+                    <span id="close-signin" class="cursor-pointer absolute left-[20px] md:left-[50px] lg:left-[50px]">&#x2715;</span>
+                    <span>Увійдіть або зареєструйтесь</span>
+                </div>
+                <h2 class="font-semibold text-xl md:text-2xl lg:text-3xl mb-4 md:mb-8 lg:mb-8">Ласкаво просимо до Go To Rest</h2>
+                <form action="#" class="pb-8 border-b-2 relative">
+                    <label for="auth-phone" class="text-base md:text-xl lg:text-xl">Введіть ваш номер телефону</label>
+                    <input id="auth-phone" type="tel" class="w-full border-2 border-[#929292] py-5 px-2 rounded-md mt-5 mb-5 text-base md:text-xl lg:text-xl" name="phone" required placeholder="+380" pattern = "(\+?380|0)?\d{9}">
+                    <span class="auth-error-message pt-0 pb-5 hidden text-red-500">Введіть дійсний номер телефону</span>
+                    <button type="submit" class="main-btn !w-full !text-base md:!text-xl lg:!text-xl">Продовжити</button>
+                    <span class="absolute bottom-[-20px] left-[48%] p-2 bg-white">або</span>
+                </form> 
+                <a href="https://t.me/infoGoToRest" class="flex flex-row py-3 px-2 border-2 border-black rounded-md items-center justify-center gap-5 mt-8 cursor-pointer">
+                    <img src="public/images/telegram.svg" alt="telegram" class="w-[45px]">
+                    <span class="text-base md:text-xl lg:text-xl">Продовжити через Telegram</span>
+                </a>
+            </div>
         </div>
         
 
-        <div class="side-paddings">
+        <div class="side-paddings pt-12 md:pt-20 lg:pt-20 pb-[60px] lg:pb-[100px]">
             <h2 class="main-title">Заголовок</h2>
             <ul id="categories">
                 <li class="category-item active-item whitespace-nowrap" data-target="#options1">Що робити</li>
@@ -379,39 +412,39 @@
                 <img src="public/images/icon-service/triangle2.svg" alt="arrow" id="arrow-right">
             </div>
             <ul class="categories-options" id="options1">
-                <li class="options">Натхнення для літніх подорожей</li>
-                <li class="options">Відпочинок з дітьми</li>
-                <li class="options">Відпочинок на двох</li>
-                <li class="options">Найближчі тури</li>
-                <li class="options">Ще щось</li>
+                <li class="options"><a href="#">Натхнення для літніх подорожей</a></li>
+                <li class="options"><a href="#">Відпочинок з дітьми</a></li>
+                <li class="options"><a href="#">Відпочинок на двох</a></li>
+                <li class="options"><a href="#">Найближчі тури</a></li>
+                <li class="options"><a href="#">Ще щось</a></li>
             </ul>
             <ul class="categories-options hidden"  id="options2">
-                <li class="options">Водоспади Карпат</li>
-                <li class="options">Гірські озера та річки</li>
-                <li class="options">Вершини Карпат</li>
-                <li class="options">Маловідомі місця</li>
-                <li class="options">Національні парки</li>
-                <li class="options">Ще щось</li>
+                <li class="options"><a href="#">Водоспади Карпат</a></li>
+                <li class="options"><a href="#">Гірські озера та річки</a></li>
+                <li class="options"><a href="#">Вершини Карпат</a></li>
+                <li class="options"><a href="#">Маловідомі місця</a></li>
+                <li class="options"><a href="#">Національні парки</a></li>
+                <li class="options"><a href="#">Ще щось</a></li>
             </ul>
             <ul class="categories-options hidden"  id="options3">
-                <li class="options">Котедж з басейном</li>
-                <li class="options">Котедж на двох</li>
-                <li class="options">Будиночок із чаном</li>
-                <li class="options">Будиночок біля річки</li>
-                <li class="options">Будиночок з виглядом</li>
-                <li class="options">Котедж у лісі</li>
-                <li class="options">Будиночок з каміном</li>
-                <li class="options">Будиночок у горах</li>
-                <li class="options">Будиночок біля озера</li>
-                <li class="options">Спа готелі</li>
-                <li class="options">Готелі з басейном</li>
-                <li class="options">Дитячі табори</li>
+                <li class="options"><a href="#">Котедж з басейном</a></li>
+                <li class="options"><a href="#">Котедж на двох</a></li>
+                <li class="options"><a href="#">Будиночок із чаном</a></li>
+                <li class="options"><a href="#">Будиночок біля річки</a></li>
+                <li class="options"><a href="#">Будиночок з виглядом</a></li>
+                <li class="options"><a href="#">Котедж у лісі</a></li>
+                <li class="options"><a href="#">Будиночок з каміном</a></li>
+                <li class="options"><a href="#">Будиночок у горах</a></li>
+                <li class="options"><a href="#">Будиночок біля озера</a></li>
+                <li class="options"><a href="#">Спа готелі</a></li>
+                <li class="options"><a href="#">Готелі з басейном</a></li>
+                <li class="options"><a href="#">Дитячі табори</a></li>
             </ul>
         </div>
 
         <div class="bg-gray-100">
-            <div class="pt-14 lg:pt-10 pb-24 md:pb-28 lg:pb-28 side-paddings">
-                <h2 class="main-title">Популярні напрямки</h2>
+            <div class="pt-14 lg:pt-20 pb-[60px] lg:pb-[100px] side-paddings">
+                <h2 class="main-title !pb-[60px]">Популярні напрямки</h2>
                 <div class="splide">
                     <div class="splide__track ">
                     <div class="splide__list lg:!grid lg:grid-cols-2 md:grid-cols-none sm:grid-cols-none gap-0 lg:gap-7 w-full">
@@ -611,7 +644,7 @@
             </div> 
         </div> 
         
-        <div class="pt-10 pb-6 md:pb-24 lg:pb-28 side-paddings">
+        <div class="pt-14 lg:pt-20 pb-[30px] md:pb-[100px] lg:pb-[100px] side-paddings">
             <h2 class="main-title">Карпати це:</h2>
             <div class="carpatians-is">
                 <div class="carpatians-card">
@@ -644,11 +677,21 @@
                         <button class="culture-btn">Оздоровитись</button>
                     </div>
                 </div>
+                <div class="carpatians-card">
+                    <img src="public/images/culture/4_1.jpg" alt="culture" class="culture-img">
+                    <div class="carpatians-desc">
+                        <div>
+                            <div class="carpatians-title">Культура</div>
+                            <p class="text-gray-500 mr-3">Відкрийте для себе історію Закарпаття, відчувши нашу багату культуру та спадщину.</p>
+                        </div>
+                        <button class="culture-btn">Відчути культуру</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="bg-gray-100">
-            <div class="side-paddings pt-10 pb-16 md:pb-24 lg:pb-28">
+            <div class="side-paddings pt-14 lg:pt-20 pb-[60px] md:pb-[100px] lg:pb-[100px]">
                 <h2 class="main-title">Активний відпочинок в Карпатах</h2>
                 <div class="active-rest">
                     <div class="w-full lg:w-1/2">
@@ -663,14 +706,16 @@
             </div>
         </div>
 
-        <div class="side-paddings pt-10 pb-16">
+        <div class="side-paddings pt-14 lg:pt-20 pb-[60px] lg:pb-[100px]">
             <faq-component class="w-full"></faq-component>
         </div>
+        <button class="button-up hidden">></button>
     </main>
 
     <footer-component></footer-component>
     <script src="./js/slider.js" type="module"></script>
     <script src="./js/splide.js" type="module"></script>
+    <script src="./js/auth.js" type="module"></script>
     <script type="module" src="app.js"></script>
 </body>
 </html>
