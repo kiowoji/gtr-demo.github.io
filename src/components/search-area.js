@@ -51,7 +51,7 @@ class SearchArea extends HTMLElement {
                                 <img src="${eyeIcon}" alt="icon" class="eye-icon">
                             </div>
                             <div class="flex flex-row justify-start">
-                                <img src="${coinIcon}" alt="icon">
+                                <img src="${coinIcon}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 pl-2 text-sm lg:text-base">від 1070 ₴ / ніч</div>
                             </div>
                         </div>
@@ -70,11 +70,11 @@ class SearchArea extends HTMLElement {
                             <h2 class="text-lg lg:text-xl">Назва тура 4</h2>
                             <span class="text-gray-400 text-sm lg:text-base">Тур</span>
                             <div class="hotel-phone">
-                                <img src="${clockIcon}" alt="icon">
+                                <img src="${clockIcon}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 ml-2 text-sm lg:text-base">9 годин</div>
                             </div>
                             <div class="flex flex-row justify-star">
-                                <img src="${coinIcon}" alt="icon">
+                                <img src="${coinIcon}" alt="icon" class="result-icons">
                                 <div class="text-base text-gray-700 pl-2 text-sm lg:text-base">від 1070 ₴</div>
                             </div>
                         </div>
@@ -85,11 +85,11 @@ class SearchArea extends HTMLElement {
                             <h2 class="text-lg lg:text-xl">Назва тура 5</h2>
                             <span class="text-gray-400 text-sm lg:text-base">Тур</span>
                             <div class="hotel-phone">
-                                <img src="${clockIcon}" alt="icon">
+                                <img src="${clockIcon}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 ml-2 text-sm lg:text-base">9 годин</div>
                             </div>
                             <div class="flex flex-row justify-star">
-                                <img src="${coinIcon}" alt="icon">
+                                <img src="${coinIcon}" alt="icon" class="result-icons">
                                 <div class="text-base text-gray-700 pl-2 text-sm lg:text-base">від 1070 ₴</div>
                             </div>
                         </div>
@@ -119,7 +119,7 @@ class SearchArea extends HTMLElement {
                                 <img src="${eyeIcon}" alt="icon" class="eye-icon">
                             </div>
                             <div class="flex flex-row justify-start">
-                                <img src="${coinIcon}" alt="icon">
+                                <img src="${coinIcon}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 pl-2 text-sm lg:text-base">від 1070 ₴ / ніч</div>
                             </div>
                         </div>
@@ -138,11 +138,11 @@ class SearchArea extends HTMLElement {
                             <h2 class="text-lg lg:text-xl">Назва тура 6</h2>
                             <span class="text-gray-400 text-sm lg:text-base">Тур</span>
                             <div class="hotel-phone">
-                                <img src="${clockIcon}" alt="icon">
+                                <img src="${clockIcon}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 ml-2 text-sm lg:text-base">9 годин</div>
                             </div>
                             <div class="flex flex-row justify-star">
-                                <img src="${coinIcon}" alt="icon">
+                                <img src="${coinIcon}" alt="icon" class="result-icons">
                                 <div class="text-base text-gray-700 pl-2 text-sm lg:text-base">від 1070 ₴</div>
                             </div>
                         </div>
@@ -153,11 +153,11 @@ class SearchArea extends HTMLElement {
                             <h2 class="text-lg lg:text-xl">Назва тура 7</h2>
                             <span class="text-gray-400 text-sm lg:text-base">Тур</span>
                             <div class="hotel-phone">
-                                <img src="${clockIcon}" alt="icon">
+                                <img src="${clockIcon}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 ml-2 text-sm lg:text-base">9 годин</div>
                             </div>
                             <div class="flex flex-row justify-star">
-                                <img src="${coinIcon}" alt="icon">
+                                <img src="${coinIcon}" alt="icon" class="result-icons">
                                 <div class="text-base text-gray-700 pl-2 text-sm lg:text-base">від 1070 ₴</div>
                             </div>
                         </div>

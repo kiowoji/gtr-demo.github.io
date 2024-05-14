@@ -587,7 +587,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 document.addEventListener("DOMContentLoaded", function() {
     const overlay = document.getElementById("signin-overlay");
     const closeSignin = document.getElementById("close-signin");
-    const likeButton = document.querySelector(".like-icon");
+    const likeButtons = document.querySelectorAll(".like-icon");
     const phoneInput = document.getElementById("auth-phone");
     const errorMessage = overlay.querySelector(".auth-error-message");
     const form = overlay.querySelector("form");
@@ -600,17 +600,17 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("click", function(event) {
         if (event.target === overlay) closeOverlay();
     });
-    likeButton.addEventListener("click", function(event) {
-        overlay.classList.remove("hidden");
-        event.stopPropagation();
+    likeButtons.forEach((likeButton)=>{
+        likeButton.addEventListener("click", function(event) {
+            overlay.classList.remove("hidden");
+            event.stopPropagation();
+        });
     });
     form.addEventListener("submit", function(event) {
         event.preventDefault();
         if (!form.checkValidity()) return;
-        else {
-            form.submit();
-            window.location.href = "https://t.me/infoGoToRest";
-        }
+        else // form.submit();
+        window.location.href = "https://t.me/infoGoToRest";
     });
     phoneInput.addEventListener("invalid", ()=>{
         errorMessage.style.display = "block";

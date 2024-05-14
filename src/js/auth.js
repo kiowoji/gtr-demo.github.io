@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const overlay = document.getElementById("signin-overlay");
     const closeSignin = document.getElementById("close-signin");
-    const likeButton = document.querySelector(".like-icon");
+    const likeButtons = document.querySelectorAll(".like-icon");
     const phoneInput = document.getElementById("auth-phone");
     const errorMessage = overlay.querySelector(".auth-error-message");
     const form = overlay.querySelector("form");
@@ -20,10 +20,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    likeButton.addEventListener("click", function(event) {
+    likeButtons.forEach((likeButton) => {
+        likeButton.addEventListener("click", function(event) {
         overlay.classList.remove("hidden");
         event.stopPropagation();
     });
+    })
+    
 
     form.addEventListener("submit", function (event) {
         event.preventDefault();

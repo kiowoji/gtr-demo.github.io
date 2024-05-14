@@ -76,7 +76,10 @@ label{
     text-underline-offset: 3px;
 }
 .hotel-rate{
-    @apply ml-2 text-base text-secondary underline;
+    @apply ml-2 text-base text-secondary;
+}
+.hotel-rate span{
+    @apply underline;
     text-underline-offset: 3px;
 }
 .link-map{
@@ -107,7 +110,7 @@ label{
     @apply block rounded-md border-2 border-gray-200 pr-28 pl-5 pt-5 pb-5 bg-white
 }
 .price span {
-    @apply text-2xl text-black font-bold
+    @apply text-2xl text-black font-semibold
 }
 .sidebar{
     @apply ml-6
@@ -116,7 +119,7 @@ label{
     @apply flex flex-col rounded-md bg-[#F0F0F0] px-5 mt-4 py-0 md:py-[28px] lg:py-[28px] w-full lg:w-[300px]
 }
 .name-form{
-    @apply text-2xl mb-2 font-bold
+    @apply text-2xl mb-2 font-semibold
 }
 .btn-add{
     @apply rounded-md bg-main-orange font-bold text-white text-lg py-4 px-16 mt-8
@@ -696,7 +699,7 @@ label{
     display: block;
 }
 .main-title{
-    @apply sm:text-[28px] md:text-3xl lg:text-5xl font-bold pb-10 sm:text-center md:text-center lg:text-left leading-8
+    @apply sm:text-[28px] md:text-3xl lg:text-5xl font-semibold pb-10 sm:text-center md:text-center lg:text-left leading-8
 }
 .indicator {
     @apply absolute bottom-0 left-[50%] mb-[-50px] sm:flex md:block lg:hidden cursor-pointer;
@@ -985,4 +988,7 @@ input.invalid {
 }
 .like-icon{
     @apply w-[25px] h-[25px] absolute right-3 top-3 hover:scale-110;
+}
+.result-icons{
+    @apply w-[20px] h-[20px]
 }

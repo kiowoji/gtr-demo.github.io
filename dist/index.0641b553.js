@@ -2555,7 +2555,7 @@ class SearchArea extends HTMLElement {
                                 <img src="${0, _iconEyeOffSvgDefault.default}" alt="icon" class="eye-icon">
                             </div>
                             <div class="flex flex-row justify-start">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4} / \u{43D}\u{456}\u{447}</div>
                             </div>
                         </div>
@@ -2574,11 +2574,11 @@ class SearchArea extends HTMLElement {
                             <h2 class="text-lg lg:text-xl">\u{41D}\u{430}\u{437}\u{432}\u{430} \u{442}\u{443}\u{440}\u{430} 4</h2>
                             <span class="text-gray-400 text-sm lg:text-base">\u{422}\u{443}\u{440}</span>
                             <div class="hotel-phone">
-                                <img src="${0, _clockIconSvgDefault.default}" alt="icon">
+                                <img src="${0, _clockIconSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 ml-2 text-sm lg:text-base">9 \u{433}\u{43E}\u{434}\u{438}\u{43D}</div>
                             </div>
                             <div class="flex flex-row justify-star">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-base text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4}</div>
                             </div>
                         </div>
@@ -2589,11 +2589,11 @@ class SearchArea extends HTMLElement {
                             <h2 class="text-lg lg:text-xl">\u{41D}\u{430}\u{437}\u{432}\u{430} \u{442}\u{443}\u{440}\u{430} 5</h2>
                             <span class="text-gray-400 text-sm lg:text-base">\u{422}\u{443}\u{440}</span>
                             <div class="hotel-phone">
-                                <img src="${0, _clockIconSvgDefault.default}" alt="icon">
+                                <img src="${0, _clockIconSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 ml-2 text-sm lg:text-base">9 \u{433}\u{43E}\u{434}\u{438}\u{43D}</div>
                             </div>
                             <div class="flex flex-row justify-star">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-base text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4}</div>
                             </div>
                         </div>
@@ -2623,7 +2623,7 @@ class SearchArea extends HTMLElement {
                                 <img src="${0, _iconEyeOffSvgDefault.default}" alt="icon" class="eye-icon">
                             </div>
                             <div class="flex flex-row justify-start">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4} / \u{43D}\u{456}\u{447}</div>
                             </div>
                         </div>
@@ -2642,11 +2642,11 @@ class SearchArea extends HTMLElement {
                             <h2 class="text-lg lg:text-xl">\u{41D}\u{430}\u{437}\u{432}\u{430} \u{442}\u{443}\u{440}\u{430} 6</h2>
                             <span class="text-gray-400 text-sm lg:text-base">\u{422}\u{443}\u{440}</span>
                             <div class="hotel-phone">
-                                <img src="${0, _clockIconSvgDefault.default}" alt="icon">
+                                <img src="${0, _clockIconSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 ml-2 text-sm lg:text-base">9 \u{433}\u{43E}\u{434}\u{438}\u{43D}</div>
                             </div>
                             <div class="flex flex-row justify-star">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-base text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4}</div>
                             </div>
                         </div>
@@ -2657,11 +2657,11 @@ class SearchArea extends HTMLElement {
                             <h2 class="text-lg lg:text-xl">\u{41D}\u{430}\u{437}\u{432}\u{430} \u{442}\u{443}\u{440}\u{430} 7</h2>
                             <span class="text-gray-400 text-sm lg:text-base">\u{422}\u{443}\u{440}</span>
                             <div class="hotel-phone">
-                                <img src="${0, _clockIconSvgDefault.default}" alt="icon">
+                                <img src="${0, _clockIconSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 ml-2 text-sm lg:text-base">9 \u{433}\u{43E}\u{434}\u{438}\u{43D}</div>
                             </div>
                             <div class="flex flex-row justify-star">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-base text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4}</div>
                             </div>
                         </div>

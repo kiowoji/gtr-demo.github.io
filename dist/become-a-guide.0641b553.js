@@ -877,7 +877,7 @@ class Header extends HTMLElement {
                     <li id="tours">\u{422}\u{443}\u{440}\u{438}<span class="text-gray-400 text-2xl lg:!hidden">></span></li>
                     <li id="services">\u{410}\u{43A}\u{442}\u{438}\u{432}\u{43D}\u{43E}\u{441}\u{442}\u{456}<span class="text-gray-400 text-2xl lg:!hidden">></span></li>
                 </ul>
-                <div class="menu-link pb-16 lg:pb-8 pt-5 border-t-2 lg:border-t-0 flex flex-row justify-between items-end">
+                <div class="menu-link pb-24 lg:pb-8 pt-5 border-t-2 lg:border-t-0 flex flex-row justify-between items-end">
                     <div class="flex flex-col gap-5 pl-5 lg:pl-12">
                         <span class="font-bold">\u{41E}\u{43F}\u{443}\u{431}\u{43B}\u{456}\u{43A}\u{443}\u{432}\u{430}\u{442}\u{438} \u{43E}\u{431}'\u{454}\u{43A}\u{442}</span>
                         <a href="tel:+380956480880" class="text-gray-500">+38(095) 648 0880</a>
@@ -1478,16 +1478,51 @@ var _arrowDownSvgDefault = parcelHelpers.interopDefault(_arrowDownSvg);
 var _sunsetPng = require("/src/public/images/sunset.png");
 var _sunsetPngDefault = parcelHelpers.interopDefault(_sunsetPng);
 document.addEventListener("DOMContentLoaded", function() {
-    let acc = document.querySelectorAll(".accordion");
-    for(let i = 0; i < acc.length; i++)acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        let panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-            this.querySelector("img").style.transform = "rotate(0deg)";
+    const accordions = document.querySelectorAll(".accordion");
+    const currentPage = window.location.pathname;
+    if (currentPage === "/hotel.html") {
+        const faqImg = document.querySelector(".faq-img");
+        if (faqImg) faqImg.style.display = "none";
+    }
+    function togglePanel(panel) {
+        const isOpen = panel.classList.contains("active");
+        if (isOpen) {
+            panel.classList.remove("active");
+            panel.style.maxHeight = null;
+            panel.previousElementSibling.querySelector(".orange-border").classList.add("hidden");
         } else {
-            panel.style.display = "block";
-            this.querySelector("img").style.transform = "rotate(180deg)";
+            panel.classList.add("active");
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            panel.previousElementSibling.querySelector(".orange-border").classList.remove("hidden");
+        }
+    }
+    function closeOtherPanels(clickedPanel) {
+        accordions.forEach((accordion)=>{
+            const panel = accordion.nextElementSibling;
+            if (accordion !== clickedPanel) {
+                panel.classList.remove("active");
+                panel.style.maxHeight = null;
+                accordion.querySelector("img").style.transform = "rotate(0deg)";
+                panel.previousElementSibling.querySelector(".orange-border").classList.add("hidden");
+            }
+        });
+    }
+    accordions.forEach((accordion, index)=>{
+        accordion.addEventListener("click", function() {
+            this.classList.toggle("active");
+            const panel = this.nextElementSibling;
+            togglePanel(panel);
+            closeOtherPanels(this);
+            const rotation = panel.classList.contains("active") ? "180deg" : "0deg";
+            this.querySelector("img").style.transform = `rotate(${rotation})`;
+        });
+        if (index === 1) {
+            accordion.classList.add("active");
+            const panel = accordion.nextElementSibling;
+            panel.classList.add("active");
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            accordion.querySelector("img").style.transform = "rotate(180deg)";
+            panel.previousElementSibling.querySelector(".orange-border").classList.remove("hidden");
         }
     });
 });
@@ -1501,6 +1536,7 @@ class Faq extends HTMLElement {
             <div class="faq">
                 <div class="w-full">
                     <button class="accordion">
+                    <span class="orange-border hidden"></span>
                         <span>\u{42F}\u{43A}\u{430} \u{441}\u{435}\u{440}\u{435}\u{434}\u{43D}\u{44F} \u{446}\u{456}\u{43D}\u{430} \u{433}\u{43E}\u{442}\u{435}\u{43B}\u{44E}?</span>
                         <img src="${0, _arrowDownSvgDefault.default}">
                     </button>
@@ -1509,14 +1545,16 @@ class Faq extends HTMLElement {
                     </div>
 
                     <button class="accordion">
+                    <span class="orange-border hidden"></span>
                         <span>\u{427}\u{43E}\u{43C}\u{443} \u{432}\u{430}\u{440}\u{442}\u{43E} \u{43E}\u{431}\u{440}\u{430}\u{442}\u{438} Go To Rest?</span>
                         <img src="${0, _arrowDownSvgDefault.default}">
                     </button>
-                    <div class="panel active">
+                    <div class="panel">
                         <p class="text-gray-500 mb-9 ml-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur</p>
                     </div>
 
                     <button class="accordion">
+                    <span class="orange-border hidden"></span>
                         <span>\u{42F}\u{43A}\u{430} \u{441}\u{435}\u{440}\u{435}\u{434}\u{43D}\u{44F} \u{446}\u{456}\u{43D}\u{430} \u{433}\u{43E}\u{442}\u{435}\u{43B}\u{44E}?</span>
                         <img src="${0, _arrowDownSvgDefault.default}">
                     </button>
@@ -1525,6 +1563,7 @@ class Faq extends HTMLElement {
                     </div>
 
                     <button class="accordion">
+                    <span class="orange-border hidden"></span>
                         <span>\u{427}\u{43E}\u{43C}\u{443} \u{432}\u{430}\u{440}\u{442}\u{43E} \u{43E}\u{431}\u{440}\u{430}\u{442}\u{438} Go To Rest?</span>
                         <img src="${0, _arrowDownSvgDefault.default}">
                     </button>
@@ -1533,6 +1572,7 @@ class Faq extends HTMLElement {
                     </div>
 
                     <button class="accordion">
+                    <span class="orange-border hidden"></span>
                         <span>\u{42F}\u{43A}\u{430} \u{441}\u{435}\u{440}\u{435}\u{434}\u{43D}\u{44F} \u{446}\u{456}\u{43D}\u{430} \u{433}\u{43E}\u{442}\u{435}\u{43B}\u{44E}?</span>
                         <img src="${0, _arrowDownSvgDefault.default}">
                     </button>
@@ -1543,6 +1583,30 @@ class Faq extends HTMLElement {
                 <img src="${0, _sunsetPngDefault.default}" alt="img" class="faq-img">
             </div>
     `;
+        this.addStructuredData();
+    }
+    addStructuredData() {
+        const faqItems = Array.from(this.querySelectorAll(".accordion")).map((accordion, index)=>{
+            const question = accordion.querySelector("span:first-child").innerText.trim();
+            const answer = accordion.nextElementSibling.querySelector(".panel p").innerText.trim();
+            return {
+                "@type": "Question",
+                "name": question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": answer
+                }
+            };
+        });
+        const structuredData = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqItems
+        };
+        const script = document.createElement("script");
+        script.type = "application/ld+json";
+        script.innerHTML = JSON.stringify(structuredData);
+        this.appendChild(script);
     }
 }
 customElements.define("faq-component", Faq);
@@ -1627,7 +1691,7 @@ class BookingForm extends HTMLElement {
                     </div>
                     <div class="item-form relative">
                         <label for="guests">\u{413}\u{43E}\u{441}\u{442}\u{456}</label>
-                        <div id="guests" class="w-full bg-white p-4 rounded-md border-2 border-gray-300 cursor-pointer flex flex-row justify-between items-center">
+                        <div id="guests" class="w-full bg-white px-5 py-3 rounded-md border-2 border-gray-300 cursor-pointer flex flex-row justify-between items-center">
                             <span id="total-guests">1 \u{413}\u{456}\u{441}\u{442}\u{44C}</span>
                             <span class="text-2xl rotate-90" id="toggle-icon">></span>
                         </div>
@@ -1679,7 +1743,6 @@ class BookingForm extends HTMLElement {
                                 <li class="text-sm text-gray-500">
                                     \u{41F}\u{43E}\u{43C}\u{435}\u{448}\u{43A}\u{430}\u{43D}\u{43D}\u{44F} \u{440}\u{43E}\u{437}\u{440}\u{430}\u{445}\u{43E}\u{432}\u{430}\u{43D}\u{43E} \u{43C}\u{430}\u{43A}\u{441}\u{438}\u{43C}\u{443}\u{43C} \u{43D}\u{430} 4 \u{43E}\u{441}\u{43E}\u{431}\u{438}. \u{42F}\u{43A}\u{449}\u{43E} \u{432}\u{438} \u{43F}\u{43B}\u{430}\u{43D}\u{443}\u{454}\u{442}\u{435} \u{43F}\u{440}\u{438}\u{432}\u{435}\u{437}\u{442}\u{438} \u{431}\u{456}\u{43B}\u{44C}\u{448}\u{435} 2 \u{443}\u{43B}\u{44E}\u{431}\u{43B}\u{435}\u{43D}\u{446}\u{456}\u{432}, \u{43F}\u{43E}\u{432}\u{456}\u{434}\u{43E}\u{43C}\u{442}\u{435} \u{43F}\u{440}\u{43E} \u{446}\u{435} \u{432}\u{43B}\u{430}\u{441}\u{43D}\u{438}\u{43A}\u{430}.
                                 </li>
-                                <li class="text-right underline cursor-pointer" id="close-info">\u{417}\u{430}\u{43A}\u{440}\u{438}\u{442}\u{438}</li>
                             </ul>
                         </div>
                     </div>
@@ -1712,7 +1775,7 @@ class BookingForm extends HTMLElement {
                     <div class="text-xl mb-2">\u{41A}\u{43E}\u{43D}\u{442}\u{430}\u{43A}\u{442}\u{438}</div>
                     <div class="contact-tel">
                         <img src=${0, _iconPhoneSvgDefault.default} alt="icon">
-                        <a href="tel:+380672170985" class="text-base ml-2">+38 (067) 217 09 85</a>
+                        <a href="tel:+380672170985" class="text-base ml-2 text-secondary">+38 (067) 217 09 85</a>
                     </div>
                 </div>
             </div>
@@ -1735,49 +1798,32 @@ class BookingForm extends HTMLElement {
             const calendarErrorMessage = calendar.querySelector("#calendar-error");
             const datesError = bookingForm.querySelector(".dates-error-message");
             checkInDateInput.addEventListener("click", ()=>{
-                if (checkInDateInput.value) {
-                    checkInDateInput.value = "";
-                    checkOutDateInput.value = "";
-                    const selectedDates = document.querySelectorAll(".selected-date");
-                    selectedDates.forEach((date)=>{
-                        date.classList.remove("selected-date");
-                    });
-                    const selectedRange = document.querySelectorAll(".date div");
-                    selectedRange.forEach((range)=>{
-                        range.classList.remove("bg-orange-100");
-                    });
-                }
                 calendar.classList.remove("!hidden");
                 checkInDateInput.focus();
                 checkInDateInput.classList.add("active-outline");
                 checkOutDateInput.classList.remove("active-outline");
             });
             checkOutDateInput.addEventListener("click", ()=>{
-                if (checkOutDateInput.value) {
-                    checkOutDateInput.value = "";
-                    checkInDateInput.value = "";
-                    const selectedDates = document.querySelectorAll(".selected-date");
-                    selectedDates.forEach((date)=>{
-                        date.classList.remove("selected-date");
-                    });
-                    const selectedRange = document.querySelectorAll(".date div");
-                    selectedRange.forEach((range)=>{
-                        range.classList.remove("bg-orange-100");
-                    });
-                }
                 calendar.classList.remove("!hidden");
-                checkInDateInput.focus();
-                checkInDateInput.classList.add("active-outline");
+                checkOutDateInput.focus();
+                checkOutDateInput.classList.add("active-outline");
+                checkInDateInput.classList.remove("active-outline");
             });
             document.addEventListener("click", (event)=>{
                 if (!calendar.contains(event.target) && !checkInDateInput.contains(event.target) && !checkOutDateInput.contains(event.target)) calendar.classList.add("!hidden");
             });
-            guestsField.addEventListener("click", ()=>{
-                guestsInfo.classList.remove("hidden");
-                toggleIcon.classList.toggle("-rotate-90");
-            });
-            closeInfo.addEventListener("click", ()=>{
-                guestsInfo.classList.add("hidden");
+            if (!guestsField.hasEventListener) {
+                guestsField.addEventListener("click", ()=>{
+                    guestsInfo.classList.toggle("hidden");
+                    toggleIcon.classList.toggle("rotate-[270deg]");
+                });
+                guestsField.hasEventListener = true;
+            }
+            document.addEventListener("click", (event)=>{
+                if (!guestsInfo.contains(event.target) && !guestsField.contains(event.target)) {
+                    guestsInfo.classList.add("hidden");
+                    toggleIcon.classList.remove("rotate-[270deg]");
+                }
             });
             function showPopup() {
                 bookingOverlay.style.display = "block";
@@ -1935,12 +1981,15 @@ class BookingForm extends HTMLElement {
                         const monthString = (clickedDate.getMonth() + 1).toString().padStart(2, "0");
                         const dateString = clickedDate.getDate().toString().padStart(2, "0");
                         const formattedDate = `${dateString}.${monthString}.${yearString}`;
-                        if (!checkInDateInput.value) {
+                        if (!checkInDateInput.value || checkOutDateInput.value) {
+                            document.querySelectorAll(".selected-date").forEach((selectedDate)=>{
+                                selectedDate.classList.remove("selected-date");
+                            });
                             checkInDateInput.value = formattedDate;
+                            checkOutDateInput.value = "";
                             dateDiv.classList.add("selected-date");
-                            checkOutDateInput.focus();
-                            checkInDateInput.classList.remove("active-outline");
                             checkOutDateInput.classList.add("active-outline");
+                            checkInDateInput.classList.remove("active-outline");
                         } else if (!checkOutDateInput.value) {
                             const checkOutDate = new Date(year, month, i);
                             const checkInDate = new Date(checkInDateInput.value.split(".").reverse().join("-"));
@@ -1959,15 +2008,17 @@ class BookingForm extends HTMLElement {
                 dateContainer.addEventListener("mouseover", (event)=>{
                     const checkInDateInput = document.querySelector("#check-in-date");
                     const checkInDate = checkInDateInput.value;
+                    const checkOutDateInput = document.querySelector("#check-out-date");
+                    const checkOutDate = checkOutDateInput.value;
                     const hoveredDateDiv = event.target;
                     const year = parseInt(hoveredDateDiv.closest(".month").querySelector(".month-name").textContent.split(" ")[1]);
                     const monthIndex = months.indexOf(hoveredDateDiv.closest(".month").querySelector(".month-name").textContent.split(" ")[0]);
                     const day = parseInt(hoveredDateDiv.textContent);
                     const hoveredDate = new Date(year, monthIndex, day);
-                    highlightDateRange(checkInDate, hoveredDate);
+                    highlightDateRange(checkInDate, checkOutDate, hoveredDate);
                 });
             });
-            function highlightDateRange(checkinDate, hoverDate) {
+            function highlightDateRange(checkinDate, checkOutDate, hoverDate) {
                 const checkin = new Date(checkinDate.split(".").reverse().join("-"));
                 const dateContainers = document.querySelectorAll(".calendar .date");
                 dateContainers.forEach((dateContainer)=>{
@@ -2504,7 +2555,7 @@ class SearchArea extends HTMLElement {
                                 <img src="${0, _iconEyeOffSvgDefault.default}" alt="icon" class="eye-icon">
                             </div>
                             <div class="flex flex-row justify-start">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4} / \u{43D}\u{456}\u{447}</div>
                             </div>
                         </div>
@@ -2523,11 +2574,11 @@ class SearchArea extends HTMLElement {
                             <h2 class="text-lg lg:text-xl">\u{41D}\u{430}\u{437}\u{432}\u{430} \u{442}\u{443}\u{440}\u{430} 4</h2>
                             <span class="text-gray-400 text-sm lg:text-base">\u{422}\u{443}\u{440}</span>
                             <div class="hotel-phone">
-                                <img src="${0, _clockIconSvgDefault.default}" alt="icon">
+                                <img src="${0, _clockIconSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 ml-2 text-sm lg:text-base">9 \u{433}\u{43E}\u{434}\u{438}\u{43D}</div>
                             </div>
                             <div class="flex flex-row justify-star">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-base text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4}</div>
                             </div>
                         </div>
@@ -2538,11 +2589,11 @@ class SearchArea extends HTMLElement {
                             <h2 class="text-lg lg:text-xl">\u{41D}\u{430}\u{437}\u{432}\u{430} \u{442}\u{443}\u{440}\u{430} 5</h2>
                             <span class="text-gray-400 text-sm lg:text-base">\u{422}\u{443}\u{440}</span>
                             <div class="hotel-phone">
-                                <img src="${0, _clockIconSvgDefault.default}" alt="icon">
+                                <img src="${0, _clockIconSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 ml-2 text-sm lg:text-base">9 \u{433}\u{43E}\u{434}\u{438}\u{43D}</div>
                             </div>
                             <div class="flex flex-row justify-star">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-base text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4}</div>
                             </div>
                         </div>
@@ -2572,7 +2623,7 @@ class SearchArea extends HTMLElement {
                                 <img src="${0, _iconEyeOffSvgDefault.default}" alt="icon" class="eye-icon">
                             </div>
                             <div class="flex flex-row justify-start">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4} / \u{43D}\u{456}\u{447}</div>
                             </div>
                         </div>
@@ -2591,11 +2642,11 @@ class SearchArea extends HTMLElement {
                             <h2 class="text-lg lg:text-xl">\u{41D}\u{430}\u{437}\u{432}\u{430} \u{442}\u{443}\u{440}\u{430} 6</h2>
                             <span class="text-gray-400 text-sm lg:text-base">\u{422}\u{443}\u{440}</span>
                             <div class="hotel-phone">
-                                <img src="${0, _clockIconSvgDefault.default}" alt="icon">
+                                <img src="${0, _clockIconSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 ml-2 text-sm lg:text-base">9 \u{433}\u{43E}\u{434}\u{438}\u{43D}</div>
                             </div>
                             <div class="flex flex-row justify-star">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-base text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4}</div>
                             </div>
                         </div>
@@ -2606,11 +2657,11 @@ class SearchArea extends HTMLElement {
                             <h2 class="text-lg lg:text-xl">\u{41D}\u{430}\u{437}\u{432}\u{430} \u{442}\u{443}\u{440}\u{430} 7</h2>
                             <span class="text-gray-400 text-sm lg:text-base">\u{422}\u{443}\u{440}</span>
                             <div class="hotel-phone">
-                                <img src="${0, _clockIconSvgDefault.default}" alt="icon">
+                                <img src="${0, _clockIconSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 ml-2 text-sm lg:text-base">9 \u{433}\u{43E}\u{434}\u{438}\u{43D}</div>
                             </div>
                             <div class="flex flex-row justify-star">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-base text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4}</div>
                             </div>
                         </div>
