@@ -310,10 +310,6 @@ img, video {
   left: 20px;
 }
 
-.left-\[48\%\] {
-  left: 48%;
-}
-
 .right-4 {
   right: 1rem;
 }
@@ -328,6 +324,22 @@ img, video {
 
 .top-\[70px\] {
   top: 70px;
+}
+
+.left-\[48\%\] {
+  left: 48%;
+}
+
+.left-\[50\%\] {
+  left: 50%;
+}
+
+.left-\[40\%\] {
+  left: 40%;
+}
+
+.left-\[45\%\] {
+  left: 45%;
 }
 
 .z-\[9998\] {
@@ -537,10 +549,6 @@ img, video {
 
 .mt-\[50px\] {
   margin-top: 50px;
-}
-
-.\!block {
-  display: block !important;
 }
 
 .block {
@@ -5360,6 +5368,10 @@ input.invalid:focus {
     margin-bottom: 2rem;
   }
 
+  .sm\:\!block {
+    display: block !important;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -5397,6 +5409,10 @@ input.invalid:focus {
 @media (width >= 768px) {
   .md\:left-\[50px\] {
     left: 50px;
+  }
+
+  .md\:left-\[48\%\] {
+    left: 48%;
   }
 
   .md\:order-last {
@@ -5542,6 +5558,10 @@ input.invalid:focus {
     left: 600px !important;
   }
 
+  .lg\:left-\[48\%\] {
+    left: 48%;
+  }
+
   .lg\:left-\[50px\] {
     left: 50px;
   }
@@ -5585,6 +5605,10 @@ input.invalid:focus {
 
   .lg\:block {
     display: block;
+  }
+
+  .lg\:\!inline {
+    display: inline !important;
   }
 
   .lg\:flex {
