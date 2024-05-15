@@ -122,9 +122,7 @@ class Faq extends HTMLElement {
     addStructuredData() {
         const faqItems = Array.from(this.querySelectorAll('.accordion')).map((accordion, index) => {
             const question = accordion.querySelector('.question').innerText.trim();
-            console.log(question);
             const answer = accordion.nextElementSibling.querySelector('.panel p').innerText.trim();
-            console.log(answer)
             return {
                 "@type": "Question",
                 "name": question,
