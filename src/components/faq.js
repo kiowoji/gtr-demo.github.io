@@ -70,7 +70,7 @@ class Faq extends HTMLElement {
                 <div class="w-full">
                     <button class="accordion">
                     <span class="orange-border hidden"></span>
-                        <span>Яка середня ціна готелю?</span>
+                        <span class="question">Яка середня ціна готелю?</span>
                         <img src="${arrowDown}">
                     </button>
                     <div class="panel">
@@ -79,7 +79,7 @@ class Faq extends HTMLElement {
 
                     <button class="accordion">
                     <span class="orange-border hidden"></span>
-                        <span>Чому варто обрати Go To Rest?</span>
+                        <span class="question">Чому варто обрати Go To Rest?</span>
                         <img src="${arrowDown}">
                     </button>
                     <div class="panel">
@@ -88,7 +88,7 @@ class Faq extends HTMLElement {
 
                     <button class="accordion">
                     <span class="orange-border hidden"></span>
-                        <span>Яка середня ціна готелю?</span>
+                        <span class="question">Яка середня ціна готелю?</span>
                         <img src="${arrowDown}">
                     </button>
                     <div class="panel">
@@ -97,7 +97,7 @@ class Faq extends HTMLElement {
 
                     <button class="accordion">
                     <span class="orange-border hidden"></span>
-                        <span>Чому варто обрати Go To Rest?</span>
+                        <span class="question">Чому варто обрати Go To Rest?</span>
                         <img src="${arrowDown}">
                     </button>
                     <div class="panel">
@@ -106,7 +106,7 @@ class Faq extends HTMLElement {
 
                     <button class="accordion">
                     <span class="orange-border hidden"></span>
-                        <span>Яка середня ціна готелю?</span>
+                        <span class="question">Яка середня ціна готелю?</span>
                         <img src="${arrowDown}">
                     </button>
                     <div class="panel">
@@ -121,8 +121,10 @@ class Faq extends HTMLElement {
 
     addStructuredData() {
         const faqItems = Array.from(this.querySelectorAll('.accordion')).map((accordion, index) => {
-            const question = accordion.querySelector('span:first-child').innerText.trim();
+            const question = accordion.querySelector('.question').innerText.trim();
+            console.log(question);
             const answer = accordion.nextElementSibling.querySelector('.panel p').innerText.trim();
+            console.log(answer)
             return {
                 "@type": "Question",
                 "name": question,

@@ -1537,7 +1537,7 @@ class Faq extends HTMLElement {
                 <div class="w-full">
                     <button class="accordion">
                     <span class="orange-border hidden"></span>
-                        <span>\u{42F}\u{43A}\u{430} \u{441}\u{435}\u{440}\u{435}\u{434}\u{43D}\u{44F} \u{446}\u{456}\u{43D}\u{430} \u{433}\u{43E}\u{442}\u{435}\u{43B}\u{44E}?</span>
+                        <span class="question">\u{42F}\u{43A}\u{430} \u{441}\u{435}\u{440}\u{435}\u{434}\u{43D}\u{44F} \u{446}\u{456}\u{43D}\u{430} \u{433}\u{43E}\u{442}\u{435}\u{43B}\u{44E}?</span>
                         <img src="${0, _arrowDownSvgDefault.default}">
                     </button>
                     <div class="panel">
@@ -1546,7 +1546,7 @@ class Faq extends HTMLElement {
 
                     <button class="accordion">
                     <span class="orange-border hidden"></span>
-                        <span>\u{427}\u{43E}\u{43C}\u{443} \u{432}\u{430}\u{440}\u{442}\u{43E} \u{43E}\u{431}\u{440}\u{430}\u{442}\u{438} Go To Rest?</span>
+                        <span class="question">\u{427}\u{43E}\u{43C}\u{443} \u{432}\u{430}\u{440}\u{442}\u{43E} \u{43E}\u{431}\u{440}\u{430}\u{442}\u{438} Go To Rest?</span>
                         <img src="${0, _arrowDownSvgDefault.default}">
                     </button>
                     <div class="panel">
@@ -1555,7 +1555,7 @@ class Faq extends HTMLElement {
 
                     <button class="accordion">
                     <span class="orange-border hidden"></span>
-                        <span>\u{42F}\u{43A}\u{430} \u{441}\u{435}\u{440}\u{435}\u{434}\u{43D}\u{44F} \u{446}\u{456}\u{43D}\u{430} \u{433}\u{43E}\u{442}\u{435}\u{43B}\u{44E}?</span>
+                        <span class="question">\u{42F}\u{43A}\u{430} \u{441}\u{435}\u{440}\u{435}\u{434}\u{43D}\u{44F} \u{446}\u{456}\u{43D}\u{430} \u{433}\u{43E}\u{442}\u{435}\u{43B}\u{44E}?</span>
                         <img src="${0, _arrowDownSvgDefault.default}">
                     </button>
                     <div class="panel">
@@ -1564,7 +1564,7 @@ class Faq extends HTMLElement {
 
                     <button class="accordion">
                     <span class="orange-border hidden"></span>
-                        <span>\u{427}\u{43E}\u{43C}\u{443} \u{432}\u{430}\u{440}\u{442}\u{43E} \u{43E}\u{431}\u{440}\u{430}\u{442}\u{438} Go To Rest?</span>
+                        <span class="question">\u{427}\u{43E}\u{43C}\u{443} \u{432}\u{430}\u{440}\u{442}\u{43E} \u{43E}\u{431}\u{440}\u{430}\u{442}\u{438} Go To Rest?</span>
                         <img src="${0, _arrowDownSvgDefault.default}">
                     </button>
                     <div class="panel">
@@ -1573,7 +1573,7 @@ class Faq extends HTMLElement {
 
                     <button class="accordion">
                     <span class="orange-border hidden"></span>
-                        <span>\u{42F}\u{43A}\u{430} \u{441}\u{435}\u{440}\u{435}\u{434}\u{43D}\u{44F} \u{446}\u{456}\u{43D}\u{430} \u{433}\u{43E}\u{442}\u{435}\u{43B}\u{44E}?</span>
+                        <span class="question">\u{42F}\u{43A}\u{430} \u{441}\u{435}\u{440}\u{435}\u{434}\u{43D}\u{44F} \u{446}\u{456}\u{43D}\u{430} \u{433}\u{43E}\u{442}\u{435}\u{43B}\u{44E}?</span>
                         <img src="${0, _arrowDownSvgDefault.default}">
                     </button>
                     <div class="panel">
@@ -1587,8 +1587,10 @@ class Faq extends HTMLElement {
     }
     addStructuredData() {
         const faqItems = Array.from(this.querySelectorAll(".accordion")).map((accordion, index)=>{
-            const question = accordion.querySelector("span:first-child").innerText.trim();
+            const question = accordion.querySelector(".question").innerText.trim();
+            console.log(question);
             const answer = accordion.nextElementSibling.querySelector(".panel p").innerText.trim();
+            console.log(answer);
             return {
                 "@type": "Question",
                 "name": question,

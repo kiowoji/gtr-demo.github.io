@@ -310,6 +310,10 @@ img, video {
   left: 20px;
 }
 
+.left-\[45\%\] {
+  left: 45%;
+}
+
 .right-4 {
   right: 1rem;
 }
@@ -324,22 +328,6 @@ img, video {
 
 .top-\[70px\] {
   top: 70px;
-}
-
-.left-\[48\%\] {
-  left: 48%;
-}
-
-.left-\[50\%\] {
-  left: 50%;
-}
-
-.left-\[40\%\] {
-  left: 40%;
-}
-
-.left-\[45\%\] {
-  left: 45%;
 }
 
 .z-\[9998\] {
@@ -5407,12 +5395,12 @@ input.invalid:focus {
 }
 
 @media (width >= 768px) {
-  .md\:left-\[50px\] {
-    left: 50px;
-  }
-
   .md\:left-\[48\%\] {
     left: 48%;
+  }
+
+  .md\:left-\[50px\] {
+    left: 50px;
   }
 
   .md\:order-last {
