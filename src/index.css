@@ -357,21 +357,28 @@ label{
     @apply bg-white py-16 text-center w-[90%] md:w-2/3 lg:w-2/3 rounded-md mx-auto fixed top-[50%] left-[50%] z-50;
     transform: translate(-50%, -50%);
 }
-#signin-popup{
-    @apply bg-white px-4 md:px-10 lg:px-10 py-8 w-full md:w-[70%] lg:w-[800px] rounded-md mx-auto fixed top-[50%] left-[50%] z-50;
+#auth-popup{
+    @apply bg-white px-4 md:px-10 lg:px-10 py-4 md:py-8 lg:py-8 w-full md:w-[70%] lg:w-[800px] rounded-md mx-auto fixed top-[50%] left-[50%] z-50 max-h-[100vh] md:max-h-[100vh] lg:max-h-fit overflow-y-auto;
     transform: translate(-50%, -50%);
+    overscroll-behavior-y: contain;
 }
-@media (max-width: 768px) {
-   #signin-popup{
-    @apply bottom-0 top-auto left-0 pb-20;
-    transform: none;
+@media (max-width: 767px) {
+   #auth-popup{
+    @apply bottom-0 top-[auto];
+ transform: translate(-50%, 0%);
 }
+}
+.auth-fields{
+    @apply py-2 md:py-4 lg:py-5 px-4 rounded-md;
+}
+.auth-icons{
+ @apply w-[20px] md:w-[30px] lg:w-[30px];
 }
 #overlay, #booking-overlay{
     @apply fixed top-0 left-0 w-full h-full z-[9999] hidden;
     background-color: rgba(0, 0, 0, 0.5); 
 }
-#signin-overlay{
+#auth-overlay{
     @apply fixed top-0 left-0 w-full h-full z-[9999];
     background-color: rgba(0, 0, 0, 0.5); 
 }

@@ -378,23 +378,35 @@
             <button class="btn-more">Показати ще</button>
         </div>
 
-        <div id="signin-overlay" class="signin-overlay hidden">
-            <div id="signin-popup">
-                <div class="flex text-base md:text-xl lg:text-xl pb-8 border-b-2 border-gray-section font-semibold mb-10 justify-center">
-                    <span id="close-signin" class="cursor-pointer absolute left-[20px] md:left-[50px] lg:left-[50px]">&#x2715;</span>
+        <div id="auth-overlay" class="auth-overlay hidden">
+            <div id="auth-popup">
+                <div class="flex text-base md:text-xl lg:text-xl pb-4 md:pb-8 lg:pb-8 border-b-2 border-gray-section font-semibold mb-4 lg:mb-10 justify-center">
+                    <span id="close-auth" class="cursor-pointer absolute left-[20px] md:left-[50px] lg:left-[50px]">&#x2715;</span>
                     <span>Увійдіть або зареєструйтесь</span>
                 </div>
                 <h2 class="font-semibold text-xl md:text-2xl lg:text-3xl mb-4 md:mb-8 lg:mb-8">Ласкаво просимо до Go To Rest</h2>
                 <form action="#" class="pb-8 border-b-2 relative">
                     <label for="auth-phone" class="text-base md:text-xl lg:text-xl">Введіть ваш номер телефону</label>
-                    <input id="auth-phone" type="tel" class="w-full border-2 border-[#929292] py-5 px-2 rounded-md mt-5 mb-5 text-base md:text-xl lg:text-xl" name="phone" required placeholder="+380" pattern = "(\+?380|0)?\d{9}">
+                    <input id="auth-phone" type="tel" class="w-full border-2 border-[#929292] auth-fields mt-5 mb-5 text-base md:text-xl lg:text-xl" name="phone" required placeholder="+380">
                     <span class="auth-error-message pt-0 pb-5 hidden text-red-500">Введіть дійсний номер телефону</span>
-                    <button type="submit" class="main-btn !w-full !text-base md:!text-xl lg:!text-xl">Продовжити</button>
+                    <button type="submit" class="bg-main-orange hover:bg-hover-orange auth-fields text-white w-full text-base md:text-xl lg:text-xl">Продовжити</button>
                     <span class="absolute bottom-[-20px] left-[45%] md:left-[48%] lg:left-[48%] p-2 bg-white">або</span>
                 </form> 
-                <a href="https://t.me/infoGoToRest" class="flex flex-row py-3 px-2 border-2 border-black rounded-md items-center justify-center gap-5 mt-8 cursor-pointer">
-                    <img src="public/images/telegram.svg" alt="telegram" class="w-[45px]">
-                    <span class="text-base md:text-xl lg:text-xl">Продовжити через Telegram</span>
+                <a href="https://t.me/infoGoToRest" class="flex flex-row auth-fields border-2 border-black items-center justify-center gap-5 mt-8 cursor-pointer hover:bg-zinc-100">
+                    <img src="public/images/telegram2.svg" alt="telegram" class="auth-icons">
+                    <span class="text-base md:text-xl lg:text-xl grow text-center">Продовжити через Telegram</span>
+                </a>
+                <a href="#" class="flex flex-row auth-fields border-2 border-black items-center justify-center gap-5 mt-5 cursor-pointer hover:bg-zinc-100">
+                    <img src="public/images/facebook.svg" alt="facebook" class="auth-icons">
+                    <span class="text-base md:text-xl lg:text-xl grow text-center">Продовжити через Facebook</span>
+                </a>
+                <a href="#" class="flex flex-row auth-fields border-2 border-black items-center justify-center gap-5 mt-5 cursor-pointer hover:bg-zinc-100">
+                    <img src="public/images/google.svg" alt="google" class="auth-icons">
+                    <span class="text-base md:text-xl lg:text-xl grow text-center">Продовжити через Google</span>
+                </a>
+                 <a href="#" class="flex flex-row auth-fields border-2 border-black items-center justify-center gap-5 mt-5 cursor-pointer hover:bg-zinc-100 mb-5">
+                    <img src="public/images/email.svg" alt="email" class="auth-icons">
+                    <span class="text-base md:text-xl lg:text-xl grow text-center">Продовжити через пошту</span>
                 </a>
             </div>
         </div>
