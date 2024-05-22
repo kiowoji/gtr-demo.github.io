@@ -357,29 +357,8 @@ label{
     @apply bg-white py-16 text-center w-[90%] md:w-2/3 lg:w-2/3 rounded-md mx-auto fixed top-[50%] left-[50%] z-50;
     transform: translate(-50%, -50%);
 }
-#auth-popup{
-    @apply bg-white px-4 md:px-10 lg:px-10 py-4 md:py-8 lg:py-8 w-full md:w-[70%] lg:w-[800px] rounded-md mx-auto fixed top-[50%] left-[50%] z-50 max-h-[100vh] md:max-h-[100vh] lg:max-h-fit overflow-y-auto;
-    transform: translate(-50%, -50%);
-    overscroll-behavior-y: contain;
-}
-@media (max-width: 767px) {
-   #auth-popup{
-    @apply bottom-0 top-[auto];
- transform: translate(-50%, 0%);
-}
-}
-.auth-fields{
-    @apply py-2 md:py-4 lg:py-5 px-4 rounded-md;
-}
-.auth-icons{
- @apply w-[20px] md:w-[30px] lg:w-[30px];
-}
 #overlay, #booking-overlay{
     @apply fixed top-0 left-0 w-full h-full z-[9999] hidden;
-    background-color: rgba(0, 0, 0, 0.5); 
-}
-#auth-overlay{
-    @apply fixed top-0 left-0 w-full h-full z-[9999];
     background-color: rgba(0, 0, 0, 0.5); 
 }
 #add-hotel-popup{
@@ -998,4 +977,81 @@ input.invalid {
 }
 .result-icons{
     @apply w-[20px] h-[20px]
+}
+
+/*sign-in*/
+
+#auth-overlay{
+    @apply fixed top-0 left-0 w-full h-full z-[9999];
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+#auth-popup{
+    @apply bg-white pb-4 md:pb-8 lg:pb-8 w-full md:w-[70%] lg:w-[800px] rounded-2xl mx-auto fixed top-[50%] left-[50%] z-50 max-h-[100vh] md:max-h-[100vh] lg:max-h-[90vh] overflow-hidden;
+    transform: translate(-50%, -50%);
+}
+@media (max-width: 767px) {
+   #auth-popup{
+    @apply bottom-0 top-[auto];
+    transform: translate(-50%, 0%);
+}
+}
+.auth-fields{
+    @apply py-2 md:py-4 lg:py-5 px-4 rounded-md;
+}
+.auth-icons{
+ @apply w-[20px] md:w-[30px] lg:w-[30px];
+}
+#signin-form input{
+    @apply py-2 md:py-4 lg:py-5 px-4 rounded-md border-[1px] border-[#6a6a6a] focus:outline-orange-500 mb-2 text-base md:text-xl lg:text-xl;
+}
+#auth-popup input::placeholder{
+    @apply text-[#6a6a6a];
+}
+#signin-form  .sign-in-info{
+    @apply text-base text-[#6a6a6a]
+}
+#signin-form button{
+    @apply py-2 md:py-4 lg:py-5 px-4 rounded-md bg-main-orange text-white text-base md:text-xl lg:text-xl hover:bg-hover-orange mt-5 font-semibold;
+}
+#signin-form label{
+    @apply font-semibold text-base md:text-xl lg:text-xl pt-5 pb-2;
+}
+#auth-popup .form-wrapper{
+    overscroll-behavior-y: contain;
+}
+
+#auth-popup .loader {
+    @apply flex justify-center items-center absolute bottom-[40px] md:bottom-[53px] lg:bottom-[53px] left-[42%] md:left-[46.5%] lg:left-[46.5%];
+    display: none;
+}
+.loader .dot {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 100%;
+    border-color: transparent;
+    margin: 0 1px;
+    animation: loading 1s linear infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+@keyframes loading {
+    0% {
+        transform: translateY(-15px);
+    }
+
+    25%, 75% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-15px);
+    }
+}
+.loading-btn{
+    cursor: not-allowed !important;
+    background-color: #d9d9d9 !important;
+}
+
+#auth-popup input{
+    @apply focus:bg-white;
 }

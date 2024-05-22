@@ -877,7 +877,7 @@ class Header extends HTMLElement {
                     <li id="tours">\u{422}\u{443}\u{440}\u{438}<span class="text-gray-400 text-2xl lg:!hidden">></span></li>
                     <li id="services">\u{410}\u{43A}\u{442}\u{438}\u{432}\u{43D}\u{43E}\u{441}\u{442}\u{456}<span class="text-gray-400 text-2xl lg:!hidden">></span></li>
                 </ul>
-                <div class="menu-link pb-16 lg:pb-8 pt-5 border-t-2 lg:border-t-0 flex flex-row justify-between items-end">
+                <div class="menu-link pb-24 lg:pb-8 pt-5 border-t-2 lg:border-t-0 flex flex-row justify-between items-end">
                     <div class="flex flex-col gap-5 pl-5 lg:pl-12">
                         <span class="font-bold">\u{41E}\u{43F}\u{443}\u{431}\u{43B}\u{456}\u{43A}\u{443}\u{432}\u{430}\u{442}\u{438} \u{43E}\u{431}'\u{454}\u{43A}\u{442}</span>
                         <a href="tel:+380956480880" class="text-gray-500">+38(095) 648 0880</a>
@@ -1537,7 +1537,7 @@ class Faq extends HTMLElement {
                 <div class="w-full">
                     <button class="accordion">
                     <span class="orange-border hidden"></span>
-                        <span>\u{42F}\u{43A}\u{430} \u{441}\u{435}\u{440}\u{435}\u{434}\u{43D}\u{44F} \u{446}\u{456}\u{43D}\u{430} \u{433}\u{43E}\u{442}\u{435}\u{43B}\u{44E}?</span>
+                        <span class="question">\u{42F}\u{43A}\u{430} \u{441}\u{435}\u{440}\u{435}\u{434}\u{43D}\u{44F} \u{446}\u{456}\u{43D}\u{430} \u{433}\u{43E}\u{442}\u{435}\u{43B}\u{44E}?</span>
                         <img src="${0, _arrowDownSvgDefault.default}">
                     </button>
                     <div class="panel">
@@ -1546,7 +1546,7 @@ class Faq extends HTMLElement {
 
                     <button class="accordion">
                     <span class="orange-border hidden"></span>
-                        <span>\u{427}\u{43E}\u{43C}\u{443} \u{432}\u{430}\u{440}\u{442}\u{43E} \u{43E}\u{431}\u{440}\u{430}\u{442}\u{438} Go To Rest?</span>
+                        <span class="question">\u{427}\u{43E}\u{43C}\u{443} \u{432}\u{430}\u{440}\u{442}\u{43E} \u{43E}\u{431}\u{440}\u{430}\u{442}\u{438} Go To Rest?</span>
                         <img src="${0, _arrowDownSvgDefault.default}">
                     </button>
                     <div class="panel">
@@ -1555,7 +1555,7 @@ class Faq extends HTMLElement {
 
                     <button class="accordion">
                     <span class="orange-border hidden"></span>
-                        <span>\u{42F}\u{43A}\u{430} \u{441}\u{435}\u{440}\u{435}\u{434}\u{43D}\u{44F} \u{446}\u{456}\u{43D}\u{430} \u{433}\u{43E}\u{442}\u{435}\u{43B}\u{44E}?</span>
+                        <span class="question">\u{42F}\u{43A}\u{430} \u{441}\u{435}\u{440}\u{435}\u{434}\u{43D}\u{44F} \u{446}\u{456}\u{43D}\u{430} \u{433}\u{43E}\u{442}\u{435}\u{43B}\u{44E}?</span>
                         <img src="${0, _arrowDownSvgDefault.default}">
                     </button>
                     <div class="panel">
@@ -1564,7 +1564,7 @@ class Faq extends HTMLElement {
 
                     <button class="accordion">
                     <span class="orange-border hidden"></span>
-                        <span>\u{427}\u{43E}\u{43C}\u{443} \u{432}\u{430}\u{440}\u{442}\u{43E} \u{43E}\u{431}\u{440}\u{430}\u{442}\u{438} Go To Rest?</span>
+                        <span class="question">\u{427}\u{43E}\u{43C}\u{443} \u{432}\u{430}\u{440}\u{442}\u{43E} \u{43E}\u{431}\u{440}\u{430}\u{442}\u{438} Go To Rest?</span>
                         <img src="${0, _arrowDownSvgDefault.default}">
                     </button>
                     <div class="panel">
@@ -1573,7 +1573,7 @@ class Faq extends HTMLElement {
 
                     <button class="accordion">
                     <span class="orange-border hidden"></span>
-                        <span>\u{42F}\u{43A}\u{430} \u{441}\u{435}\u{440}\u{435}\u{434}\u{43D}\u{44F} \u{446}\u{456}\u{43D}\u{430} \u{433}\u{43E}\u{442}\u{435}\u{43B}\u{44E}?</span>
+                        <span class="question">\u{42F}\u{43A}\u{430} \u{441}\u{435}\u{440}\u{435}\u{434}\u{43D}\u{44F} \u{446}\u{456}\u{43D}\u{430} \u{433}\u{43E}\u{442}\u{435}\u{43B}\u{44E}?</span>
                         <img src="${0, _arrowDownSvgDefault.default}">
                     </button>
                     <div class="panel">
@@ -1587,7 +1587,7 @@ class Faq extends HTMLElement {
     }
     addStructuredData() {
         const faqItems = Array.from(this.querySelectorAll(".accordion")).map((accordion, index)=>{
-            const question = accordion.querySelector("span:first-child").innerText.trim();
+            const question = accordion.querySelector(".question").innerText.trim();
             const answer = accordion.nextElementSibling.querySelector(".panel p").innerText.trim();
             return {
                 "@type": "Question",
@@ -2555,7 +2555,7 @@ class SearchArea extends HTMLElement {
                                 <img src="${0, _iconEyeOffSvgDefault.default}" alt="icon" class="eye-icon">
                             </div>
                             <div class="flex flex-row justify-start">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4} / \u{43D}\u{456}\u{447}</div>
                             </div>
                         </div>
@@ -2574,11 +2574,11 @@ class SearchArea extends HTMLElement {
                             <h2 class="text-lg lg:text-xl">\u{41D}\u{430}\u{437}\u{432}\u{430} \u{442}\u{443}\u{440}\u{430} 4</h2>
                             <span class="text-gray-400 text-sm lg:text-base">\u{422}\u{443}\u{440}</span>
                             <div class="hotel-phone">
-                                <img src="${0, _clockIconSvgDefault.default}" alt="icon">
+                                <img src="${0, _clockIconSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 ml-2 text-sm lg:text-base">9 \u{433}\u{43E}\u{434}\u{438}\u{43D}</div>
                             </div>
                             <div class="flex flex-row justify-star">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-base text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4}</div>
                             </div>
                         </div>
@@ -2589,11 +2589,11 @@ class SearchArea extends HTMLElement {
                             <h2 class="text-lg lg:text-xl">\u{41D}\u{430}\u{437}\u{432}\u{430} \u{442}\u{443}\u{440}\u{430} 5</h2>
                             <span class="text-gray-400 text-sm lg:text-base">\u{422}\u{443}\u{440}</span>
                             <div class="hotel-phone">
-                                <img src="${0, _clockIconSvgDefault.default}" alt="icon">
+                                <img src="${0, _clockIconSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 ml-2 text-sm lg:text-base">9 \u{433}\u{43E}\u{434}\u{438}\u{43D}</div>
                             </div>
                             <div class="flex flex-row justify-star">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-base text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4}</div>
                             </div>
                         </div>
@@ -2623,7 +2623,7 @@ class SearchArea extends HTMLElement {
                                 <img src="${0, _iconEyeOffSvgDefault.default}" alt="icon" class="eye-icon">
                             </div>
                             <div class="flex flex-row justify-start">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4} / \u{43D}\u{456}\u{447}</div>
                             </div>
                         </div>
@@ -2642,11 +2642,11 @@ class SearchArea extends HTMLElement {
                             <h2 class="text-lg lg:text-xl">\u{41D}\u{430}\u{437}\u{432}\u{430} \u{442}\u{443}\u{440}\u{430} 6</h2>
                             <span class="text-gray-400 text-sm lg:text-base">\u{422}\u{443}\u{440}</span>
                             <div class="hotel-phone">
-                                <img src="${0, _clockIconSvgDefault.default}" alt="icon">
+                                <img src="${0, _clockIconSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 ml-2 text-sm lg:text-base">9 \u{433}\u{43E}\u{434}\u{438}\u{43D}</div>
                             </div>
                             <div class="flex flex-row justify-star">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-base text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4}</div>
                             </div>
                         </div>
@@ -2657,11 +2657,11 @@ class SearchArea extends HTMLElement {
                             <h2 class="text-lg lg:text-xl">\u{41D}\u{430}\u{437}\u{432}\u{430} \u{442}\u{443}\u{440}\u{430} 7</h2>
                             <span class="text-gray-400 text-sm lg:text-base">\u{422}\u{443}\u{440}</span>
                             <div class="hotel-phone">
-                                <img src="${0, _clockIconSvgDefault.default}" alt="icon">
+                                <img src="${0, _clockIconSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-gray-700 ml-2 text-sm lg:text-base">9 \u{433}\u{43E}\u{434}\u{438}\u{43D}</div>
                             </div>
                             <div class="flex flex-row justify-star">
-                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+                                <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="result-icons">
                                 <div class="text-base text-gray-700 pl-2 text-sm lg:text-base">\u{432}\u{456}\u{434} 1070 \u{20B4}</div>
                             </div>
                         </div>
@@ -2739,4 +2739,4 @@ module.exports = require("5dd29987dabf64d3").getBundleURL("lPpKD") + "clock-icon
 
 },{"5dd29987dabf64d3":"lgJ39"}]},["gbXMy","bNKaB"], "bNKaB", "parcelRequireccbb")
 
-//# sourceMappingURL=index.0641b553.js.map
+//# sourceMappingURL=hotel.0641b553.js.map
