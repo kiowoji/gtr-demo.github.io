@@ -1188,6 +1188,10 @@ img, video {
   padding-bottom: .25rem;
 }
 
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
+
 .pb-16 {
   padding-bottom: 4rem;
 }
