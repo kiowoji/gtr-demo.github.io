@@ -537,26 +537,26 @@ label{
     @apply !w-full
 }
 .phone-overflow{
-    @apply text-base text-gray-500 pl-2 mr-1 text-ellipsis w-[60px] overflow-hidden
+    @apply text-base text-secondary pl-2 mr-1 text-ellipsis w-[60px] overflow-hidden
 }
-.icons-group{
-    @apply flex flex-col items-center pb-1 cursor-pointer border-b-2 border-transparent
+.icons-group, .tour-icons-group{
+    @apply flex flex-col items-center pb-1 cursor-pointer border-b-2 border-transparent 
 }
-.icons-group:hover{
+.icons-group:hover, .tour-icons-group:hover{
     @apply brightness-[0.6] border-white
 }
-.icons-group.active-group{
+.icons-group.active-group, .tour-icons-group.active-group{
     @apply border-b-2 border-black brightness-0
 }
 .service-icon{
     @apply w-9 h-9 mb-1
 }
-.locations-group{
+.locations-group, .tours-group{
     @apply flex justify-start gap-5 lg:gap-10 overflow-x-scroll w-[80%] lg:w-[70%] md:w-full lg:w-full mx-4 scroll-smooth;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-.locations-group::-webkit-scrollbar{
+.locations-group::-webkit-scrollbar, .tours-group::-webkit-scrollbar{
     display: none;
 }
 .slider-icon{
@@ -565,26 +565,29 @@ label{
 .triangle-icons{
     @apply sm:flex md:hidden lg:hidden justify-between side-paddings mt-6 cursor-pointer
 }
-.hotel-cards{
-    @apply grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-7 mt-10
+.hotel-cards, .tour-cards{
+    @apply grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-x-7 gap-y-10 mt-10
 }
-.hotel-card{
+.hotel-card, .tour-card{
     @apply flex flex-col justify-start cursor-pointer relative
 }
-.hotel-title{
-    @apply text-base font-semibold text-black mt-4 mb-3 text-ellipsis overflow-hidden whitespace-nowrap
+.hotel-title, .tour-title{
+    @apply text-base font-semibold text-black mt-4 mb-2.5 text-ellipsis overflow-hidden whitespace-nowrap
+}
+.tour-title{
+    @apply text-lg lg:text-base
 }
 .hotel-address{
-    @apply text-base text-gray-500 pl-2 text-ellipsis overflow-hidden whitespace-nowrap
+    @apply text-base text-secondary pl-2 text-ellipsis overflow-hidden whitespace-nowrap
 }
 .hotel-phone{
     @apply flex flex-row mt-1.5 mb-1.5 justify-start
 }
-.hotel-img{
+.hotel-img, tour-img{
     @apply rounded-md aspect-square object-cover
 }
 .btn-more{
-    @apply rounded-md bg-main-orange text-white text-lg py-5 px-10 mt-20 mb-10 block mx-auto sm:w-full md:w-max lg:w-max
+    @apply rounded-md bg-main-orange text-white font-bold text-lg py-5 px-10 mt-20 mb-10 block mx-auto sm:w-full md:w-max lg:w-max
 }
 .btn-more:hover, .culture-btn:hover{
     @apply bg-hover-orange
@@ -974,6 +977,12 @@ input.invalid {
 }
 .like-icon{
     @apply w-[25px] h-[25px] absolute right-3 top-3 hover:scale-110;
+}
+.tour-label{
+    @apply absolute left-2 top-2 bg-white text-main px-3 py-1 rounded-md opacity-90;
+}
+.tour-info {
+    @apply text-base text-[#454545] pl-2;
 }
 .result-icons{
     @apply w-[20px] h-[20px]

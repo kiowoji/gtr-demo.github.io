@@ -83,3 +83,30 @@ button.addEventListener("click", function() {
 window.addEventListener("scroll", function() {
   button.classList.toggle("hidden", window.scrollY < 100);
 });
+
+//tours slider
+
+const toursGroup = document.getElementsByClassName('tour-icons-group');
+const toursGroupArray = Array.from(toursGroup);
+
+ toursGroupArray.forEach(item => {
+  item.addEventListener('click', () => {
+     toursGroupArray.forEach(item => {
+      item.classList.remove('active-group');
+    });
+
+    item.classList.add('active-group');
+  });
+});
+
+const slideLeftTours = document.getElementById('tours-slide-left');
+const slideRightTours = document.getElementById('tours-slide-right');
+const scrollContainerTours = document.getElementById('tours-scroll-container')
+
+slideLeftTours.addEventListener('click', () => {
+  scrollContainerTours.scrollLeft -= 150;
+})
+
+slideRightTours.addEventListener('click', () => {
+  scrollContainerTours.scrollLeft += 150;
+})
