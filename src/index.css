@@ -50,15 +50,6 @@ label{
 .active{
     display: none;
 }
-.breadcrumbs{
-    @apply sm:hidden md:flex lg:flex flex-row justify-start items-center my-8 
-}
-.breadcrumbs li{
-    @apply flex flex-row text-sm text-gray-400
-}
-.breadcrumbs img{
-    @apply px-3
-}
 .wrapper{
     @apply flex flex-col lg:flex-row justify-start items-start lg:items-center gap-2 lg:gap-0
 }
@@ -556,7 +547,7 @@ label{
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-.locations-group::-webkit-scrollbar, .tours-group::-webkit-scrollbar{
+.locations-group::-webkit-scrollbar, .tours-group::-webkit-scrollbar, .services-filters::-webkit-scrollbar{
     display: none;
 }
 .slider-icon{
@@ -1063,4 +1054,160 @@ input.invalid {
 
 #auth-popup input{
     @apply focus:bg-white;
+}
+
+/*filters*/
+.breadcrumbs{
+    @apply flex md:flex lg:flex flex-row justify-start items-center mb-7 sm:overflow-scroll 
+}
+.breadcrumbs li{
+    @apply flex flex-row text-sm whitespace-nowrap
+}
+.breadcrumbs li a{
+    @apply hover:bg-bggrey py-1 rounded-md px-1
+}
+/* .breadcrumbs img{
+    @apply px-3
+} */
+.services-filters{
+    @apply flex flex-row gap-x-2.5 justify-start items-center mb-5 pb-5 border-b-2 border-[#F0F0F0] overflow-x-scroll whitespace-nowrap scroll-smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.service-option{
+    @apply bg-bggrey py-2 px-4 border-[2.5px] border-bggrey hover:bg-white hover:border-main-orange rounded-md;
+}
+.num-input::-webkit-outer-spin-button,
+.num-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.num-input[type=number] {
+  -moz-appearance: textfield;
+}
+.active-service{
+    @apply bg-white border-main-orange;
+}
+#price-sort-options{
+    @apply absolute bg-white rounded-md z-50 w-[165px] py-1.5;
+}
+#price-sort-options li{
+    @apply py-2 px-4 hover:bg-[#FFECE1];
+}
+#loc_group{
+    @apply absolute bg-white rounded-md mt-1 overflow-y-scroll h-52 w-[90%] md:w-[95%] lg:w-[260px];
+    box-shadow: 0px 4px 6px 3px rgba(211, 211, 211, 0.5);
+}
+#loc_group li{
+    @apply flex flex-row py-3 pl-5 hover:bg-[#FFECE1] cursor-pointer items-center;
+}
+#loc_group li img{
+    @apply brightness-[4] w-[24px];
+}
+#loc_group li:hover img{
+    @apply brightness-[2];
+}
+.filter-accordion.active{
+    display: flex;
+}
+.guests-filter {
+    box-shadow: 0px 4px 6px 3px rgba(211, 211, 211, 0.5);
+}
+#filterForm input::placeholder, #filterForm input {
+    color: #252525;
+    font-size: 16px;
+}
+ #filterForm input {
+    color: #252525;
+    padding-left: 8px;
+    font-size: 16px;
+}
+#filterForm #check-in-date:focus,  #filterForm #check-out-date:focus{
+   outline: none;
+}
+#filterForm #calendar{
+    @apply flex flex-col p-4 md:p-8 lg:p-8 w-full md:w-[400px] lg:w-[580px] text-sm rounded-md absolute z-50 bg-white mt-[250px] left-0 md:left-5 lg:left-5;
+    box-shadow: 0px 4px 6px 4px rgba(90, 90, 90, 0.165);
+}
+#filterForm  .month {
+    @apply max-w-[310px] md:w-[80%] lg:w-[45%];
+}
+.grid-mode{
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[30px] gap-y-10;
+}
+.grid-mode .card-desc, .grid-mode .open-hotel{
+    display: none;
+}
+.column-mode{
+    @apply grid grid-cols-1 gap-y-10;
+}
+.column-mode .hotel-card{
+    @apply flex flex-row justify-between cursor-pointer relative bg-[#fafafa] p-5 rounded-md border-2 border-[#dedede] gap-x-2
+}
+.column-mode .hotel-img{
+    @apply w-[230px]
+}
+.column-mode .card-icon, .column-mode .phone-overflow, .column-mode .hotel-phone{
+    display: none;
+}
+.column-mode .hotel-address, .column-mode .card-price{
+    @apply pl-0 
+}
+.column-mode .price-bold{
+    @apply text-main text-2xl
+}
+.column-mode .card-price{
+    @apply flex flex-row items-center gap-2 mt-5
+}
+.column-mode .card-content{
+    @apply flex flex-col justify-between w-[70%]
+}
+.column-mode .card-img{
+    @apply w-[30%]
+}
+.column-mode .hotel-title {
+    @apply mt-0 mb-0 text-xl
+}
+#grid-mode:hover, #column-mode:hover{
+    @apply scale-110
+}
+.column-mode .open-hotel {
+    @apply rounded-md bg-main-orange text-white font-bold text-base py-3.5 px-7 hover:bg-hover-orange
+}
+.column-mode .card-bottom{
+    @apply justify-between
+}
+#open-filters{
+    @apply rounded bg-main-orange text-white font-semibold text-base px-[17px] py-[8px] hover:bg-hover-orange mb-1
+}
+#open-services{
+    @apply rounded bg-bggrey text-main text-base px-[17px] py-[8px] mb-1
+}
+.grid-mode .hotel-img{
+    @apply aspect-square w-full 
+}
+#services-popup{
+    @apply top-0 bg-white z-[999999] h-full w-full left-0;
+    position:fixed;
+    overflow:hidden;
+}
+.filters-popup{
+    @apply bg-white md:bg-white fixed md:fixed z-[9999] md:z-[9999] w-full top-0 left-0 pt-24;
+}
+.filters-popup .filters-top{
+    @apply block fixed top-0 w-full bg-white;
+}
+.filters-popup .filters-bottom{
+    @apply block bottom-0 fixed w-full z-[9999] ;
+}
+.services-list {
+    @apply flex flex-wrap gap-3 whitespace-nowrap justify-center px-1 md:px-8;
+    overflow-y: auto;
+    max-height: calc(100vh - 260px);
+}
+.filters-popup .map-popup{
+    @apply fixed z-[999999] top-0 md:top-0 lg:top-[50%] left-0 md:left-0 lg:left-[50%] w-full lg:w-[90%] h-full lg:h-[90%] bg-white md:bg-white lg:bg-gray-100 rounded-none md:rounded-none lg:rounded-md sm:translate-x-0 md:translate-x-0 sm:translate-y-0 md:translate-y-0;
+}
+.filters-popup .map-popup iframe{
+    @apply w-full h-full;
 }

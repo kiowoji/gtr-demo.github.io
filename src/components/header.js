@@ -33,7 +33,7 @@ class Header extends HTMLElement {
                     <button type="button" id="currency" class="rounded-sm px-1">
                         <div class="money-select !text-header-top-text" id="currency-data">uah</div>
                     </button>
-                    <a class="text-header-top-text text-base mr-5" href="#">Блог</a>
+                    <a class="text-header-top-text text-base mr-5" href="filter.html">Блог</a>
                     <a class="text-header-top-text text-base "  href="#">Про нас</a> 
                 </div>
                 <div class="flex-alignment">

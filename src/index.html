@@ -381,119 +381,7 @@
         </div>
 
         <!--auth window-->
-        <div id="auth-overlay" class="auth-overlay hidden">
-            <div id="auth-popup">
-                <div id="main-window" class="">
-                    <div class="flex sticky top-0 bg-white z-[9999] text-base md:text-xl lg:text-xl py-4 md:py-8 lg:py-8 border-b-2 border-gray-section font-semibold mb-6 lg:mb-10 justify-center rounded-2xl">
-                        <span id="close-auth" class="cursor-pointer absolute left-[20px] md:left-[50px] lg:left-[50px]">&#x2715;</span>
-                        <span>Увійдіть або зареєструйтесь</span>
-                    </div>
-                    <div class="form-wrapper overflow-y-auto max-h-[78vh] px-4 md:px-10 lg:px-10 pb-10">
-                    <h2 class="font-semibold text-xl md:text-2xl lg:text-3xl mb-4 md:mb-8 lg:mb-8">Ласкаво просимо до Go To Rest</h2>
-                    <form action="#" class="pb-8 border-b-2 relative" id="auth-phone-form">
-                        <label for="auth-phone" class="text-base md:text-xl lg:text-xl">Введіть ваш номер телефону</label>
-                        <input id="auth-phone" type="tel" class="w-full border-[1px] border-[#6a6a6a] auth-fields mt-5 mb-5 text-base md:text-xl lg:text-xl focus:outline-orange-500" name="phone" required placeholder="Номер телефону">
-                        <span class="auth-error-message pt-0 pb-5 hidden text-red-500">Введіть дійсний номер телефону</span>
-                        <button type="submit" class="bg-main-orange hover:bg-hover-orange auth-fields text-white w-full text-base md:text-xl lg:text-xl h-[44px] md:h-[68px] lg:h-[68px]">Продовжити</button>
-                    </form> 
-                    <form action="#" class="pb-8 border-b-2 relative hidden" id="auth-email-form">
-                        <label for="auth-email" class="text-base md:text-xl lg:text-xl">Введіть вашу електронну пошту</label>
-                        <input id="auth-email" type="email" class="w-full border-[1px] border-[#6a6a6a] auth-fields mt-5 mb-5 text-base md:text-xl lg:text-xl focus:outline-orange-500" name="email" required placeholder="Електронна пошта">
-                        <span class="auth-error-message pt-0 pb-5 hidden text-red-500">Введіть дійсну адресу електронної пошти</span>
-                        <button id="submit-email" type="submit" class="bg-main-orange hover:bg-hover-orange auth-fields text-white w-full text-base md:text-xl lg:text-xl h-[44px] md:h-[68px] lg:h-[68px]">Продовжити</button>
-                        <div class="loader">
-                            <span class="dot" style="--i:3"></span>
-                            <span class="dot" style="--i:2"></span>
-                            <span class="dot" style="--i:1"></span>
-                            <span class="dot" style="--i:0"></span>
-                        </div>
-                    </form> 
-                    <div class="relative">
-                        <span class="absolute top-[-55px] left-[45%] md:left-[48%] lg:left-[48%] p-2 bg-white">або</span>
-                        <a href="https://t.me/infoGoToRest" class="flex flex-row auth-fields border-2 border-black items-center justify-center gap-5 mt-8 cursor-pointer hover:bg-zinc-100">
-                            <img src="public/images/telegram2.svg" alt="telegram" class="auth-icons">
-                            <span class="text-base md:text-xl lg:text-xl grow text-center">Продовжити через Telegram</span>
-                        </a>
-                        <a href="#" class="flex flex-row auth-fields border-2 border-black items-center justify-center gap-5 mt-5 cursor-pointer hover:bg-zinc-100">
-                            <img src="public/images/facebook.svg" alt="facebook" class="auth-icons">
-                            <span class="text-base md:text-xl lg:text-xl grow text-center">Продовжити через Facebook</span>
-                        </a>
-                        <a href="#" class="flex flex-row auth-fields border-2 border-black items-center justify-center gap-5 mt-5 cursor-pointer hover:bg-zinc-100">
-                            <img src="public/images/google.svg" alt="google" class="auth-icons">
-                            <span class="text-base md:text-xl lg:text-xl grow text-center">Продовжити через Google</span>
-                        </a>
-                        <a href="#" class="flex flex-row auth-fields border-2 border-black items-center justify-center gap-5 mt-5 cursor-pointer hover:bg-zinc-100 mb-5" id="continue-by-email">
-                            <img src="public/images/email.svg" alt="email" class="auth-icons">
-                            <span class="text-base md:text-xl lg:text-xl grow text-center">Продовжити через пошту</span>
-                        </a>
-                    </div>
-                    </div>  
-                </div>
-
-                <div id="signin-email-window" class="hidden">
-                    <div class="flex items-center sticky top-0 bg-white z-[9999] text-base md:text-xl lg:text-xl py-4 md:py-8 lg:py-8 border-b-2 border-gray-section font-semibold mb-4 justify-center px-4 md:px-10 lg:px-10 rounded-2xl">
-                        <span id="go-back-signin" class="cursor-pointer absolute left-[20px] md:left-[50px] lg:left-[40px] text-3xl font-medium"><</span>
-                        <span>Завершіть реєстрацію</span>
-                    </div>
-                    <div class="form-wrapper overflow-y-auto max-h-[78vh] px-4 md:px-10 lg:px-10">
-                        <form action="#" id="signin-form" class="flex flex-col">
-                            <label for="signin-first-name">Oфіційне ім'я</label>
-                            <input type="text" name="signin-first-name" id="signin-first-name" required placeholder="Ваше ім'я" class="w-full">
-                            <span class="error-message pb-3">Це поле обов'язкове</span>
-                            <input type="text" name="signin-second-name" id="signin-second-name" required placeholder="Ваше прізвище" class="mt-1 w-full">
-                            <span class="error-message pb-3">Це поле обов'язкове</span>
-                            <p class="sign-in-info">Надані дані мають відповідати вашому посвідченню особи державного зразка.</p>
-                            <label for="signin-date">Дата народження</label>
-                            <input type="date" name="signin-date" id="signin-date" required class="w-full">
-                            <span class="error-message pb-3">Це поле обов'язкове</span>
-                            <p class="sign-in-info">Для реєстрації вам має бути щонайменше 18 років. Інформація щодо вашого дня народження не буде доступна іншим користувачам Go To Rest.</p>
-                            <label for="signin-email">Електронна пошта</label>
-                            <input type="email" name="signin-email" id="signin-email" placeholder="Електронна пошта" required class="w-full"> 
-                            <span class="error-message pb-3">Введіть коректну електронну пошту</span>
-                            <label for="signin-phone">Номер телефону</label>
-                            <input type="tel" name="signin-phone" id="signin-phone" placeholder="Номер телефону" class="w-full">
-                            <span class="error-message pb-3">Введіть коректний номер телефону</span>
-                            <label for="signin-password">Пароль</label>
-                            <input type="password" name="signin-password" id="signin-password" placeholder="Пароль" required class="w-full">
-                            <span class="error-message pb-3">Це поле обов'язкове</span>
-                            <div class="mt-3 flex gap-3">
-                                <input type="checkbox" name="password-checkbox" id="password-checkbox" class="w-6 h-6 accent-main-orange">
-                                <span class="text-base text-secondary">Показати пароль</span>
-                            </div>
-                            <p class="mt-5 text-base text-secondary">Натискаючи "Погодитися і продовжити", я погоджуюсь з Умовами надання послуг Go To Rest, Умовами здійснення платежів та Політикою недискримінації, а також визнаю Політику конфіденційності.</p>
-                            <button type="submit" class="h-[44px] md:h-[68px] lg:h-[68px]">Погодитися і продовжити</button>
-                        </form>
-                        <p class="text-base text-secondary mt-5">Go To Rest надсилатиме вам пропозиції для учасників, ідеї для натхнення, маркетингові електронні листи та push-сповіщення. Ви можете в будь-який час відмовитися від отримання цих повідомлень у налаштуваннях акаунта або безпосередньо в маркетинговому сповіщенні.</p>
-                        <div class="mt-5 flex gap-3 mb-10">
-                            <input type="checkbox" name="mailings-checkbox" id="mailings-checkbox" class="w-6 h-6 accent-main-orange">
-                            <span class="text-base text-secondary w-fit">Я не хочу отримувати маркетингові повідомлення від Go To Rest.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="login-email-window" class="hidden">
-                    <div class="flex items-center sticky top-0 bg-white z-[9999] text-base md:text-xl lg:text-xl py-4 md:py-8 lg:py-8 border-b-2 border-gray-section font-semibold mb-4 justify-center px-4 md:px-10 lg:px-10 rounded-2xl">
-                        <span id="go-back-login" class="cursor-pointer absolute left-[20px] md:left-[50px] lg:left-[40px] text-3xl font-medium"><</span>
-                        <span>Увійдіть у систему</span>
-                    </div>
-                    <div class="form-wrapper overflow-y-auto max-h-[78vh] px-4 md:px-10 lg:px-10">
-                        <form action="#" id="signin-form" class="flex flex-col">
-                            <label for="login-email">Електронна пошта</label>
-                            <input type="email" name="login-email" id="login-email" placeholder="Електронна пошта" required class="w-full">
-                            <span class="error-message">Введіть коректну електронну пошту</span>
-                            <label for="login-password">Пароль</label>
-                            <input type="password" name="login-password" id="login-password" placeholder="Пароль" required class="w-full">
-                            <span class="error-message pb-3">Це поле обов'язкове</span>
-                            <div class="mt-3 flex gap-3">
-                                <input type="checkbox" name="password-checkbox" id="login-password-checkbox" class="w-6 h-6 accent-main-orange">
-                                <span class="text-base text-secondary">Показати пароль</span>
-                            </div>
-                            <button type="submit" class="h-[44px] md:h-[68px] lg:h-[68px] mb-10">Увійти</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <auth-form></auth-form>
         
         <!--what to do section-->
         <div class="side-paddings pt-12 md:pt-20 lg:pt-20 pb-[60px] lg:pb-[100px]">
@@ -549,26 +437,26 @@
                         <img src="public/images/location/uzhorod.png" alt="" class="w-full">
                         <div class="location-title">Ужгород</div>
                         <div class="location-info">
-                            <div class="flex flex-col">
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Готелі</span>
                                 <span class="text-orange-800 font-medium text-xl">3</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Приватна оренда</span>
                                 <span class="text-orange-800 font-medium text-xl">-</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Тури</span>
                                 <span class="text-orange-800 font-medium text-xl">39</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Активності</span>
                                 <span class="text-orange-800 font-medium text-xl">8</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Автомобілі</span>
                                 <span class="text-orange-800 font-medium text-xl">-</span>
-                            </div>
+                            </a>
                         </div> 
                     </div>
 
@@ -576,26 +464,26 @@
                         <img src="public/images/location/lumshors.png" alt="" class="w-full">
                         <div class="location-title">Лумшори</div>
                         <div class="location-info">
-                            <div class="flex flex-col">
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Готелі</span>
                                 <span class="text-orange-800 font-medium text-xl">3</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Приватна оренда</span>
                                 <span class="text-orange-800 font-medium text-xl">-</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Тури</span>
                                 <span class="text-orange-800 font-medium text-xl">10</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Активності</span>
                                 <span class="text-orange-800 font-medium text-xl">2</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Автомобілі</span>
                                 <span class="text-orange-800 font-medium text-xl">-</span>
-                            </div>
+                            </a>
                         </div> 
                     </div>
 
@@ -603,26 +491,26 @@
                         <img src="public/images/location/uzhorod.png" alt="" class="w-full">
                         <div class="location-title">Деренівська купіль</div>
                         <div class="location-info">
-                            <div class="flex flex-col">
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Готелі</span>
                                 <span class="text-orange-800 font-medium text-xl">-</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Приватна оренда</span>
                                 <span class="text-orange-800 font-medium text-xl">-</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Тури</span>
                                 <span class="text-orange-800 font-medium text-xl">2</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Активності</span>
                                 <span class="text-orange-800 font-medium text-xl">-</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Автомобілі</span>
                                 <span class="text-orange-800 font-medium text-xl">-</span>
-                            </div>
+                            </a>
                         </div> 
                     </div>
 
@@ -630,26 +518,26 @@
                         <img src="public/images/location/kosino.png" alt="" class="w-full">
                         <div class="location-title">Косино - термальні води</div>
                         <div class="location-info">
-                            <div class="flex flex-col">
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Готелі</span>
                                 <span class="text-orange-800 font-medium text-xl">2</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Приватна оренда</span>
                                 <span class="text-orange-800 font-medium text-xl">1</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Тури</span>
                                 <span class="text-orange-800 font-medium text-xl">6</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Активності</span>
                                 <span class="text-orange-800 font-medium text-xl">4</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Автомобілі</span>
                                 <span class="text-orange-800 font-medium text-xl">-</span>
-                            </div>
+                            </a>
                         </div> 
                     </div>
 
@@ -657,26 +545,26 @@
                         <img src="public/images/location/kolochava.png" alt="" class="w-full">
                         <div class="location-title">Колочава</div>
                         <div class="location-info">
-                            <div class="flex flex-col">
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Готелі</span>
                                 <span class="text-orange-800 font-medium text-xl">3</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Приватна оренда</span>
                                 <span class="text-orange-800 font-medium text-xl">1</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Тури</span>
                                 <span class="text-orange-800 font-medium text-xl">4</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Активності</span>
                                 <span class="text-orange-800 font-medium text-xl">2</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Автомобілі</span>
                                 <span class="text-orange-800 font-medium text-xl">-</span>
-                            </div>
+                            </a>
                         </div> 
                     </div>
 
@@ -684,26 +572,26 @@
                         <img src="public/images/location/synevir.png" alt="" class="w-full">
                         <div class="location-title">Синевир</div>
                         <div class="location-info">
-                            <div class="flex flex-col">
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Готелі</span>
                                 <span class="text-orange-800 font-medium text-xl">-</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Приватна оренда</span>
                                 <span class="text-orange-800 font-medium text-xl">-</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Тури</span>
                                 <span class="text-orange-800 font-medium text-xl">6</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Активності</span>
                                 <span class="text-orange-800 font-medium text-xl">-</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Автомобілі</span>
                                 <span class="text-orange-800 font-medium text-xl">-</span>
-                            </div>
+                            </a>
                         </div> 
                     </div>
 
@@ -711,26 +599,26 @@
                         <img src="public/images/location/mizhhirya.png" alt="" class="w-full">
                         <div class="location-title">Міжгір’я</div>
                         <div class="location-info">
-                            <div class="flex flex-col">
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Готелі</span>
                                 <span class="text-orange-800 font-medium text-xl">4</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Приватна оренда</span>
                                 <span class="text-orange-800 font-medium text-xl">-</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Тури</span>
                                 <span class="text-orange-800 font-medium text-xl">7</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Активності</span>
                                 <span class="text-orange-800 font-medium text-xl">2</span>
-                            </div>
-                            <div class="flex flex-col">
+                            </a>
+                            <a class="flex flex-col" href="filter.html">
                                 <span class="mb-3">Автомобілі</span>
                                 <span class="text-orange-800 font-medium text-xl">-</span>
-                            </div>
+                            </a>
                         </div> 
                     </div>
                 </div>
@@ -1134,7 +1022,7 @@
     <footer-component></footer-component>
     <script src="./js/slider.js" type="module"></script>
     <script src="./js/splide.js" type="module"></script>
-    <script src="./js/auth.js" type="module"></script>
+    <!-- <script src="./js/auth.js" type="module"></script> -->
     <script type="module" src="app.js"></script>
 </body>
 </html>

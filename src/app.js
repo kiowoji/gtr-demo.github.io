@@ -3,7 +3,8 @@ import './components/footer.js';
 import './components/faq.js';
 import './components/booking-form.js';
 import './components/add-object-form.js';
-import './components/search-area.js'
+import './components/search-area.js';
+import './components/auth-form';
 
 
 // const select_btn = document.getElementById('select_open')

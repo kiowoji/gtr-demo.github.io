@@ -7,230 +7,1139 @@
     <link href="./index.css" type="text/css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <title>filter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Filter</title>
 </head>
 <body>
 
 
 <header-component></header-component>
 
-<div class="container mx-auto bg-white">
-    <ul class="breadcrumbs">
-        <li>
-            <a href="#">Головна</a>
-            <img src="public/images/chevron-right.svg" alt="">
-        </li>
-        <li>
-            <a href="#">Якась сторінка</a>
-            <img src="public/images/chevron-right.svg" alt="">
-        </li>
-        <li>
-            <a href="#">Ще якась сторінка</a>
-            <img src="public/images/chevron-right.svg" alt="">
-        </li>
-        <li class=" ">
-            <a href="#">Лумшори</a>
-        </li>
-    </ul>
-    <div class=" container mx-auto">
-        <div class=" text-lg mb-16 text-black">Лумшори: знайдено 287 варіантів</div>
-    </div>
-    <div class="container mx-auto flex">
+<main class="mx-auto sm:w-full md:w-[95%] lg:w-[1170px] px-4 pt-10 md:pt-10 lg:pt-20">
+
+    <!--breadcrumbs-->
+    <div>
+        <div class="overflow-hidden">
+            <ul class="breadcrumbs">
+            <li class="text-header-top-text">
+                <a href="#">Головна</a>
+                <img src="public/images/chevron-right.svg" alt="">
+            </li>
+            <li class="text-header-top-text">
+                <a href="#" class="ml-4">Якась сторінка</a>
+                <img src="public/images/chevron-right.svg" alt="">
+            </li>
+            <li class="text-header-top-text">
+                <a href="#" class="ml-4">Ще якась сторінка</a>
+                <img src="public/images/chevron-right.svg" alt="">
+            </li>
+            <li class="font-bold text-[#252525]">
+                <a href="#" class="ml-4">Лумшори</a>
+            </li>
+        </ul>
+        </div>
         
-        <div class=" flex flex-row justify-start">
-            <div class="w-72 mr-7">
-                <form action="" method="get">
-                    <div class="px-5 bg-bggrey flex flex-col">
-                        <div class=" text-2xl text-black mt-10 mb-7">Пошук оренди</div>
+        <div>
+            <div class="text-[27px] mb-10 md:mb-10 lg:mb-16 text-black font-bold">Лумшори: знайдено 287 варіантів</div>
+        </div>
+    </div>
+
+    <!--services popup md/sm screens-->
+    <div class="services-popup hidden" id="services-popup">
+        <img src="./public/images/filters/hide-services.svg" alt="hide" class="absolute left-4 md:left-8 top-8 cursor-pointer" id="go-back">
+        <h3 class="font-bold text-xl text-center mt-8 mb-5">Послуги</h3>
+        <p class="text-base text-[#595959] text-center mb-8">(Можна вибрати будь-яку кількість послуг)</p>
+        <div class="services-list">
+            <a href="#" class="service-option">Є Wi-Fi</a>
+            <a href="#" class="service-option">З кухнею</a>
+            <a href="#" class="service-option">З басейном</a>
+            <a href="#" class="service-option">З кондиціонером</a>
+            <a href="#" class="service-option">З парковкою</a>
+            <a href="#" class="service-option">Зі сніданком</a>
+            <a href="#" class="service-option">Тег 1</a>
+            <a href="#" class="service-option">Тег 2</a>
+            <a href="#" class="service-option">Тег 3</a>
+            <a href="#" class="service-option">Тег 4</a>
+            <a href="#" class="service-option">Тег 5</a>
+            <a href="#" class="service-option">Тег 6</a>
+            <a href="#" class="service-option">Тег 7</a>
+            <a href="#" class="service-option">Тег 8</a>
+            <a href="#" class="service-option">Тег 9</a>
+            <a href="#" class="service-option">Тег 10</a>
+            <a href="#" class="service-option">Тег 11</a>
+            <a href="#" class="service-option">Тег 12</a>
+            <a href="#" class="service-option">Тег 13</a>
+            <a href="#" class="service-option">Тег 14</a>
+            <a href="#" class="service-option">Тег 15</a>
+            <a href="#" class="service-option">Тег 16</a>
+            <a href="#" class="service-option">Тег 17</a>
+            <a href="#" class="service-option">Тег 18</a>
+            <a href="#" class="service-option">Тег 19</a>
+            <a href="#" class="service-option">Тег 20</a>
+            <a href="#" class="service-option">Тег 21</a>
+            <a href="#" class="service-option">Тег 22</a>
+            <a href="#" class="service-option">Тег 23</a>
+            <a href="#" class="service-option">Тег 24</a>
+            <a href="#" class="service-option">Тег 25</a>
+            <a href="#" class="service-option">Тег 26</a>
+            <a href="#" class="service-option">Тег 27</a>
+            <a href="#" class="service-option">Тег 28</a>
+        </div>
+        <div class="bottom-0 absolute w-full">
+            <div class="block md:hidden lg:hidden bg-[#DDDDDD] text-center text-base px-4 md:px-8 py-1">
+                Знайдено 174 варіанти
+            </div>
+            <div class="flex flex-row justify-between px-4 md:px-8 items-center bg-bggrey py-5">
+                <span class="underline cursor-pointer text-main before:content-['Скасувати_все'] md:before:content-['Скасувати_всі_послуги']"" id="clean-services"></span>
+                <button class="rounded-md bg-main-orange text-white font-bold text-base py-3.5 px-8 hover:bg-hover-orange before:content-['Показати'] md:before:content-['Показати_174_варіанти']" id="show-results" type="submit"></button>
+            </div>
+        </div>
+    </div>
+
+    <!--main content-->
+    <div class="filter-content flex flex-row gap-x-8">
+        <div class="hidden lg:block" id="filters-popup">
+            <div class="filters-top hidden">
+                <img src="./public/images/filters/hide-services.svg" alt="hide" class="absolute left-4 md:left-8 top-8 cursor-pointer" id="go-back-filters">
+                <h3 class="font-bold text-xl text-center mt-8 mb-8">Фільтри</h3>
+            </div>
+            <div class="filters-bottom hidden">
+                <div class="block md:hidden lg:hidden bg-[#DDDDDD] text-center text-base px-4 md:px-8 py-1">
+                    Знайдено 174 варіанти
+                </div>
+                <div class="flex flex-row justify-between px-4 md:px-8 items-center bg-bggrey py-5">
+                    <span class="underline cursor-pointer text-main before:content-['Скасувати_все'] md:before:content-['Скасувати_всі_фільтри']" id="reset-filters"></span>
+                    <button class="rounded-md bg-main-orange text-white font-bold text-base py-3.5 px-8 hover:bg-hover-orange before:content-['Показати'] md:before:content-['Показати_174_варіанти']" id="show-results-filters" type="submit"></button>
+                </div>
+            </div>
+
+            <!--filters-->
+
+            <div class="filters-container w-full md:w-full lg:w-[270px] h-[100vh] md:h-[100vh] lg:h-auto overflow-y-auto px-4 md:px-8 lg:px-0 sm:hidden md:hidden lg:block pb-56 md:pb-48 lg:pb-0" id="filters-container">
+            
+            <!--filter form-->
+
+            <form action="#" method="get" class="rounded-md px-5 py-5 md:py-8 lg:py-10 bg-bggrey flex flex-col mb-5 relative md:relative lg:absolute" id="filterForm">
+                        <div class="text-2xl text-main mb-7 font-semibold">Пошук оренди</div>
                         <div class="mb-5">
-                            <label for="">Місце призначення</label>
-                            <div id="loc_search" class=" pl-3 py-3 mt-2 rounded-md border-gray-400 border bg-white flex fle-row justify-start items-center">
-                                <img src="public/images/icon-map.svg" alt="">
-                                <div id="loc_name" class="w-48 ml-2 border-none text-sm text-black">Оберіть локацію :</div>
+                            <label for="loc_name">Місце призначення</label>
+                            <div id="loc_search" class="pl-3 py-3 mt-2 rounded-md border-gray-400 border bg-white flex flex-row justify-start items-center relative">
+                                <img src="public/images/icon-map.svg" alt="img" class="brightness-[4] w-[26px]">
+                                <div id="loc_name" class="w-48 ml-2 border-none text-base text-black">Колочава</div>
                                 <input name="location" id="loc" type="hidden" value="">
                             </div>
-                            <ul id="loc_group" class="hidden absolute bg-white rounded-md mt-1 overflow-y-scroll h-52 loc_group">
-                                <li class=" flex flex-row py-3 px-6 hover:bg-orange-200" data-location="Колочава">
+                            <ul id="loc_group" class="hidden">
+                                <li data-location="Колочава">
                                     <img src="public/images/icon-map.svg" alt="">
-                                    <div class=" text-sm text-black font-normal pl-2">Колочава</div>
+                                    <div class="text-base text-black font-normal pl-2">Колочава</div>
                                 </li>
-                                <li class=" flex flex-row py-3 px-6 hover:bg-orange-200" data-location="Косино - термальні води">
+                                <li data-location="Косино - термальні води">
                                     <img src="public/images/icon-map.svg" alt="">
-                                    <div class=" text-sm text-black font-normal pl-2">Косино - термальні води</div>
+                                    <div class="text-base text-black font-normal pl-2">Косино - термальні води</div>
                                 </li>
-                                <li class=" flex flex-row py-3 px-6 hover:bg-orange-200" data-location="Лумшори">
+                                <li data-location="Лумшори">
                                     <img src="public/images/icon-map.svg" alt="">
-                                    <div class=" text-sm text-black font-normal pl-2">Лумшори</div>
+                                    <div class="text-base text-black font-normal pl-2">Лумшори</div>
                                 </li>
-                                <li class=" flex flex-row py-3 px-6 hover:bg-orange-200" data-location="Міжгір’я">
+                                <li data-location="Міжгір’я">
                                     <img src="public/images/icon-map.svg" alt="">
-                                    <div class=" text-sm text-black font-normal pl-2">Міжгір’я</div>
+                                    <div class="text-base text-black font-normal pl-2">Міжгір’я</div>
                                 </li>
-                                <li class=" flex flex-row py-3 px-6 hover:bg-orange-200" data-location="Колочава">
+                                <li data-location="Колочава">
                                     <img src="public/images/icon-map.svg" alt="">
-                                    <div class=" text-sm text-black font-normal pl-2">Колочава</div>
+                                    <div class="text-base text-black font-normal pl-2">Колочава</div>
                                 </li>
-                                <li class=" flex flex-row py-3 px-6 hover:bg-orange-200" data-location="Косино - термальні води">
+                                <li data-location="Косино - термальні води">
                                     <img src="public/images/icon-map.svg" alt="">
-                                    <div class=" text-sm text-black font-normal pl-2">Косино - термальні води</div>
+                                    <div class="text-base text-black font-normal pl-2">Косино - термальні води</div>
                                 </li>
-                                <li class=" flex flex-row py-3 px-6 hover:bg-orange-200" data-location="Лумшори">
+                                <li data-location="Лумшори">
                                     <img src="public/images/icon-map.svg" alt="">
-                                    <div class=" text-sm text-black font-normal pl-2">Лумшори</div>
+                                    <div class="text-base text-black font-normal pl-2">Лумшори</div>
                                 </li>
-                                <li class=" flex flex-row py-3 px-6 hover:bg-orange-200" data-location="Міжгір’я">
+                                <li data-location="Міжгір’я">
                                     <img src="public/images/icon-map.svg" alt="">
-                                    <div class=" text-sm text-black font-normal pl-2">Міжгір’я</div>
+                                    <div class="text-base text-black font-normal pl-2">Міжгір’я</div>
                                 </li>
                             </ul> 
                         </div>
-                        <div class=" mb-5">
-                            <label for="">Прибуття</label>
-                            <div id="start_data" class=" pl-3 py-3 mt-2 rounded-md border-gray-400 border bg-white flex fle-row justify-start items-center">
-                                <img src="public/images/icon-service/tabler-icon-calendar-minus.svg" alt="">
-                                <div id="data_s" class="w-48 ml-2 border-none text-sm text-black">24 лютого</div>
-                                <input name="start" id="start" type="hidden" value="">
+                        <div class="flex flex-row md:flex-row lg:flex-col w-full gap-x-5">
+                            <div class="mb-5 w-full">
+                                <label for="check-in-date">Прибуття</label>
+                                <div id="start_data" class="pl-3 py-3 mt-2 rounded-md border-gray-400 border bg-white flex fle-row justify-start items-center">
+                                    <img src="public/images/icon-service/tabler-icon-calendar-minus.svg" alt="">
+                                    <input id="check-in-date" type="text" class="w-full !rounded-r-none !border-r-0 text-sm !pr-2" placeholder="01.01.2024" readonly>
+                                </div>
+                            </div>
+                            <div class="mb-5 w-full">
+                                <label for="check-out-date">Виїзд</label>
+                                <div id="end_data" class=" pl-3 py-3 mt-2 rounded-md border-gray-400 border bg-white flex fle-row justify-start items-center">
+                                    <img src="public/images/icon-service/tabler-icon-calendar-minus.svg" alt="">
+                                    <input id="check-out-date" type="text" class="w-full !rounded-l-none" placeholder="02.01.2024" readonly>
+                                </div>
                             </div>
                         </div>
-                        <div class=" mb-5">
-                            <label for="">Виїзд</label>
-                            <div id="end_data" class=" pl-3 py-3 mt-2 rounded-md border-gray-400 border bg-white flex fle-row justify-start items-center">
-                                <img src="public/images/icon-service/tabler-icon-calendar-minus.svg" alt="">
-                                <div id="data_e" class="w-48 ml-2 border-none text-sm text-black">24 лютого</div>
-                                <input name="end" id="end" type="hidden" value="">
+                        <div class="calendar !hidden" id="calendar">
+                            <div class="flex flex-row  justify-between">
+                                <div class="month" id="prevMonth">
+                                    <div class="flex flex-row items-center pb-5 justify-between lg:justify-start">
+                                        <button class="prevMonthBtn calendar-button mr-10" type="button"><</button>
+                                        <div class="month-name"></div>
+                                        <button class="nextMonthBtn calendar-button ml-10 block lg:hidden" type="button">></button>
+                                    </div>
+                                    <div class="days">
+                                        <div class="day">Вс</div>
+                                        <div class="day">Пн</div>
+                                        <div class="day">Вт</div>
+                                        <div class="day">Ср</div>
+                                        <div class="day">Чт</div>
+                                        <div class="day">Пт</div>
+                                        <div class="day">Сб</div>
+                                    </div>
+                                    <div class="date"></div>
+                                </div>
+                                <div class="month" id="nextMonth">
+                                    <div class="flex flex-row items-center pb-5 justify-end">
+                                        <div class="month-name"></div>
+                                        <button class="nextMonthBtn calendar-button ml-10" type="button">></button>
+                                    </div>
+                                    <div class="days">
+                                        <div class="day">Вс</div>
+                                        <div class="day">Пн</div>
+                                        <div class="day">Вт</div>
+                                        <div class="day">Ср</div>
+                                        <div class="day">Чт</div>
+                                        <div class="day">Пт</div>
+                                        <div class="day">Сб</div>
+                                    </div>
+                                    <div class="date"></div>
+                                </div>
                             </div>
+                            <div id="calendar-error" class="text-sm text-red-500 hidden !pt-4">Дата виїзду має бути більшою за дату заїзду.</div>
                         </div>
-                        <div class=" mb-5">
+
+                        <div class="mb-8">
                             <label for="">Гості</label>
-                            <div id="guest" class=" pl-3 py-3 mt-2 rounded-md border-gray-400 border bg-white flex fle-row justify-start items-center">
+                            <div id="guests-field" class=" pl-3 py-3 mt-2 rounded-md border-gray-400 border bg-white flex fle-row justify-start items-center">
                                 <img src="public/images/icon-service/tabler-icon-user-plus.svg" alt="">
-                                <div id="inp_guest" class="w-48 ml-2 border-none text-sm text-black">1 дорослий без дітей</div>
+                                <div id="inp_guest" class="w-48 ml-2 border-none text-base text-black">1 Гість</div>
                                 <input name="guest_data" id="guest_data" type="hidden" value="">
                             </div>
-                        </div>
-                        
-                            <button id="form_filter" class=" bg-orange-400 text-white text-xl font-bold px-16 py-6  mt-10 mb-5 rounded-md" type="submit">Шукати</button>
-                        
-                        
-                    </div>        
-                </form> 
-            </div>
-            <div>
-                <div class=" flex flex-row justify-start items-center border-b-2 border-b-slate-300 mb-5 pb-5">
-                    <a class=" bg-bggrey py-2 px-4 mr-3 hover:bg-white border-2 hover:border-orange-400" href="#">Є Wi-Fi</a>
-                    <a class=" bg-bggrey py-2 px-4 mr-3 hover:bg-white border-2 hover:border-orange-400"href="#">З кухнею</a>
-                    <a class=" bg-bggrey py-2 px-4 mr-3 hover:bg-white border-2 hover:border-orange-400" href="#">З басейном</a>
-                    <button class=" text-black-orange text-base underline" >Показати більше</button>
-                </div>
-                <div class=" flex justify-between items-center mb-8">
-                    <a href="#" class="flex text-x text-base border border-red-500 py-1 pr-1 pl-5" >Скасувати фільтри 
-                        <img src="public/images/icon-service/x.svg" alt="">
-                    </a>
-                    <div class=" flex justify-between items-center">
-                        <div>
-                            <div class=" flex justify-between items-center bg-bggrey  rounded mr-7 pr-1 pl-4 py-1">
-                                <div class=" mr-6">Від дешевих</div> 
-                                <img src="public/images/icon-service/Vector.svg" alt="">
-                            </div>
-                            <ul id="sort_filter" class=" absolute bg-white rounded ">
-                                <li class=" pt-5 pb-3 px-7">За рейтингом </li>
-                                <li class=" pt-5 pb-3 px-7">За ціною </li>
+                            <div id="guests-counter" class="hidden guests-filter absolute bg-white rounded-md p-5 w-[90%] md:w-[400px] lg:w-[260px] mt-[5px] z-50">
+                            <ul class="flex flex-col gap-6">
+                                <li class="flex flex-row justify-between items-center">
+                                    <div class="flex flex-col gap-1">
+                                        <span class="font-bold">Дорослі</span>
+                                        <span class="text-gray-500">Від 13 років</span>
+                                    </div>
+                                    <div class="flex flex-row gap-3 items-center">
+                                        <button type="button" class="border-2 rounded-full w-8 h-8 cursor-pointer border-gray-400 text-gray-400" id="decrease-adults">-</button>
+                                        <span id="adults">1</span>
+                                        <button  type="button" class="border-2 rounded-full w-8 h-8 cursor-pointer border-gray-400 text-gray-400" id="increase-adults">+</button>
+                                    </div>
+                                </li>
+                                <li class="flex flex-row justify-between items-center">
+                                    <div class="flex flex-col gap-1">
+                                        <span class="font-bold">Діти</span>
+                                        <span class="text-gray-500">2 - 12 років</span>
+                                    </div>
+                                    <div class="flex flex-row gap-3 items-center">
+                                        <button type="button" class="border-2 rounded-full w-8 h-8 cursor-pointer border-gray-400 text-gray-400" id="decrease-children">-</button>
+                                        <span id="children">0</span>
+                                        <button  type="button" class="border-2 rounded-full w-8 h-8 cursor-pointer border-gray-400 text-gray-400" id="increase-children">+</button>
+                                    </div>
+                                </li>
+                                <li class="flex flex-row justify-between items-center">
+                                    <div class="flex flex-col gap-1">
+                                        <span class="font-bold">Немовля</span>
+                                        <span class="text-gray-500">Молодше 2</span>
+                                    </div>
+                                    <div class="flex flex-row gap-3 items-center">
+                                        <button type="button" class="border-2 rounded-full w-8 h-8 cursor-pointer border-gray-400 text-gray-400" id="decrease-infants">-</button>
+                                        <span id="infants">0</span>
+                                        <button  type="button" class="border-2 rounded-full w-8 h-8 cursor-pointer border-gray-400 text-gray-400" id="increase-infants">+</button>
+                                    </div>
+                                </li>
+                                <li class="flex flex-row justify-between items-center">
+                                    <div class="flex flex-col gap-1">
+                                        <span class="font-bold">Домашні улюбленці</span>
+                                    </div>
+                                    <div class="flex flex-row gap-3 items-center">
+                                        <button type="button" class="border-2 rounded-full w-8 h-8 cursor-pointer border-gray-400 text-gray-400" id="decrease-pets">-</button>
+                                        <span id="pets">0</span>
+                                        <button type="button" class="border-2 rounded-full w-8 h-8 cursor-pointer border-gray-400 text-gray-400" id="increase-pets">+</button>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
-                        
-                        <img src="public/images/icon-service/grid-2.svg" alt="">
-                        <img src="public/images/icon-service/grid.svg" alt="">
+                        </div>
+                        <button id="form_filter" class="bg-main-orange text-white text-xl font-bold w-full py-6 rounded-md hover:bg-hover-orange hidden md:hidden lg:block" type="submit">Шукати</button>     
+            </form> 
+
+            <!--map-->
+            <div class="pt-0 lg:pt-[670px]">
+
+            
+            <div class="filters-map mb-10 cursor-pointer" id="open-map">
+                <img src="public/images/filters/filters-map.jpg" alt="map" class="rounded-md block md:hidden lg:block w-full object-cover h-[90px] lg:h-[100px]">
+                <div class="relative hidden md:block lg:hidden">
+                    <img src="public/images/filters/full-map.png" alt="map" class="rounded-md h-[100px] w-full object-cover">
+                </div>
+            </div>
+            <div id="map-overlay" class="slider-overlay hidden">
+                <div class="map-popup">
+                    <div class="block lg:hidden bg-white">
+                        <img src="./public/images/filters/hide-services.svg" alt="hide" class="absolute left-4 md:left-8 top-8 cursor-pointer" id="go-back-map">
+                        <h3 class="font-bold text-xl text-center mt-8 mb-8">Карта</h3>
+                    </div>
+                    <img src="public/images/icon-close-round.svg" alt="icon-close" id="close-map" class="hidden md:hidden lg:block">
+                    <iframe class="map-iframe relative" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2647.380602922082!2d23.689662926953133!3d48.43003460000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47376232ac998769%3A0xbdf0d44f6872e01b!2zSG90ZWzKuSAiQXpoaW8i!5e0!3m2!1sen!2sua!4v1712139978466!5m2!1sen!2sua" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!--filter accordions-->
+
+            <div class="filter-accordion flex flex-row justify-between bg-bggrey p-2.5 mb-5 rounded active">
+                <span class="font-semibold text-base">Ціна</span>
+                <img src="public/images/icon-service/Vector.svg" alt="icon" class="mr-2 rotate-180">
+            </div>
+            <div class="filter-panel flex flex-row items-center justify-between mb-10">
+                <input type="number" name="min-price" id="min-price" class="num-input rounded-md bg-white border-2 border-zinc-300 py-2 px-3 w-[45%] focus:outline-main-orange">
+                <span class="text-zinc-300">&mdash;</span>
+                <input type="number" name="max-price" id="max-price" class="num-input rounded-md bg-white border-2 border-zinc-300 py-2 px-3 w-[45%] focus:outline-main-orange">
+            </div>
+
+            <div class="filter-accordion flex flex-row justify-between bg-bggrey p-2.5 mb-6 rounded active">
+                <span class="font-semibold text-base">Площа</span>
+                <img src="public/images/icon-service/Vector.svg" alt="icon" class="mr-2 rotate-180">
+            </div>
+            <div class="filter-panel grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-y-5 pl-2.5 mb-10">
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="area1" id="area1" class="w-5 h-5 accent-main-orange">
+                    <label for="area1">10+ m²</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="area2" id="area2" class="w-5 h-5 accent-main-orange">
+                    <label for="area2">20+ m²</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="area3" id="area3" class="w-5 h-5 accent-main-orange">
+                    <label for="area3">30+ m²</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="area4" id="area4" class="w-5 h-5 accent-main-orange">
+                    <label for="area4">40+ m²</label>
+                </div>
+            </div>
+
+            <div class="filter-accordion flex flex-row justify-between bg-bggrey p-2.5 mb-6 rounded active">
+                <span class="font-semibold text-base">Кількість людей</span>
+                <img src="public/images/icon-service/Vector.svg" alt="icon" class="mr-2 rotate-180">
+            </div>
+            <div class="filter-panel grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-y-5 pl-2.5 mb-10">
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="people-quantity1" id="people-quantity1" class="w-5 h-5 accent-main-orange">
+                    <label for="people-quantity1">1</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="people-quantity2" id="people-quantity2" class="w-5 h-5 accent-main-orange">
+                    <label for="people-quantity2">2</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="people-quantity3" id="people-quantity3" class="w-5 h-5 accent-main-orange">
+                    <label for="people-quantity3">3</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="people-quantity4" id="people-quantity4" class="w-5 h-5 accent-main-orange">
+                    <label for="people-quantity4">4</label>
+                </div>
+            </div>
+
+            <div class="filter-accordion flex flex-row justify-between bg-bggrey p-2.5 mb-6 rounded active">
+                <span class="font-semibold text-base">Кількість ліжок</span>
+                <img src="public/images/icon-service/Vector.svg" alt="icon" class="mr-2 rotate-180">
+            </div>
+            <div class="filter-panel grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-y-5 pl-2.5 mb-10">
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="bed-quantity1" id="bed-quantity1" class="w-5 h-5 accent-main-orange">
+                    <label for="bed-quantity1">1</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="bed-quantity2" id="bed-quantity2" class="w-5 h-5 accent-main-orange">
+                    <label for="bed-quantity2">2</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="bed-quantity3" id="bed-quantity3" class="w-5 h-5 accent-main-orange">
+                    <label for="bed-quantity3">3</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="bed-quantity4" id="bed-quantity4" class="w-5 h-5 accent-main-orange">
+                    <label for="bed-quantity4">4</label>
+                </div>
+            </div>
+
+            <div class="filter-accordion flex flex-row justify-between bg-bggrey p-2.5 mb-6 rounded active">
+                <span class="font-semibold text-base">Кількість ванних кімнат</span>
+                <img src="public/images/icon-service/Vector.svg" alt="icon" class="mr-2 rotate-180">
+            </div>
+            <div class="filter-panel grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-y-5 pl-2.5 mb-10">
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="bath-quantity1" id="bath-quantity1" class="w-5 h-5 accent-main-orange">
+                    <label for="bath-quantity1">1</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="bath-quantity2" id="bath-quantity2" class="w-5 h-5 accent-main-orange">
+                    <label for="bath-quantity2">2</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="bath-quantity3" id="bath-quantity3" class="w-5 h-5 accent-main-orange">
+                    <label for="bath-quantity3">3</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="bath-quantity4" id="bath-quantity4" class="w-5 h-5 accent-main-orange">
+                    <label for="bath-quantity4">4</label>
+                </div>
+            </div>
+
+            <div class="filter-accordion flex flex-row justify-between bg-bggrey p-2.5 mb-6 rounded active">
+                <span class="font-semibold text-base">Назначення</span>
+                <img src="public/images/icon-service/Vector.svg" alt="icon" class="mr-2 rotate-180">
+            </div>
+            <div class="filter-panel grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-y-5 pl-2.5 mb-10">
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="for-kids" id="for-kids" class="w-5 h-5 accent-main-orange">
+                    <label for="for-kids">Для дітей</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="allow-pets" id="allow-pets" class="w-5 h-5 accent-main-orange">
+                    <label for="allow-pets">Дозволено з тваринами</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="room-smoking" id="room-smoking" class="w-5 h-5 accent-main-orange">
+                    <label for="room-smoking">Кімната для куріння</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="no-smoking" id="no-smoking" class="w-5 h-5 accent-main-orange">
+                    <label for="no-smoking">Курити заборонено</label>
+                </div>
+            </div>
+
+            <div class="filter-accordion flex flex-row justify-between bg-bggrey p-2.5 mb-6 rounded">
+                <span class="font-semibold text-base">Назва фільтру</span>
+                <img src="public/images/icon-service/Vector.svg" alt="icon" class="mr-2">
+            </div>
+            <div class="filter-panel flex flex-col gap-y-5 pl-2.5 mb-10 hidden">
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="" id="" class="w-5 h-5 accent-main-orange">
+                    <label for="">1</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="" id="" class="w-5 h-5 accent-main-orange">
+                    <label for="">2</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="" id="" class="w-5 h-5 accent-main-orange">
+                    <label for="">3</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="" id="" class="w-5 h-5 accent-main-orange">
+                    <label for="">4</label>
+                </div>
+            </div>
+
+            <div class="filter-accordion flex flex-row justify-between bg-bggrey p-2.5 mb-6 rounded">
+                <span class="font-semibold text-base">Назва фільтру</span>
+                <img src="public/images/icon-service/Vector.svg" alt="icon" class="mr-2">
+            </div>
+            <div class="filter-panel flex flex-col gap-y-5 pl-2.5 mb-10 hidden">
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="" id="" class="w-5 h-5 accent-main-orange">
+                    <label for="">1</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="" id="" class="w-5 h-5 accent-main-orange">
+                    <label for="">2</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="" id="" class="w-5 h-5 accent-main-orange">
+                    <label for="">3</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="" id="" class="w-5 h-5 accent-main-orange">
+                    <label for="">4</label>
+                </div>
+            </div>
+
+            <div class="filter-accordion flex flex-row justify-between bg-bggrey p-2.5 mb-6 rounded">
+                <span class="font-semibold text-base">Назва фільтру</span>
+                <img src="public/images/icon-service/Vector.svg" alt="icon" class="mr-2">
+            </div>
+            <div class="filter-panel flex flex-col gap-y-5 pl-2.5 mb-10 hidden">
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="" id="" class="w-5 h-5 accent-main-orange">
+                    <label for="">1</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="" id="" class="w-5 h-5 accent-main-orange">
+                    <label for="">2</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="" id="" class="w-5 h-5 accent-main-orange">
+                    <label for="">3</label>
+                </div>
+                <div class="flex gap-x-3">
+                    <input type="checkbox" name="" id="" class="w-5 h-5 accent-main-orange">
+                    <label for="">4</label>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+        
+
+        <div class="filter-results">
+            <!--service filter options-->
+            <div class="flex-row justify-between items-center sm:hidden md:hidden lg:flex">
+                <img src="public/images/service/button_sliderL.svg" alt="slider" class="slider-icon pb-10" id="slide-left">
+                <div class="w-[750px] overflow-x-hidden">
+                    <div class="services-filters" id="services-filters">
+                        <a href="#" class="service-option">Є Wi-Fi</a>
+                        <a href="#" class="service-option">З кухнею</a>
+                        <a href="#" class="service-option">З басейном</a>
+                        <a href="#" class="service-option">З кондиціонером</a>
+                        <a href="#" class="service-option">З парковкою</a>
+                        <a href="#" class="service-option">Зі сніданком</a>
+                        <a href="#" class="service-option">Тег 1</a>
+                        <a href="#" class="service-option">Тег 2</a>
+                        <a href="#" class="service-option">Тег 3</a>
+                        <a href="#" class="service-option">Тег 4</a>
+                        <a href="#" class="service-option">Тег 5</a>
+                        <a href="#" class="service-option">Тег 6</a>
+                        <a href="#" class="service-option">Тег 7</a>
+                        <a href="#" class="service-option">Тег 8</a>
+                        <a href="#" class="service-option">Тег 9</a>
+                        <a href="#" class="service-option">Тег 10</a>
+                        <a href="#" class="service-option">Тег 11</a>
+                        <a href="#" class="service-option">Тег 12</a>
+                        <a href="#" class="service-option">Тег 13</a>
+                        <a href="#" class="service-option">Тег 14</a>
+                        <a href="#" class="service-option">Тег 15</a>
+                        <a href="#" class="service-option">Тег 16</a>
+                        <a href="#" class="service-option">Тег 17</a>
+                        <a href="#" class="service-option">Тег 18</a>
+                        <a href="#" class="service-option">Тег 19</a>
+                        <a href="#" class="service-option">Тег 20</a>
+                        <a href="#" class="service-option">Тег 21</a>
+                        <a href="#" class="service-option">Тег 22</a>
+                        <a href="#" class="service-option">Тег 23</a>
+                        <a href="#" class="service-option">Тег 24</a>
+                        <a href="#" class="service-option">Тег 25</a>
+                        <a href="#" class="service-option">Тег 26</a>
+                        <a href="#" class="service-option">Тег 27</a>
+                        <a href="#" class="service-option">Тег 28</a>
                     </div>
                 </div>
-                <div class="grid grid-cols-3 gap-4">
-                    <div class="flex flex-col justify-start">
-                        <img src="public/images/hotel/2021-08-22-scaled.webp" alt="">
-                        <div class="text-base font-semibold text-black mt-4 mb-3">
-                            <a href="#"> Назва готеля</a>
+                <img src="public/images/service/button_slider.svg" alt="slider" class="slider-icon pb-10" id="slide-right">
+            </div>
+           
+            <!--sorting / mode switch-->
+            <div class="flex justify-between items-center mb-8">
+                <a href="#" class="sm:hidden md:hidden lg:flex text-x text-base border border-red-500 py-1.5 pr-3 pl-4 rounded-md" id="clean-filters">Скасувати фільтри 
+                    <img src="public/images/icon-service/x.svg" alt="icon" class="ml-1.5">
+                </a>
+                <div class="flex justify-between items-center w-full md:w-full lg:w-auto">
+                    <div class="flex md:flex lg:hidden gap-2.5 mr-2.5">
+                        <button id="open-filters">Фільтри</button>
+                        <button id="open-services">Послуги</button>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center bg-bggrey rounded pr-1 pl-4 py-2 mb-1 cursor-pointer w-full md:w-[150px] lg:w-[165px]" id="price-sort">
+                            <div class="mr-2 lg:mr-4" id="price-sort-text">Від дешевих</div> 
+                            <img src="public/images/icon-service/Vector.svg" alt="icon" class="mr-1" id="sort-arrow">
                         </div>
-                        <div class="flex flex-row justify-star">
-                            <img src="public/images/icon-map.svg" alt="">
-                            <div class="text-base text-gray-500 pl-2">
-                                Адресса...</div>
-                        </div>
-                        <div class="flex flex-row mt-1.5 mb-1.5 justify-star">
-                            <img src="public/images/main-cards/icon-phone.svg" alt="">
-                            <div class="text-base text-gray-500 pl-2">+380960000000</div>
-                            <img src="public/images/main-cards/icon-eye-off.svg" alt="">
-                        </div>
-                        <div class="flex flex-row justify-star">
-                            <img src="public/images/main-cards/icon-coins.svg" alt="">
-                            <div class="text-base text-gray-500 pl-2">від 1070 ₴ / ніч</div>
+                        <ul id="price-sort-options" class="hidden">
+                            <li id="sort-cheap">Від дешевих</li>
+                            <li id="sort-expensive">Від дорогих</li>
+                        </ul>
+                    </div>
+                    <img src="public/images/icon-service/grid-2.svg" alt="icon" class="ml-6 mr-2.5 cursor-pointer sm:hidden md:hidden lg:flex" id="grid-mode">
+                    <img src="public/images/icon-service/grid.svg" alt="icon" class="cursor-pointer sm:hidden md:hidden lg:flex" id="column-mode">
+                </div>
+            </div>
+
+            <!--filter results-->
+            <div class="grid-mode" id="results">
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/376862503.webp" alt="" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Еко-садиба «Васкул»</a>
+                    </div>
+                    <div class="flex flex-row justify-start">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
                         </div>
                     </div>
-                    <div class="flex flex-col justify-start">
-                        <img src="public/images/hotel/2021-08-22-scaled.webp" alt="">
-                        <div class="text-base font-semibold text-black mt-4 mb-3">
-                            <a href="#"> Назва готеля</a>
-                        </div>
-                        <div class="flex flex-row justify-star">
-                            <img src="public/images/icon-map.svg" alt="">
-                            <div class="text-base text-gray-500 pl-2">
-                                Адресса...</div>
-                        </div>
-                        <div class="flex flex-row mt-1.5 mb-1.5 justify-star">
-                            <img src="public/images/main-cards/icon-phone.svg" alt="">
-                            <div class="text-base text-gray-500 pl-2">+380960000000</div>
-                            <img src="public/images/main-cards/icon-eye-off.svg" alt="">
-                        </div>
-                        <div class="flex flex-row justify-star">
-                            <img src="public/images/main-cards/icon-coins.svg" alt="">
-                            <div class="text-base text-gray-500 pl-2">від 1070 ₴ / ніч</div>
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="eye" class="eye-icon card-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div>   
+                </div>              
+            </div>
+
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/2021-08-22-scaled.webp" alt="img" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Гостинний двір «Лісова казка в лісі</a>
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
                         </div>
                     </div>
-                    <div class="flex flex-col justify-start">
-                        <img src="public/images/hotel/2021-08-22-scaled.webp" alt="">
-                        <div class="text-base font-semibold text-black mt-4 mb-3">
-                            <a href="#"> Назва готеля</a>
-                        </div>
-                        <div class="flex flex-row justify-star">
-                            <img src="public/images/icon-map.svg" alt="">
-                            <div class="text-base text-gray-500 pl-2">
-                                Адресса...</div>
-                        </div>
-                        <div class="flex flex-row mt-1.5 mb-1.5 justify-star">
-                            <img src="public/images/main-cards/icon-phone.svg" alt="">
-                            <div class="text-base text-gray-500 pl-2">+380960000000</div>
-                            <img src="public/images/main-cards/icon-eye-off.svg" alt="">
-                        </div>
-                        <div class="flex flex-row justify-star">
-                            <img src="public/images/main-cards/icon-coins.svg" alt="">
-                            <div class="text-base text-gray-500 pl-2">від 1070 ₴ / ніч</div>
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="icon" class="card-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div> 
+                </div>                    
+            </div>
+
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/hotel_3.png" alt="img" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Готель «Mineral»</a>
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
                         </div>
                     </div>
-                    <div class="flex flex-col justify-start">
-                        <img src="public/images/hotel/2021-08-22-scaled.webp" alt="">
-                        <div class="text-base font-semibold text-black mt-4 mb-3">
-                            <a href="#"> Назва готеля</a>
-                        </div>
-                        <div class="flex flex-row justify-star">
-                            <img src="public/images/icon-map.svg" alt="">
-                            <div class="text-base text-gray-500 pl-2">
-                                Адресса...</div>
-                        </div>
-                        <div class="flex flex-row mt-1.5 mb-1.5 justify-star">
-                            <img src="public/images/main-cards/icon-phone.svg" alt="">
-                            <div class="text-base text-gray-500 pl-2">+380960000000</div>
-                            <img src="public/images/main-cards/icon-eye-off.svg" alt="">
-                        </div>
-                        <div class="flex flex-row justify-star">
-                            <img src="public/images/main-cards/icon-coins.svg" alt="">
-                            <div class="text-base text-gray-500 pl-2">від 1070 ₴ / ніч</div>
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="icon" class="card-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div>   
+                </div>                  
+            </div>
+
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/hotel_4.png" alt="img" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Еко-садиба «Васкул»</a>
+                    </div>
+                    <div class="flex flex-row justify-start">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
                         </div>
                     </div>
-                </div> 
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="icon" class="card-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row card-bottom items-center">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div>     
+                </div>                
+            </div>
+
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/hotel_5.png" alt="img" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Гостинний двір «Лісова казка в лісі</a>
+                    </div>
+                    <div class="flex flex-row justify-start">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
+                        </div>
+                    </div>
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="icon" class="card-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row card-bottom items-center">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div>      
+                </div>               
+            </div>
+
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/hotel_6.png" alt="img" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Еко-садиба «Васкул»</a>
+                    </div>
+                    <div class="flex flex-row justify-start">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
+                        </div>
+                    </div>
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="icon" class="card-icon" class="eye-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row card-bottom items-center">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div>  
+                </div>                   
+            </div>
+
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/hotel_7.png" alt="img" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Готель «Mineral»</a>
+                    </div>
+                    <div class="flex flex-row justify-start">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
+                        </div>
+                    </div>
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="icon" class="card-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row card-bottom items-center">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div>   
+                </div>                  
+            </div>
+
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/hotel_8.png" alt="img" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Еко-садиба «Васкул»</a>
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
+                        </div>
+                    </div>
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="icon" class="card-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row card-bottom items-center">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div> 
+                </div>                    
+            </div>
+
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/hotel_9.png" alt="img" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Гостинний двір «Лісова казка в лісі</a>
+                    </div>
+                    <div class="flex flex-row justify-start">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
+                        </div>
+                    </div>
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="icon" class="card-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row card-bottom items-center">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div>  
+                </div>                
+            </div>
+
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/hotel_10.png" alt="img" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Еко-садиба «Васкул»</a>
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
+                        </div>
+                    </div>
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="icon" class="card-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row card-bottom items-center">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div> 
+                </div>                     
+            </div>
+
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/hotel_11.png" alt="img" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Готель «Mineral»</a>
+                    </div>
+                    <div class="flex flex-row justify-start">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
+                        </div>
+                    </div>
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="icon" class="card-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row card-bottom items-center">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div>  
+                </div>                  
+            </div>
+
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/hotel_12.png" alt="img" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Еко-садиба «Васкул»</a>
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
+                        </div>
+                    </div>
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="icon" class="card-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row card-bottom items-center">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div> 
+                </div>                   
+            </div>
+
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/376862503.webp" alt="img" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Еко-садиба «Васкул»</a>
+                    </div>
+                    <div class="flex flex-row justify-start">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
+                        </div>
+                    </div>
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="icon" class="card-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div> 
+                </div>                  
+            </div>
+
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/2021-08-22-scaled.webp" alt="img" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Гостинний двір «Лісова казка в лісі</a>
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
+                        </div>
+                    </div>
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="icon" class="card-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div> 
+                </div>                   
+            </div>
+
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/hotel_3.png" alt="img" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Готель «Mineral»</a>
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
+                        </div>
+                    </div>
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="icon" class="card-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div>   
+                </div>                  
+            </div>
+
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/376862503.webp" alt="img" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Еко-садиба «Васкул»</a>
+                    </div>
+                    <div class="flex flex-row justify-start">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
+                        </div>
+                    </div>
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="icon" class="card-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div>
+                </div>                     
+            </div>
+
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/2021-08-22-scaled.webp" alt="img" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Гостинний двір «Лісова казка в лісі</a>
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
+                        </div>
+                    </div>
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="icon" class="card-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div>  
+                </div>                 
+            </div>
+
+            <div class="hotel-card">
+                <div class="card-img">
+                    <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
+                    <img src="public/images/hotel/hotel_3.png" alt="img" class="hotel-img">
+                </div>
+                <div class="card-content">
+                    <div class="hotel-title">
+                        <a href="./hotel.html">Готель «Mineral»</a>
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/icon-map.svg" alt="icon" class="card-icon">
+                        <div class="hotel-address">
+                            с. Лумшори, вул. Лугова, 5, Закарпатська область, Україна
+                        </div>
+                    </div>
+                    <div class="hotel-phone">
+                        <img src="public/images/main-cards/icon-phone.svg" alt="icon" class="card-icon">
+                        <div class="phone-overflow">+380969036281</div>
+                        <img src="public/images/main-cards/icon-eye-off.svg" alt="icon" class="card-icon">
+                    </div>
+                    <div class="card-desc">
+                        Добре місце для дешевого сімейного відпочинку. Багато кімнат, з душем та туалетом. Загальна кухня, три з холодильником, електричною плитою, мікрохвильовою піччю та пральною машиною. На території є парковка на 6-8 автомобілів. Також у розпорядженні гостей 3 альтанки, барбекю...
+                    </div>
+                    <div class="flex flex-row items-center card-bottom">
+                        <img src="public/images/main-cards/icon-coins.svg" alt="icon" class="card-icon">
+                        <div class="text-base text-secondary pl-2 card-price">від <span class="price-bold">1070 ₴</span> / ніч</div>
+                        <button class="open-hotel">Відкрити</button>
+                    </div>  
+                </div>                  
+            </div>
+            </div>
+
+            <div class="">
+                <button class="btn-more">Показати ще</button>
             </div> 
+
+            <auth-form></auth-form>
         </div>
 
     </div>
-</div>
-    <div class=" fixed top-0 left-0 w-full h-screen bg-slate-200 bg-opacity-80">
+</main>
+
+<div class="hidden fixed top-0 left-0 w-full h-screen bg-slate-200 bg-opacity-80">
         <div class="  bg-white  w-3/6 mx-auto mt-60 px-6 py-8">
             <div class="flex flex-col justify-between">
                 <div class=" flex flex-row items-center justify-between mt-6">
@@ -258,12 +1167,13 @@
             </div>
 
         </div> 
-    </div>
+</div>
 
-    <footer-component></footer-component>
+<footer-component></footer-component>
     
 </body>
 <script type="module" src="app.js"></script>
-<script type="module" src="./js/uploader.js"></script>
+<!-- <script type="module" src="./js/uploader.js"></script> -->
+<script type="module" src="./js/filter.js"></script>
 
 </html>
