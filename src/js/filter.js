@@ -45,10 +45,29 @@ Array.from(hotelCards).forEach((card) => {
 
 //choosing services
 
-servicesOptions.forEach(option => {
-    option.addEventListener('click', function() {
-        this.classList.add('active-service');
-    });
+const serviceOptions = document.querySelectorAll('.service-option');
+
+function handleServiceOptionClick(event) {
+    const selectedOption = event.target;
+    const optionText = selectedOption.textContent.trim(); 
+
+    const isAlreadyChosen = document.getElementById('choosen-services').querySelector(`.service-option[data-text="${optionText}"]`);
+    
+    if (!isAlreadyChosen) {
+        selectedOption.classList.add('active-service');
+
+        const duplicateOption = document.createElement('a');
+        duplicateOption.href = "#"; 
+        duplicateOption.className = 'service-option'; 
+        duplicateOption.setAttribute('data-text', optionText);
+        duplicateOption.textContent = optionText;
+
+        document.getElementById('choosen-services').appendChild(duplicateOption);
+    }
+}
+
+serviceOptions.forEach(option => {
+    option.addEventListener('click', handleServiceOptionClick);
 });
 
 
@@ -459,7 +478,7 @@ showResultsFilters.addEventListener('click', () => {
 
 function resetFormAndCheckboxes() {
     filterForm.reset();
-    locName.textContent = 'Лумшори';
+    locName.textContent = 'Колочава';
     filterForm.querySelector('#inp_guest').innerText = '1 Гість';
 
     adults = 1;
@@ -485,6 +504,7 @@ cleanFilters.addEventListener('click', function() {
     servicesOptions.forEach(option => {
         option.classList.remove('active-service');
     });
+    document.getElementById('choosen-services').textContent = '';
     resetFormAndCheckboxes();
 });
 
@@ -492,3 +512,82 @@ const goBackMap = document.getElementById('go-back-map');
 goBackMap.addEventListener('click', () => {
     mapOverlay.classList.add('hidden');
 })
+
+//pagination
+
+const totalPages = 25; 
+let currentPage = 1; 
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('prev').addEventListener('click', () => changePage(currentPage - 1));
+    document.getElementById('next').addEventListener('click', () => changePage(currentPage + 1));
+    generatePagination();
+});
+
+function changePage(page) {
+    if (page < 1 || page > totalPages) return;
+    currentPage = page;
+    generatePagination();
+}
+
+function generatePagination() {
+    const pageNumbers = document.getElementById('page-numbers');
+    pageNumbers.innerHTML = '';
+
+    const maxVisiblePages = 10;
+    const middlePages = 6; 
+
+    let startPage, endPage;
+
+    if (totalPages <= maxVisiblePages) {
+        startPage = 1;
+        endPage = totalPages;
+    } else {
+        if (currentPage <= 4) {
+            startPage = 1;
+            endPage = middlePages + 2; 
+        } else if (currentPage > totalPages - 4) {
+            startPage = totalPages - middlePages - 1; 
+            endPage = totalPages;
+        } else {
+            startPage = currentPage - Math.floor(middlePages / 2);
+            endPage = currentPage + Math.floor(middlePages / 2);
+        }
+    }
+
+    if (startPage > 1) {
+        pageNumbers.appendChild(createPageElement(1));
+        if (startPage > 2) {
+            pageNumbers.appendChild(createDotsElement());
+        }
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+        pageNumbers.appendChild(createPageElement(i));
+    }
+
+    if (endPage < totalPages) {
+        if (endPage < totalPages - 1) {
+            pageNumbers.appendChild(createDotsElement());
+        }
+        pageNumbers.appendChild(createPageElement(totalPages));
+    }
+
+    document.getElementById('prev').disabled = currentPage === 1;
+    document.getElementById('next').disabled = currentPage === totalPages;
+}
+
+function createPageElement(page) {
+    const pageElement = document.createElement('span');
+    pageElement.className = `page-number ${page === currentPage ? 'active' : ''}`;
+    pageElement.textContent = page;
+    pageElement.addEventListener('click', () => changePage(page));
+    return pageElement;
+}
+
+function createDotsElement() {
+    const dots = document.createElement('span');
+    dots.className = 'page-number disabled';
+    dots.textContent = '...';
+    return dots;
+}

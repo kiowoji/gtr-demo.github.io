@@ -1211,3 +1211,42 @@ input.invalid {
 .filters-popup .map-popup iframe{
     @apply w-full h-full;
 }
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    max-width: 810px;
+}
+
+.pagination button {
+    @apply px-[20px] rounded bg-[#F7F7F7] text-main-orange text-3xl;
+    border: 1px solid #ccc;
+    margin: 0 25px;
+    cursor: pointer;
+}
+
+.pagination .page-number {
+    @apply rounded py-[6px] px-[16px] cursor-pointer border-2 border-[#ccc];
+    margin: 0 5px;
+}
+
+.pagination .page-number:hover {
+    @apply border-2 border-main-orange;
+}
+
+.page-number.active {
+    @apply inline border-2 border-main-orange bg-[#FFECE1];
+}
+.disabled {
+    pointer-events: none;
+    color: grey;
+}
+#choosen-services .service-option{
+    @apply bg-white py-[5px] px-4 border-[2.5px] border-main-orange rounded-md;
+}
+#choosen-services{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
