@@ -751,15 +751,22 @@ const hotels = [
     }
 ];
 const hotelCardsContainer = document.querySelector(".hotel-cards");
+const iconsGroup = document.getElementsByClassName("icons-group");
+const iconsGroupArray = Array.from(iconsGroup);
 // fetch and display hotels
-function displayHotels() {
+async function displayHotels(service = "") {
     try {
-        // const response = await fetch(''); 
+        // let url = '';
+        // if (service) {
+        //   url = `?service=${service}`;
+        // }
+        // const response = await fetch(url);
         // if (!response.ok) {
         //   throw new Error('Failed to fetch hotels');
         // }
         // const data = await response.json();
         // const hotels = data.hotels;
+        hotelCardsContainer.innerHTML = "";
         hotels.forEach((hotel)=>{
             const hotelCard = document.createElement("div");
             hotelCard.classList.add("hotel-card");
@@ -790,8 +797,17 @@ function displayHotels() {
     }
 }
 displayHotels();
+iconsGroupArray.forEach((item)=>{
+    item.addEventListener("click", ()=>{
+        if (item.classList.contains("active-group")) {
+            const service = item.dataset.service;
+            console.log(service);
+            displayHotels(service);
+        }
+    });
+});
 
-},{"/src/public/images/main-cards/icon-eye-off.svg":"2uc3q","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","/src/public/images/main-cards/icon-coins.svg":"4fdrj","/src/public/images/main-cards/icon-phone.svg":"7dsEt","/src/public/images/icon-map.svg":"d1q9L","/src/public/images/hotel/heart.svg":"cjZ7w","/src/public/images/hotel/376862503.webp":"4UewU"}],"2uc3q":[function(require,module,exports) {
+},{"/src/public/images/main-cards/icon-eye-off.svg":"2uc3q","/src/public/images/main-cards/icon-coins.svg":"4fdrj","/src/public/images/main-cards/icon-phone.svg":"7dsEt","/src/public/images/icon-map.svg":"d1q9L","/src/public/images/hotel/heart.svg":"cjZ7w","/src/public/images/hotel/376862503.webp":"4UewU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2uc3q":[function(require,module,exports) {
 module.exports = require("c647e2f44d60088d").getBundleURL("4rjbb") + "icon-eye-off.abbd0e41.svg" + "?" + Date.now();
 
 },{"c647e2f44d60088d":"lgJ39"}],"lgJ39":[function(require,module,exports) {

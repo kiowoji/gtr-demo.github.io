@@ -130,16 +130,23 @@ const hotels = [
 ];
 
 const hotelCardsContainer = document.querySelector('.hotel-cards');
+const iconsGroup = document.getElementsByClassName('icons-group');
+const iconsGroupArray = Array.from(iconsGroup);
 
 // fetch and display hotels
-function displayHotels() {
+async function displayHotels(service = '') {
     try {
-    // const response = await fetch(''); 
+    // let url = '';
+    // if (service) {
+    //   url = `?service=${service}`;
+    // }
+    // const response = await fetch(url);
     // if (!response.ok) {
     //   throw new Error('Failed to fetch hotels');
     // }
     // const data = await response.json();
     // const hotels = data.hotels;
+    hotelCardsContainer.innerHTML = '';
     hotels.forEach(hotel => {
       const hotelCard = document.createElement('div');
       hotelCard.classList.add('hotel-card');
@@ -173,3 +180,13 @@ function displayHotels() {
 }
 
 displayHotels();
+
+iconsGroupArray.forEach(item => {
+  item.addEventListener('click', () => {
+    if (item.classList.contains('active-group')) {
+      const service = item.dataset.service;
+      console.log(service);
+      displayHotels(service);
+    }
+  });
+});
