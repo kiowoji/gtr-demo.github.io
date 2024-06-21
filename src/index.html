@@ -22,76 +22,76 @@
         <div class="flex side-paddings justify-between">
             <img src="public/images/service/button_sliderL.svg" alt="slider" class="slider-icon" id="slide-left">
             <div class="locations-group" id="scroll-container">
-                <div class="icons-group">
+                <div class="icons-group" data-service="pool">
                     <img src="public/images/service/icon-pool.svg" alt="pool" class="service-icon">
                     <span class="gray-text w-max">З басейном</span>
                 </div>
-                <div class="icons-group">
+                <div class="icons-group" data-service="forest">
                     <img src="public/images/service/icon-forest.svg" alt="forest" class="service-icon">
                     <span class="gray-text w-max">В лісі</span>
                 </div>
-                <div class="icons-group">
+                <div class="icons-group" data-service="fireplace">
                     <img src="public/images/service/icon-fireplace.svg" alt="fireplace" class="service-icon">
                     <span class="gray-text w-max">З каміном</span>
                 </div>
-                <div class="icons-group">
+                <div class="icons-group" data-service="mountains">
                     <img src="public/images/service/icon-mountains.svg" alt="mountains" class="service-icon">
                     <span class="gray-text w-max">В горах</span>
                 </div>
-                <div class="icons-group">
+                <div class="icons-group" data-service="landscape">
                     <img src="public/images/service/icon-landscape.svg" alt="landscape" class="service-icon">
                     <span class="gray-text w-max">З краєвидом</span>
                 </div>
-                <div class="icons-group">
+                <div class="icons-group" data-service="river">
                     <img src="public/images/service/icon-river.svg" alt="river" class="service-icon">
                     <span class="gray-text w-max">Біля річки</span>
                 </div>
-                <div class="icons-group">
+                <div class="icons-group" data-service="bath">
                     <img src="public/images/service/icon-bath.svg" alt="bath" class="service-icon">
                     <span class="gray-text w-max">З чаном</span>
                 </div>
-                <div class="icons-group">
+                <div class="icons-group" data-service="village">
                     <img src="public/images/service/icon-village.svg" alt="village" class="service-icon">
                     <span class="gray-text w-max">В селі</span>
                 </div>
-                <div class="icons-group">
+                <div class="icons-group" data-service="cabin">
                     <img src="public/images/service/icon-log-cabin.svg" alt="cabin" class="service-icon">
                     <span class="gray-text w-max">Зруби</span>
                 </div>
-                <div class="icons-group">
+                <div class="icons-group" data-service="lake">
                     <img src="public/images/service/icon-lake.svg" alt="lake" class="service-icon">
                     <span class="gray-text w-max">Біля озера</span>
                 </div>
-                <div class="icons-group">
+                <div class="icons-group" data-service="tour-base">
                     <img src="public/images/service/icon-tourist-base.svg" alt="base" class="service-icon">
                     <span class="gray-text w-max">Тур база</span>
                 </div>
-                <div class="icons-group">
+                <div class="icons-group" data-service="apartments">
                     <img src="public/images/service/icon-apartment.svg" alt="apartments" class="service-icon">
                     <span class="gray-text w-max">Апартаменти</span>
                 </div>
-                <div class="icons-group">
+                <div class="icons-group" data-service="child-camp">
                     <img src="public/images/service/icon-childrens-camp.svg" alt="child" class="service-icon">
                     <span class="gray-text w-max">Дитячий табор</span>
                 </div>
-                <div class="icons-group">
+                <div class="icons-group" data-service="cottage">
                     <img src="public/images/service/icon-cottage.svg" alt="cottage" class="service-icon">
                     <span class="gray-text w-max">Котедж</span>
                 </div>
-                <div class="icons-group">
+                <div class="icons-group" data-service="hostel">
                     <img src="public/images/service/icon-hostel.svg" alt="hostel" class="service-icon">
                     <span class="gray-text w-max">Хостел</span>
                 </div>
-                <div class="icons-group">
+                <div class="icons-group" data-service="hotel">
                     <img src="public/images/service/icon-hotel.svg" alt="hotel" class="service-icon">
                     <span class="gray-text w-max">Готель</span>
                 </div>
-                <div class="icons-group">
-                    <img src="public/images/service/icon-private-sector.svg" alt="hotel" class="service-icon">
+                <div class="icons-group" data-service="private-sector">
+                    <img src="public/images/service/icon-private-sector.svg" alt="private-sector" class="service-icon">
                     <span class="gray-text w-max">Приватне житло</span>
                 </div>
-                <div class="icons-group">
-                    <img src="public/images/service/icon-sanatorium.svg" alt="hotel" class="service-icon">
+                <div class="icons-group" data-service="sanatorium">
+                    <img src="public/images/service/icon-sanatorium.svg" alt="sanatorium" class="service-icon">
                     <span class="gray-text w-max">Cанаторій</span>
                 </div>
             </div>
@@ -100,7 +100,7 @@
 
         <!--hotel cards-->
         <div class="hotel-cards side-paddings">
-            <div class="hotel-card">
+            <!-- <div class="hotel-card">
                 <img src="public/images/hotel/heart.svg" alt="like" class="like-icon">
                 <img src="public/images/hotel/376862503.webp" alt="" class="hotel-img">
                 <div class="hotel-title">
@@ -374,7 +374,7 @@
                     <img src="public/images/main-cards/icon-coins.svg" alt="">
                     <div class="text-base text-secondary pl-2">від 1070 ₴ / ніч</div>
                 </div>                    
-            </div>
+            </div> -->
         </div>
         <div class="side-paddings">
             <button class="btn-more">Показати ще</button>
@@ -1024,5 +1024,6 @@
     <script src="./js/splide.js" type="module"></script>
     <!-- <script src="./js/auth.js" type="module"></script> -->
     <script type="module" src="app.js"></script>
+    <script type="module" src="./js/sort-by-location.js"></script>
 </body>
 </html>
