@@ -551,6 +551,10 @@ img, video {
   margin-top: 100px;
 }
 
+.mt-\[30px\] {
+  margin-top: 30px;
+}
+
 .mt-\[44px\] {
   margin-top: 44px;
 }
@@ -565,14 +569,6 @@ img, video {
 
 .mt-\[60px\] {
   margin-top: 60px;
-}
-
-.mt-\[\] {
-  margin-top: ;
-}
-
-.mt-\[30px\] {
-  margin-top: 30px;
 }
 
 .block {
