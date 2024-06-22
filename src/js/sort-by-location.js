@@ -190,3 +190,11 @@ iconsGroupArray.forEach(item => {
     }
   });
 });
+
+const hotelCards = document.getElementsByClassName('hotel-card');
+
+Array.from(hotelCards).forEach((card) => {
+  card.addEventListener('click', () => {
+    window.location.href = 'hotel.html';
+  });
+});

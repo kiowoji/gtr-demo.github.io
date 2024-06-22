@@ -806,6 +806,12 @@ iconsGroupArray.forEach((item)=>{
         }
     });
 });
+const hotelCards = document.getElementsByClassName("hotel-card");
+Array.from(hotelCards).forEach((card)=>{
+    card.addEventListener("click", ()=>{
+        window.location.href = "hotel.html";
+    });
+});
 
 },{"/src/public/images/main-cards/icon-eye-off.svg":"2uc3q","/src/public/images/main-cards/icon-coins.svg":"4fdrj","/src/public/images/main-cards/icon-phone.svg":"7dsEt","/src/public/images/icon-map.svg":"d1q9L","/src/public/images/hotel/heart.svg":"cjZ7w","/src/public/images/hotel/376862503.webp":"4UewU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2uc3q":[function(require,module,exports) {
 module.exports = require("c647e2f44d60088d").getBundleURL("4rjbb") + "icon-eye-off.abbd0e41.svg" + "?" + Date.now();

@@ -567,6 +567,14 @@ img, video {
   margin-top: 60px;
 }
 
+.mt-\[\] {
+  margin-top: ;
+}
+
+.mt-\[30px\] {
+  margin-top: 30px;
+}
+
 .block {
   display: block;
 }

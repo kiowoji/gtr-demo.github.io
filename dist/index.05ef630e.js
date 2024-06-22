@@ -629,12 +629,6 @@ arrowLeft.addEventListener("click", ()=>{
 arrowRight.addEventListener("click", ()=>{
     categories.scrollLeft += 150;
 });
-const hotelCards = document.getElementsByClassName("hotel-card");
-Array.from(hotelCards).forEach((card)=>{
-    card.addEventListener("click", ()=>{
-        window.location.href = "hotel.html";
-    });
-});
 const locationCards = document.getElementsByClassName("location-img");
 Array.from(locationCards).forEach((card)=>{
     card.addEventListener("click", ()=>{
