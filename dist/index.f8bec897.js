@@ -777,24 +777,41 @@ async function displayHotels(service = "") {
           <a href="${hotel.url}">${hotel.name}</a>
         </div>
         <div class="flex flex-row justify-start">
-          <img src=${0, _iconMapSvgDefault.default} alt="icon">
+          <img src=${0, _iconMapSvgDefault.default} alt="icon" class="object-contain">
           <div class="hotel-address">${hotel.address}</div>
         </div>
         <div class="hotel-phone">
-          <img src=${0, _iconPhoneSvgDefault.default} alt="icon">
+          <img src=${0, _iconPhoneSvgDefault.default} alt="icon" class="object-contain">
           <div class="phone-overflow">${hotel.phone}</div>
           <img src=${0, _iconEyeOffSvgDefault.default} alt="eye" class="eye-icon">
         </div>
         <div class="flex flex-row justify-start">
-          <img src="${0, _iconCoinsSvgDefault.default}" alt="icon">
+          <img src="${0, _iconCoinsSvgDefault.default}" alt="icon" class="object-contain">
           <div class="text-base text-secondary pl-2">${hotel.price}</div>
         </div>
       `;
             hotelCardsContainer.appendChild(hotelCard);
         });
+        attachHotelCardListeners();
     } catch (error) {
         console.error("Error displaying hotels:", error);
     }
+}
+function attachHotelCardListeners() {
+    const hotelCards = document.getElementsByClassName("hotel-card");
+    Array.from(hotelCards).forEach((card)=>{
+        card.addEventListener("click", ()=>{
+            window.location.href = "hotel.html";
+        });
+    });
+    const overlay = document.getElementById("auth-overlay");
+    const likeButtons = document.querySelectorAll(".like-icon");
+    likeButtons.forEach((likeButton)=>{
+        likeButton.addEventListener("click", function(event) {
+            overlay.classList.remove("hidden");
+            event.stopPropagation();
+        });
+    });
 }
 displayHotels();
 iconsGroupArray.forEach((item)=>{
@@ -804,12 +821,6 @@ iconsGroupArray.forEach((item)=>{
             console.log(service);
             displayHotels(service);
         }
-    });
-});
-const hotelCards = document.getElementsByClassName("hotel-card");
-Array.from(hotelCards).forEach((card)=>{
-    card.addEventListener("click", ()=>{
-        window.location.href = "hotel.html";
     });
 });
 

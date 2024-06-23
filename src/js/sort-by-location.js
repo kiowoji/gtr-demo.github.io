@@ -158,25 +158,43 @@ async function displayHotels(service = '') {
           <a href="${hotel.url}">${hotel.name}</a>
         </div>
         <div class="flex flex-row justify-start">
-          <img src=${mapIcon} alt="icon">
+          <img src=${mapIcon} alt="icon" class="object-contain">
           <div class="hotel-address">${hotel.address}</div>
         </div>
         <div class="hotel-phone">
-          <img src=${phoneIcon} alt="icon">
+          <img src=${phoneIcon} alt="icon" class="object-contain">
           <div class="phone-overflow">${hotel.phone}</div>
           <img src=${eyeIcon} alt="eye" class="eye-icon">
         </div>
         <div class="flex flex-row justify-start">
-          <img src="${coinIcon}" alt="icon">
+          <img src="${coinIcon}" alt="icon" class="object-contain">
           <div class="text-base text-secondary pl-2">${hotel.price}</div>
         </div>
       `;
 
       hotelCardsContainer.appendChild(hotelCard);
     });
+      attachHotelCardListeners();
   } catch (error) {
     console.error('Error displaying hotels:', error);
   }
+}
+
+function attachHotelCardListeners() {
+  const hotelCards = document.getElementsByClassName('hotel-card');
+  Array.from(hotelCards).forEach((card) => {
+    card.addEventListener('click', () => {
+      window.location.href = 'hotel.html';
+    });
+  });
+  const overlay = document.getElementById("auth-overlay");
+  const likeButtons = document.querySelectorAll(".like-icon");
+  likeButtons.forEach((likeButton) => {
+        likeButton.addEventListener("click", function(event) {
+        overlay.classList.remove("hidden");
+        event.stopPropagation();
+    });
+    })
 }
 
 displayHotels();
@@ -191,10 +209,3 @@ iconsGroupArray.forEach(item => {
   });
 });
 
-const hotelCards = document.getElementsByClassName('hotel-card');
-
-Array.from(hotelCards).forEach((card) => {
-  card.addEventListener('click', () => {
-    window.location.href = 'hotel.html';
-  });
-});
