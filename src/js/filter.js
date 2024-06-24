@@ -515,13 +515,14 @@ goBackMap.addEventListener('click', () => {
 
 //pagination
 
-const totalPages = 25; 
-let currentPage = 1; 
+const totalPages = 25;
+let currentPage = 1;
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('prev').addEventListener('click', () => changePage(currentPage - 1));
     document.getElementById('next').addEventListener('click', () => changePage(currentPage + 1));
     generatePagination();
+    window.addEventListener('resize', generatePagination);
 });
 
 function changePage(page) {
@@ -534,32 +535,50 @@ function generatePagination() {
     const pageNumbers = document.getElementById('page-numbers');
     pageNumbers.innerHTML = '';
 
-    const maxVisiblePages = 10;
-    const middlePages = 6; 
+    const width = window.innerWidth;
+    let maxVisibleElements;
+
+    if (width < 576) {
+        maxVisibleElements = 5;
+    } else if (width < 1024) {
+        maxVisibleElements = 8;
+    } else {
+        maxVisibleElements = 10;
+    }
 
     let startPage, endPage;
 
-    if (totalPages <= maxVisiblePages) {
+    if (totalPages <= maxVisibleElements) {
         startPage = 1;
         endPage = totalPages;
     } else {
-        if (currentPage <= 4) {
+        const sidePages = Math.floor((maxVisibleElements - 3) / 2);
+        if (currentPage <= sidePages + 1) {
             startPage = 1;
-            endPage = middlePages + 2; 
-        } else if (currentPage > totalPages - 4) {
-            startPage = totalPages - middlePages - 1; 
+            endPage = maxVisibleElements - 2;
+        } else if (currentPage >= totalPages - sidePages) {
+            startPage = totalPages - maxVisibleElements + 3;
             endPage = totalPages;
         } else {
-            startPage = currentPage - Math.floor(middlePages / 2);
-            endPage = currentPage + Math.floor(middlePages / 2);
+            startPage = currentPage - sidePages + 1;
+            endPage = currentPage + sidePages - 1;
         }
     }
 
+    const addDot = (where) => {
+        const dots = document.createElement('span');
+        dots.className = 'page-number disabled';
+        dots.textContent = '...';
+        if (where === 'start') {
+            pageNumbers.insertBefore(dots, pageNumbers.firstChild.nextSibling);
+        } else {
+            pageNumbers.appendChild(dots);
+        }
+    };
+
     if (startPage > 1) {
         pageNumbers.appendChild(createPageElement(1));
-        if (startPage > 2) {
-            pageNumbers.appendChild(createDotsElement());
-        }
+        addDot('start');
     }
 
     for (let i = startPage; i <= endPage; i++) {
@@ -567,9 +586,7 @@ function generatePagination() {
     }
 
     if (endPage < totalPages) {
-        if (endPage < totalPages - 1) {
-            pageNumbers.appendChild(createDotsElement());
-        }
+        addDot('end');
         pageNumbers.appendChild(createPageElement(totalPages));
     }
 
@@ -583,11 +600,4 @@ function createPageElement(page) {
     pageElement.textContent = page;
     pageElement.addEventListener('click', () => changePage(page));
     return pageElement;
-}
-
-function createDotsElement() {
-    const dots = document.createElement('span');
-    dots.className = 'page-number disabled';
-    dots.textContent = '...';
-    return dots;
 }

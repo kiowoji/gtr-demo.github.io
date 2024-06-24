@@ -1213,22 +1213,18 @@ input.invalid {
 }
 
 .pagination {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @apply max-w-[345px] md:max-w-[700px] lg:max-w-[810px] flex items-center justify-center mx-auto;
     margin-bottom: 50px;
-    max-width: 810px;
 }
 
 .pagination button {
-    @apply px-[20px] rounded bg-[#F7F7F7] text-main-orange text-3xl;
+    @apply px-3 md:px-[20px] lg:px-[20px] rounded bg-[#F7F7F7] text-main-orange text-3xl mx-[5px] md:mx-[25px] lg:mx-[25px];
     border: 1px solid #ccc;
-    margin: 0 25px;
     cursor: pointer;
 }
 
 .pagination .page-number {
-    @apply rounded py-[6px] px-[16px] cursor-pointer border-2 border-[#ccc];
+    @apply rounded py-[6px] px-3 md:px-[16px] lg:px-[16px] cursor-pointer border-2 border-[#ccc];
     margin: 0 5px;
 }
 

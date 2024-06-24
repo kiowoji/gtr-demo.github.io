@@ -551,6 +551,10 @@ img, video {
   margin-top: 100px;
 }
 
+.mt-\[30px\] {
+  margin-top: 30px;
+}
+
 .mt-\[44px\] {
   margin-top: 44px;
 }
@@ -711,6 +715,10 @@ img, video {
   width: 26px;
 }
 
+.w-\[365px\] {
+  width: 365px;
+}
+
 .w-\[40px\] {
   width: 40px;
 }
@@ -739,24 +747,12 @@ img, video {
   width: max-content;
 }
 
-.w-\[365px\] {
-  width: 365px;
-}
-
-.max-w-\[360px\] {
-  max-width: 360px;
-}
-
 .max-w-fit {
   max-width: fit-content;
 }
 
 .max-w-full {
   max-width: 100%;
-}
-
-.max-w-\[365px\] {
-  max-width: 365px;
 }
 
 .grow {
@@ -788,6 +784,10 @@ img, video {
 
 .resize-none {
   resize: none;
+}
+
+.resize {
+  resize: both;
 }
 
 .grid-cols-1 {
@@ -6241,9 +6241,26 @@ input.invalid:focus {
 .pagination {
   justify-content: center;
   align-items: center;
-  max-width: 810px;
-  margin-bottom: 50px;
+  max-width: 345px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
+}
+
+@media (width >= 768px) {
+  .pagination {
+    max-width: 700px;
+  }
+}
+
+@media (width >= 1440px) {
+  .pagination {
+    max-width: 810px;
+  }
+}
+
+.pagination {
+  margin-bottom: 50px;
 }
 
 .pagination button {
@@ -6251,14 +6268,36 @@ input.invalid:focus {
   background-color: rgb(247 247 247 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(221 106 36 / var(--tw-text-opacity));
-  cursor: pointer;
-  border: 1px solid #ccc;
   border-radius: .25rem;
-  margin: 0 25px;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: .75rem;
+  padding-right: .75rem;
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+@media (width >= 768px) {
+  .pagination button {
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (width >= 1440px) {
+  .pagination button {
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.pagination button {
+  cursor: pointer;
+  border: 1px solid #ccc;
 }
 
 .pagination .page-number {
@@ -6267,8 +6306,25 @@ input.invalid:focus {
   border-width: 2px;
   border-color: rgb(204 204 204 / var(--tw-border-opacity));
   border-radius: .25rem;
+  padding: 6px .75rem;
+}
+
+@media (width >= 768px) {
+  .pagination .page-number {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (width >= 1440px) {
+  .pagination .page-number {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.pagination .page-number {
   margin: 0 5px;
-  padding: 6px 16px;
 }
 
 .pagination .page-number:hover {
