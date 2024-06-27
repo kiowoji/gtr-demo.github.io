@@ -9,6 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@21.0.6/build/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
     <title>Hotel</title>
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@21.0.6/build/js/intlTelInput.min.js"></script>
 </head>
@@ -51,7 +57,7 @@
         <div id="map-overlay" class="slider-overlay hidden">
             <div class="map-popup">
                 <img src="public/images/icon-close-round.svg" alt="icon-close" id="close-map">
-                <iframe class="map-iframe relative" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2647.380602922082!2d23.689662926953133!3d48.43003460000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47376232ac998769%3A0xbdf0d44f6872e01b!2zSG90ZWzKuSAiQXpoaW8i!5e0!3m2!1sen!2sua!4v1712139978466!5m2!1sen!2sua" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div id="map-extended"></div>
                 <div class="map-info shadow-md">
                     <div class="font-semibold text-base mb-2.5">Готель «Ажіо»</div>
                     <div class="rating mb-2" id="rating">
@@ -489,8 +495,8 @@
                         <img src="public/images/icon-map.svg" alt="map" class="object-contain">
                         <div class="map-address">вул. Шевченка, 81А, с. Колочава, Закарпатська обл., Україна, 90043</div> 
                     </div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2647.380602922082!2d23.689662926953133!3d48.43003460000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47376232ac998769%3A0xbdf0d44f6872e01b!2zSG90ZWzKuSAiQXpoaW8i!5e0!3m2!1sen!2sua!4v1712139978466!5m2!1sen!2sua" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+                    <div id="map-main"></div>
+                </div> 
                 <div class="service-hotel">
                     <div class="service-title">Правила</div>
                     <div class="wrapper-type">

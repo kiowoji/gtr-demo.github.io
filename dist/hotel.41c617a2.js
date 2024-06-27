@@ -656,8 +656,44 @@ document.addEventListener("DOMContentLoaded", function() {
     const openMap = document.getElementById("open-map");
     const mapOverlay = document.getElementById("map-overlay");
     const hotelLocation = document.querySelector(".hotel-location");
+    // maps
+    function initializeMap(containerId, coordinates) {
+        let map1 = L.map(containerId).setView(coordinates, 19);
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 20,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map1);
+        L.marker(coordinates).addTo(map1);
+        return map1;
+    }
+    const coordinates = [
+        48.42992,
+        23.69376
+    ];
+    async function fetchCoordinates() {
+        try {
+            let response = await fetch(""); // Add your API endpoint here
+            if (!response.ok) throw new Error("Network response was not ok");
+            let data = await response.json();
+            let x = data.latitude;
+            let y = data.longitude;
+            map.setView([
+                x,
+                y
+            ], 19);
+            marker.setLatLng([
+                x,
+                y
+            ]);
+        } catch (error) {
+            console.error("Error fetching coordinates:", error);
+        }
+    }
+    fetchCoordinates();
+    let mapMain = initializeMap("map-main", coordinates);
     openMap.addEventListener("click", ()=>{
         mapOverlay.classList.remove("hidden");
+        initializeMap("map-extended", coordinates);
     });
     hotelLocation.addEventListener("click", ()=>{
         mapOverlay.classList.remove("hidden");

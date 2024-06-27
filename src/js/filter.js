@@ -422,17 +422,63 @@ gridMode.addEventListener('click', () => {
     results.classList.add('column-mode');
 })
 
+//map
+
 const closeMap = document.getElementById('close-map');
 const openMap = document.getElementById('open-map');
 const mapOverlay = document.getElementById('map-overlay');
 
-openMap.addEventListener('click', () => {
-mapOverlay.classList.remove('hidden');
-})
+const defaultCoordinates = [48.42992, 23.69376];
+const multipleCoordinates = [
+  [48.42992, 23.69376],
+  [48.43012, 23.69476],
+  [48.42952, 23.69276],
+  [48.43032, 23.69576]
+]; 
+
+let mapFilter;
+let markers = [];
+
+// async function fetchCoordinates() {
+//     try {
+//         let response = await fetch(''); // Add your API endpoint here
+//         if (!response.ok) {
+//             throw new Error('Network response was not ok');
+//         }
+//         let data = await response.json();
+//         return [data.latitude, data.longitude];
+//     } catch (error) {
+//         console.error('Error fetching coordinates:', error);
+//         return defaultCoordinates; // Fallback to default coordinates on error
+//     }
+// }
+
+openMap.addEventListener('click', async () => {
+  mapOverlay.classList.remove('hidden');
+
+  if (!mapFilter) {
+    mapFilter = L.map('map-filter').setView(defaultCoordinates, 19);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 20,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(mapFilter);
+
+    multipleCoordinates.forEach((coordinate) => {
+      const marker = L.marker(coordinate).addTo(mapFilter);
+      markers.push(marker);
+    });
+  } else {
+    mapFilter.setView(defaultCoordinates, 19);
+    markers.forEach((marker) => {
+      marker.setLatLng(defaultCoordinates);
+    });
+  }
+});
 
 closeMap.addEventListener('click', () => {
-mapOverlay.classList.add('hidden');
-})
+    mapOverlay.classList.add('hidden');
+});
 
 //services popup
 

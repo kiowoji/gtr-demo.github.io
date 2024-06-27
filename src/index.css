@@ -1246,3 +1246,22 @@ input.invalid {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+#map-main { 
+    height: 450px; 
+    width: 100%;
+    will-change: transform;
+}
+
+#map-extended { 
+    height: 100%; 
+    width: 100%;
+    will-change: transform;
+    border-radius: 20px;
+}
+
+#map-filter{ 
+    height: 100%; 
+    width: 100%;
+    will-change: transform;
+    border-radius: 20px;
+}
