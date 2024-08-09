@@ -114,26 +114,26 @@ function initializeMap(containerId, coordinates) {
 
 const coordinates = [48.42992, 23.69376];
 
-async function fetchCoordinates() {
-    try {
-        let response = await fetch(''); // Add your API endpoint here
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        let data = await response.json();
+// async function fetchCoordinates() {
+//     try {
+//         let response = await fetch(''); 
+//         if (!response.ok) {
+//             throw new Error('Network response was not ok');
+//         }
+//         let data = await response.json();
 
-        let x = data.latitude;
-        let y = data.longitude;
+//         let x = data.latitude;
+//         let y = data.longitude;
 
-        map.setView([x, y], 19);
-        marker.setLatLng([x, y]);
+//         map.setView([x, y], 19);
+//         marker.setLatLng([x, y]);
 
-    } catch (error) {
-        console.error('Error fetching coordinates:', error);
-    }
-}
+//     } catch (error) {
+//         console.error('Error fetching coordinates:', error);
+//     }
+// }
 
-fetchCoordinates();
+// fetchCoordinates();
 
 let mapMain = initializeMap('map-main', coordinates);
 

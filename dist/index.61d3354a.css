@@ -5735,12 +5735,14 @@ input.invalid:focus {
 @media (width >= 768px) {
   .breadcrumbs {
     display: flex;
+    overflow: hidden;
   }
 }
 
 @media (width >= 1440px) {
   .breadcrumbs {
     display: flex;
+    overflow: hidden;
   }
 }
 

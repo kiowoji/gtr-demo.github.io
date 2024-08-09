@@ -792,24 +792,32 @@ async function displayHotels(service = "") {
       `;
             hotelCardsContainer.appendChild(hotelCard);
         });
-        attachHotelCardListeners();
+        attachCardListeners();
     } catch (error) {
         console.error("Error displaying hotels:", error);
     }
 }
-function attachHotelCardListeners() {
-    const hotelCards = document.getElementsByClassName("hotel-card");
-    Array.from(hotelCards).forEach((card)=>{
-        card.addEventListener("click", ()=>{
-            window.location.href = "hotel.html";
-        });
-    });
+function attachCardListeners() {
     const overlay = document.getElementById("auth-overlay");
     const likeButtons = document.querySelectorAll(".like-icon");
+    const hotelCards = document.querySelectorAll(".hotel-card");
+    const tourCards = document.querySelectorAll(".tour-card");
     likeButtons.forEach((likeButton)=>{
         likeButton.addEventListener("click", function(event) {
             overlay.classList.remove("hidden");
             event.stopPropagation();
+        });
+    });
+    hotelCards.forEach((hotelCard)=>{
+        hotelCard.addEventListener("click", function() {
+            const hotelUrl = hotelCard.querySelector(".hotel-title a").href;
+            window.location.href = hotelUrl;
+        });
+    });
+    tourCards.forEach((tourCard)=>{
+        tourCard.addEventListener("click", function() {
+            const tourUrl = tourCard.querySelector(".tour-title a").href;
+            window.location.href = tourUrl;
         });
     });
 }

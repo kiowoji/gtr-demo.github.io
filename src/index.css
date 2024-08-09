@@ -1058,7 +1058,7 @@ input.invalid {
 
 /*filters*/
 .breadcrumbs{
-    @apply flex md:flex lg:flex flex-row justify-start items-center mb-7 sm:overflow-scroll 
+    @apply flex md:flex lg:flex flex-row justify-start items-center mb-7 sm:overflow-scroll md:overflow-hidden lg:overflow-hidden 
 }
 .breadcrumbs li{
     @apply flex flex-row text-sm whitespace-nowrap
